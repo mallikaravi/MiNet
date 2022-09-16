@@ -1,5 +1,6 @@
 package com.novare.minet.serviceimpl;
 
+import com.novare.minet.action.AdminMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.User;
 import com.novare.minet.service.IWelcomeService;
@@ -20,10 +21,16 @@ public class WelcomeServiceImpl extends BaseServiceImpl implements IWelcomeServi
 			new WelcomeMenuAction(MenuContext.LOGIN, currentUser);
 		}
 		case 3 -> {
-//			new MainMenuAction(MenuContext.MAIN, currentUser);
+			new WelcomeMenuAction(MenuContext.WELCOME, null);
 		}
 		case 4 -> {
-			new WelcomeMenuAction(MenuContext.WELCOME, null);
+			new AdminMenuAction(MenuContext.ADMIN, currentUser);
+		}
+		case 5 -> {
+			new AdminMenuAction(MenuContext.MANAGER, currentUser);
+		}
+		case 6 -> {
+			new AdminMenuAction(MenuContext.CASHIER, currentUser);
 		}
 
 		default -> throw new IndexOutOfBoundsException();

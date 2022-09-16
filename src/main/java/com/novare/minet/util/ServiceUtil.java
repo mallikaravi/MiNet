@@ -1,13 +1,42 @@
 package com.novare.minet.util;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.CollectionType;
+import com.novare.minet.model.User;
 
 public class ServiceUtil {
 
 	private ServiceUtil() {
+	}
+
+	public static List<User> loadUsers() {
+		List<User> users = new ArrayList<>();
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
+			CollectionType javaType = mapper.getTypeFactory().constructCollectionType(List.class, User.class);
+			users = mapper.readValue(Paths.get("assets/user.json").toFile(), javaType);
+			return users;
+		} catch (Exception e) {
+			return users;
+		}
+	}
+
+	public static void saveUsers(List<User> users) throws JsonProcessingException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
+		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(users);
+		Files.write(Paths.get("assets/user.json"), json.getBytes());
 	}
 
 	/**

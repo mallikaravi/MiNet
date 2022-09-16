@@ -1,19 +1,10 @@
 [ {
-  "id1" : 1,
-  "fullName" : "FulleName",
-  "userName" : "UserName",
-  "passWord" : "Password",
-  "email" : "Email",
-  "phoneNumber" : "phoneNumber",
-  "address" : "address",
-  "role" : "ADMIN"
-}, {
-  "id1" : 2,
-  "fullName" : "FulleName",
-  "userName" : "UserName",
-  "passWord" : "Password",
-  "email" : "Email",
-  "phoneNumber" : "phoneNumber",
-  "address" : "address",
+  "id" : 1,
+  "fullName" : "Kumarbabu Ravi",
+  "userName" : "kumar",
+  "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+  "email" : "k",
+  "phoneNumber" : "0",
+  "address" : "abc",
   "role" : "ADMIN"
 } ]

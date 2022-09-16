@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.novare.minet.util.MiNetObjectIdResolver;
 
-@JsonIdentityInfo(scope = IdProperty.class, generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "id1", resolver = MiNetObjectIdResolver.class)
+@JsonIdentityInfo(scope = IdProperty.class, generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "id", resolver = MiNetObjectIdResolver.class)
 public class IdProperty {
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private Integer id;

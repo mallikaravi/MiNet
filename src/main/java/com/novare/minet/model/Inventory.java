@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Inventory {
-	private int id;
+public class Inventory extends IdProperty {
+
 	private Product product;
 	private double quantity;
 	private double orderedQty;
@@ -25,20 +25,6 @@ public class Inventory {
 		this.product = product;
 		this.quantity = quantity;
 		this.orderedQty = orderedQty;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	/**
@@ -97,19 +83,23 @@ public class Inventory {
 		getHistories().add(history);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
-	
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(histories, id, orderedQty, product, quantity);
+		return Objects.hash(histories, getId(), orderedQty, product, quantity);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -119,20 +109,22 @@ public class Inventory {
 		if (getClass() != obj.getClass())
 			return false;
 		Inventory other = (Inventory) obj;
-		return Objects.equals(histories, other.histories) && id == other.id
+		return Objects.equals(histories, other.histories) && getId() == other.getId()
 				&& Double.doubleToLongBits(orderedQty) == Double.doubleToLongBits(other.orderedQty)
 				&& Objects.equals(product, other.product)
 				&& Double.doubleToLongBits(quantity) == Double.doubleToLongBits(other.quantity);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
-	
+
 	@Override
 	public String toString() {
-		return "Inventory [id=" + id + ", product=" + product + ", quantity=" + quantity + ", orderedQty=" + orderedQty
-				+ ", histories=" + histories + "]";
+		return "Inventory [id=" + getId() + ", product=" + product + ", quantity=" + quantity + ", orderedQty="
+				+ orderedQty + ", histories=" + histories + "]";
 	}
 
 }

@@ -5,7 +5,7 @@ import java.util.List;
 public class PrintHandler {
 	
 	public static void appTitle() {
-		System.out.println("** Welcome To MiNet🤞 **");
+		System.out.println("** Welcome To MiNet **");
 		System.out.println(); // on purpose to make a space between the title
 	}
 

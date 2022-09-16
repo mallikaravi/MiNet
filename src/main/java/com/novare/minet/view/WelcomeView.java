@@ -12,11 +12,11 @@ public class WelcomeView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("ADMIN","CASHIER","MANAGER");
+		return List.of("Admin", "Cashier", "Manager");
 	}
 
 	public void printNavigationMenu() {
-		PrintHandler.optionLogout();
+		PrintHandler.optionQuit();
 	}
 
 }

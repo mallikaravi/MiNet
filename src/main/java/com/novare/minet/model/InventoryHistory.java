@@ -3,9 +3,8 @@ package com.novare.minet.model;
 import java.util.Date;
 import java.util.Objects;
 
-public class InventoryHistory {
+public class InventoryHistory extends IdProperty {
 
-	private int id;
 	private Date updatedOn;
 	private Inventory inventory;
 	private User updateBy;
@@ -24,20 +23,6 @@ public class InventoryHistory {
 		this.updatedOn = updatedOn;
 		this.inventory = inventory;
 		this.updateBy = updateBy;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	/**
@@ -82,19 +67,23 @@ public class InventoryHistory {
 		this.updateBy = updateBy;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
-	
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, inventory, updateBy, updatedOn);
+		return Objects.hash(getId(), inventory, updateBy, updatedOn);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -104,19 +93,20 @@ public class InventoryHistory {
 		if (getClass() != obj.getClass())
 			return false;
 		InventoryHistory other = (InventoryHistory) obj;
-		return id == other.id && Objects.equals(inventory, other.inventory) && Objects.equals(updateBy, other.updateBy)
-				&& Objects.equals(updatedOn, other.updatedOn);
+		return getId() == other.getId() && Objects.equals(inventory, other.inventory)
+				&& Objects.equals(updateBy, other.updateBy) && Objects.equals(updatedOn, other.updatedOn);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
-	
+
 	@Override
 	public String toString() {
-		return "InventoryHistory [id=" + id + ", updatedOn=" + updatedOn + ", inventory=" + inventory + ", updateBy="
-				+ updateBy + "]";
+		return "InventoryHistory [id=" + getId() + ", updatedOn=" + updatedOn + ", inventory=" + inventory
+				+ ", updateBy=" + updateBy + "]";
 	}
 
-	
 }

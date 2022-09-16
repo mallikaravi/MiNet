@@ -1,6 +1,8 @@
 package com.novare.minet.controller;
 
+import com.novare.minet.model.User;
 import com.novare.minet.service.IWelcomeService;
+import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.WelcomeView;
 
 public class WelcomeController extends BaseController {
@@ -18,5 +20,9 @@ public class WelcomeController extends BaseController {
 	public WelcomeView getView() {
 		return (WelcomeView) super.getView();
 	}
-	
+
+	@Override
+	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
+		super.requestUserInput(context, currentUser);
+	}
 }

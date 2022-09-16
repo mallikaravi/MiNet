@@ -1,22 +1,64 @@
 package com.novare.minet;
 
-import com.google.gson.Gson;
-import com.novare.minet.model.Product;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.CollectionType;
+import com.novare.minet.action.WelcomeMenuAction;
+import com.novare.minet.model.User;
+import com.novare.minet.util.DateUtil;
+import com.novare.minet.util.MenuContext;
 
 public class MinetApp {
-//	public static Product getProduct(Product product) {
-//		product.setId(1);
-//		product.setName("Soap");
-//		product.setPrice(50);
-//		product.setQuantity(10);
-//		return product;    
-//           
-//        }   
-//    public static void main(String[] args) {  
-//        // TODO Auto-generated method stub  
-//        Product product = new Product();    
-//        product = getProduct(product);    
-//        System.out.println("The JSON representation of Object product is ");    
-//        System.out.println(new Gson().toJson(product));    
-//    }  
+
+	public static void saveUsers(List<User> users) throws JsonProcessingException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
+		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(users);
+		System.out.println(json);
+		Files.write(Paths.get("assets/user.json"), json.getBytes());
+	}
+
+	public static List<User> loadUsers() {
+		List<User> users = new ArrayList<>();
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
+			CollectionType javaType = mapper.getTypeFactory().constructCollectionType(List.class, User.class);
+			users = mapper.readValue(Paths.get("assets/user.json").toFile(), javaType);
+			return users;
+		} catch (Exception e) {
+			return users;
+		}
+	}
+
+	public static void main(String[] args) {
+		User currentUser = null;
+		try {
+			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+		} catch (Exception e) {
+			System.out.println("Error, Not able to run the application !\n Due to the " + e.getMessage());
+		}
+//		List<User> product = List.of(
+//				new User("FulleName", "UserName", "Password", "Email", "phoneNumber", "address", Role.ADMIN),
+//				new User("FulleName", "UserName", "Password", "Email", "phoneNumber", "address", Role.ADMIN));
+//		try {
+//			saveUsers(product);
+//			List<User> loadUsers = loadUsers();
+//			System.out.println(loadUsers);
+////			for (User user : loadUsers) {
+////				product.add(user);
+////			}
+////			saveUsers(product);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+	}
 }

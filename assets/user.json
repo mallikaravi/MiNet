@@ -1,0 +1,19 @@
+[ {
+  "id1" : 1,
+  "fullName" : "FulleName",
+  "userName" : "UserName",
+  "passWord" : "Password",
+  "email" : "Email",
+  "phoneNumber" : "phoneNumber",
+  "address" : "address",
+  "role" : "ADMIN"
+}, {
+  "id1" : 2,
+  "fullName" : "FulleName",
+  "userName" : "UserName",
+  "passWord" : "Password",
+  "email" : "Email",
+  "phoneNumber" : "phoneNumber",
+  "address" : "address",
+  "role" : "ADMIN"
+} ]

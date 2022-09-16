@@ -1,19 +1,22 @@
 package com.novare.minet;
 
-import java.io.IOException;
-
-import com.novare.minet.action.WelcomeMenuAction;
-import com.novare.minet.model.User;
-import com.novare.minet.util.MenuContext;
+import com.google.gson.Gson;
+import com.novare.minet.model.Product;
 
 public class MinetApp {
-	public static void main(String[] args) throws IOException {
-		User currentUser = null;
-		try {
-			new WelcomeMenuAction(MenuContext.MAIN, currentUser);
-		} catch (Exception e) {
-			System.out.println("Error, Not able to run the application !\n Due to the " + e.getMessage());
-		}
-	}
-
+	public static Product getProduct(Product product) {
+		product.setId(1);
+		product.setName("Soap");
+		product.setPrice(50);
+		product.setQuantity(10);
+		return product;    
+           
+        }   
+    public static void main(String[] args) {  
+        // TODO Auto-generated method stub  
+        Product product = new Product();    
+        product = getProduct(product);    
+        System.out.println("The JSON representation of Object product is ");    
+        System.out.println(new Gson().toJson(product));    
+    }  
 }

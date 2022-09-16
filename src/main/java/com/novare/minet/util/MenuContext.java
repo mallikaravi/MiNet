@@ -6,7 +6,12 @@ public enum MenuContext {
 
 	MAIN,
 	
-	ADMIN,CASHIER,MANAGER,
+	ADMIN,
+	
+	CASHIER,
+	
+	MANAGER,
+	
 
 	LOGOUT;
 	

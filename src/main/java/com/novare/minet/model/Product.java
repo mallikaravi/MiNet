@@ -1,19 +1,21 @@
 package com.novare.minet.model;
 
-public class InventoryItem {
+public class Product {
 	private int id;
 	private String name;
 	private double price;
 	private int quantity;
-	private User user;
 
-	public InventoryItem(int id, String name, double price, int quantity, User user) {
+	public Product() {
+
+	}
+
+	public Product(int id, String name, double price, int quantity) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity;
-		this.user = user;
 	}
 
 	public int getId() {
@@ -50,7 +52,7 @@ public class InventoryItem {
 
 	@Override
 	public String toString() {
-		return "InventoryItem [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity + "]";
+		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity + "]";
 	}
 
 }

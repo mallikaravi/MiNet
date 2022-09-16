@@ -1,23 +1,14 @@
 package com.novare.minet.model;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Transaction {
-	List<Product> products = new ArrayList<>();
-	private int receiptno;
-	
-	public Transaction(List<Product> products, int receiptno) {
-		super();
-		this.products = products;
-		this.receiptno = receiptno;
-	}
+	private int id;
+	private Date transactionOn;
+	private List<TransactionItems> transactionItems;
+	private User soldBy;
+	private TransactionType type;
+	private double totalAmount;
 
-	@Override
-	public String toString() {
-		return "Transaction [products=" + products + ", receiptno=" + receiptno + "]";
-	}
-	
-	
-	
 }

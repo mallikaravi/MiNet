@@ -31,7 +31,7 @@ public class ManagerController extends BaseController {
 			case TRANSACTION_LIST -> TransactionList();
 
 			case PRODUCT -> ViewProduct();
-			
+
 			case SUPPLIERS -> ViewSuppliers();
 
 			default -> {
@@ -64,18 +64,6 @@ public class ManagerController extends BaseController {
 
 	private Object ViewInventory() {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private Object saveTransactions() {
-		return null;
-	}
-
-	private Object reviewInventory() {
-		return null;
-	}
-
-	private Object ViewOrderList() {
 		return null;
 	}
 

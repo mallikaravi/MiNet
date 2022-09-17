@@ -1,9 +1,9 @@
 package com.novare.minet.action;
 
-import com.novare.minet.controller.AdminController;
+import com.novare.minet.controller.ProductController;
 import com.novare.minet.model.User;
-import com.novare.minet.service.IAdminService;
-import com.novare.minet.serviceimpl.AdminServiceImpl;
+import com.novare.minet.service.IProductService;
+import com.novare.minet.serviceimpl.ProductServiceImpl;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.ProductView;
 

@@ -3,6 +3,7 @@ package com.novare.minet.action;
 import com.novare.minet.controller.SupplierController;
 import com.novare.minet.model.User;
 import com.novare.minet.service.ISupplierService;
+import com.novare.minet.serviceimpl.SupplierServiceImpl;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.SupplierView;
 

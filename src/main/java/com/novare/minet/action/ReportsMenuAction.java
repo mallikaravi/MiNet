@@ -9,14 +9,12 @@ import com.novare.minet.view.ReportView;
 
 public class ReportsMenuAction  extends BaseMenuAction{
 
-	public ReportsMenuAction(MenuContext context, User currentUser) {
+	public ReportsMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
 		case BEST_SELLING_PRODUCTS -> title = " View Best Selling Products Option:";
 		case PRODUCT_PROFITS -> title = " Product Profits Option :";
-		
-
 		}
 		ReportView view = new ReportView(title);
 		IReportService model = new ReportServiceImpl();

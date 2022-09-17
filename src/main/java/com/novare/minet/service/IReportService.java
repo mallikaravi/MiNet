@@ -1,5 +1,5 @@
 package com.novare.minet.service;
 
-public interface IReportService {
+public interface IReportService extends IBaseService{
 
 }

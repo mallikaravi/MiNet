@@ -1,5 +1,5 @@
 package com.novare.minet.service;
 
-public interface ISupplierService {
+public interface ISupplierService extends IBaseService{
 
 }

@@ -4,16 +4,15 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class CashierView extends BaseView {
+public class InventoryView extends BaseView {
 
-	public CashierView(String title) {
+	public InventoryView(String title) {
 		super(title);
 	}
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Inventory Status", "My Transactions", "My Orders", "CounterSale", "Return Product",
-				"Search Transaction", "Delete Transaction");
+		return List.of("List Of Inventories", "Create Order", "List Of Orders", "Search Order", "Pending Order");
 	}
 
 	@Override

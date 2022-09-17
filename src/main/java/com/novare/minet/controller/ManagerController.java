@@ -26,15 +26,17 @@ public class ManagerController extends BaseController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-				case VIEWORDERLIST -> ViewOrderList();
+			case INVENTORY -> ViewInventory();
 
-				case REVIEWINVENTORY -> reviewInventory();
+			case TRANSACTION_LIST -> TransactionList();
 
-				case SAVETRANSACTIONS -> saveTransactions();
+			case PRODUCT -> ViewProduct();
+			
+			case SUPPLIERS -> ViewSuppliers();
 
-				default -> {
-					selectedOption = getView().getUserInput();
-				}
+			default -> {
+				selectedOption = getView().getUserInput();
+			}
 			}
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
@@ -43,6 +45,26 @@ public class ManagerController extends BaseController {
 			setMenuVisible(false);
 			requestUserInput(context, currentUser);
 		}
+	}
+
+	private Object ViewSuppliers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Object ViewProduct() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Object TransactionList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Object ViewInventory() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private Object saveTransactions() {

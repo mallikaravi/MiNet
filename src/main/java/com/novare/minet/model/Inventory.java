@@ -91,7 +91,7 @@ public class Inventory extends IdProperty {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(histories, getId(), orderedQty, product, quantity);
+		return Objects.hash(getId());
 	}
 
 	/*
@@ -109,10 +109,7 @@ public class Inventory extends IdProperty {
 		if (getClass() != obj.getClass())
 			return false;
 		Inventory other = (Inventory) obj;
-		return Objects.equals(histories, other.histories) && getId() == other.getId()
-				&& Double.doubleToLongBits(orderedQty) == Double.doubleToLongBits(other.orderedQty)
-				&& Objects.equals(product, other.product)
-				&& Double.doubleToLongBits(quantity) == Double.doubleToLongBits(other.quantity);
+		return getId() == other.getId();
 	}
 
 	/*

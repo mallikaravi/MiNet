@@ -1,5 +1,7 @@
 package com.novare.minet.model;
 
+import java.util.Objects;
+
 public class User extends IdProperty {
 
 	private String fullName;
@@ -131,6 +133,35 @@ public class User extends IdProperty {
 	 */
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
+
+	@Override
+	public int hashCode() {
+		return super.hashCode() + Objects.hash(getFullName());
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return (getId() == other.getId() && getFullName().equals(other.getFullName()));
 	}
 
 	@Override

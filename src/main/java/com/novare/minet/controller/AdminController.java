@@ -26,17 +26,27 @@ public class AdminController extends BaseController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-				case PAYMENTS -> viewPAYMENTS();
-				
-				case CASHFLOW -> viewCashFlow();
+			case INVENTORY -> viewInventories();
 
-				case PROFITS -> viewPAYMENTS();
+			case PRODUCT -> viewProduct();
 
-				case REVIEWTRANSACTIONS -> reviewTransactions();
+			case TRANSACTION_LIST -> TransactionList();
 
-				default -> {
-					selectedOption = getView().getUserInput();
-				}
+			case SUPPLIERS -> viewSuppliers();
+			
+			case PAYMENTS -> viewPayments();
+
+			case CASHFLOW -> viewCashFlow();
+
+			case PROFITS -> viewProfits();
+
+			case ORDER_HISTORY -> orderHistory();
+
+			case REPORTS -> viewReports();
+
+			default -> {
+				selectedOption = getView().getUserInput();
+			}
 			}
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
@@ -47,15 +57,49 @@ public class AdminController extends BaseController {
 		}
 	}
 
-	private Object reviewTransactions() {
+	private Object viewReports() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Object orderHistory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Object viewProfits() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	private Object viewCashFlow() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
-	private Object viewPAYMENTS() {
+	private Object viewPayments() {
+		// TODO Auto-generated method stub
 		return null;
 	}
+
+	private Object viewSuppliers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Object TransactionList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Object viewProduct() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Object viewInventories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

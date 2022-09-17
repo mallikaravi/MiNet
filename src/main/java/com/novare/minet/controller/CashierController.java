@@ -26,23 +26,19 @@ public class CashierController extends BaseController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-				case INVENTORYSTATUS -> viewInventoryStatus();
+			case START_TRANSACTION -> viewTransaction();
 
-				case COUNTERSALE -> counterSale();
+			case PRODUCT -> viewProduct();
 
-				case MYTRANSACTIONS -> myTransactions();
+			case RETURN_PRODUCT -> returnProduct();
 
-				case SEARCHTRANSACTION -> searchTransactions();
+			case INVENTORY -> viewInventory();
 
-				case DELETETRANSACTION -> deleteTransactions();
+			case TRANSACTION_LIST -> viewTransactionList();
 
-				case MYORDERS -> viewOrders();
-
-				case RETURNPRODUCT -> returnProduct();
-
-				default -> {
-					selectedOption = getView().getUserInput();
-				}
+			default -> {
+				selectedOption = getView().getUserInput();
+			}
 			}
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
@@ -53,33 +49,28 @@ public class CashierController extends BaseController {
 		}
 	}
 
+	private Object viewTransactionList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private Object viewInventory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	private Object returnProduct() {
-
+		// TODO Auto-generated method stub
 		return null;
 	}
 
-	private Object viewOrders() {
-
+	private Object viewProduct() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
-	private Object deleteTransactions() {
-		return null;
-	}
-
-	private Object searchTransactions() {
-		return null;
-	}
-
-	private Object myTransactions() {
-		return null;
-	}
-
-	private Object counterSale() {
-		return null;
-	}
-
-	private Object viewInventoryStatus() {
+	private Object viewTransaction() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

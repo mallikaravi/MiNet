@@ -17,6 +17,7 @@ public class ManagerMenuAction extends BaseMenuAction {
 		case INVENTORY -> title = "Inventory option :";
 		case PRODUCT -> title = " Product option :";
 		case SUPPLIERS -> title = " Suppliers option :";
+		default -> title = "Manager Menu options";
 
 
 		}

@@ -3,8 +3,7 @@ package com.novare.minet.model;
 import java.util.Date;
 import java.util.Objects;
 
-public class ProductHistory {
-	private int id;
+public class ProductHistory extends IdProperty {
 	private Date updatedOn;
 	private Product product;
 	private User updateBy;
@@ -26,20 +25,6 @@ public class ProductHistory {
 		this.updatedOn = updatedOn;
 		this.product = product;
 		this.updateBy = updateBy;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	/**
@@ -84,19 +69,23 @@ public class ProductHistory {
 		this.updateBy = updateBy;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
-	
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, product, updateBy, updatedOn);
+		return Objects.hash(getId(), product, updateBy, updatedOn);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -106,17 +95,19 @@ public class ProductHistory {
 		if (getClass() != obj.getClass())
 			return false;
 		ProductHistory other = (ProductHistory) obj;
-		return id == other.id && Objects.equals(product, other.product) && Objects.equals(updateBy, other.updateBy)
-				&& Objects.equals(updatedOn, other.updatedOn);
+		return getId() == other.getId() && Objects.equals(product, other.product)
+				&& Objects.equals(updateBy, other.updateBy) && Objects.equals(updatedOn, other.updatedOn);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
-	
+
 	@Override
 	public String toString() {
-		return "ProductHistory [id=" + id + ", updatedOn=" + updatedOn + ", product=" + product + ", updateBy="
+		return "ProductHistory [id=" + getId() + ", updatedOn=" + updatedOn + ", product=" + product + ", updateBy="
 				+ updateBy + "]";
 	}
 

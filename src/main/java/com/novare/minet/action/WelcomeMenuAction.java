@@ -11,7 +11,7 @@ public class WelcomeMenuAction extends BaseMenuAction {
 
 	public WelcomeMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
-		WelcomeView view = new WelcomeView("Welcome to MiNet");
+		WelcomeView view = new WelcomeView("Welcome to WareHouse MiNet");
 		IWelcomeService model = new WelcomeServiceImpl();
 		WelcomeController controller = new WelcomeController(model, view);
 		if (context == null) {

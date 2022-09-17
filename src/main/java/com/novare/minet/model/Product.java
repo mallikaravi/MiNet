@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Product {
-	private int id;
+public class Product extends IdProperty {
 	private String fullName;
 	private String shortName;
 	private String description;
@@ -38,20 +37,6 @@ public class Product {
 		this.sellingPrice = sellingPrice;
 		this.costPrice = costPrice;
 		this.minQty = minQty;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	/**
@@ -160,7 +145,7 @@ public class Product {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(costPrice, description, fullName, histories, id, minQty, sellingPrice, shortName);
+		return Objects.hash(costPrice, description, fullName, histories, getId(), minQty, sellingPrice, shortName);
 	}
 
 	/*
@@ -180,7 +165,7 @@ public class Product {
 		Product other = (Product) obj;
 		return Double.doubleToLongBits(costPrice) == Double.doubleToLongBits(other.costPrice)
 				&& Objects.equals(description, other.description) && Objects.equals(fullName, other.fullName)
-				&& Objects.equals(histories, other.histories) && id == other.id && minQty == other.minQty
+				&& Objects.equals(histories, other.histories) && getId() == other.getId() && minQty == other.minQty
 				&& Double.doubleToLongBits(sellingPrice) == Double.doubleToLongBits(other.sellingPrice)
 				&& Objects.equals(shortName, other.shortName);
 	}
@@ -193,7 +178,7 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", fullName=" + fullName + ", shortName=" + shortName + ", description="
+		return "Product [id=" + getId() + ", fullName=" + fullName + ", shortName=" + shortName + ", description="
 				+ description + ", sellingPrice=" + sellingPrice + ", costPrice=" + costPrice + ", minQty=" + minQty
 				+ ", histories=" + histories + "]";
 	}

@@ -5,8 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Transaction {
-	private int id;
+public class Transaction extends IdProperty {
 	private Date transactionOn;
 	private List<TransactionItems> transactionItems = new ArrayList<>();
 	private User soldBy;
@@ -32,20 +31,6 @@ public class Transaction {
 		this.soldBy = soldBy;
 		this.type = type;
 		this.totalAmount = totalAmount;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	/**
@@ -118,19 +103,23 @@ public class Transaction {
 		this.totalAmount = totalAmount;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
-	
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, soldBy, totalAmount, transactionItems, transactionOn, type);
+		return Objects.hash(getId(), soldBy, totalAmount, transactionItems, transactionOn, type);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -140,20 +129,22 @@ public class Transaction {
 		if (getClass() != obj.getClass())
 			return false;
 		Transaction other = (Transaction) obj;
-		return id == other.id && Objects.equals(soldBy, other.soldBy)
+		return getId() == other.getId() && Objects.equals(soldBy, other.soldBy)
 				&& Double.doubleToLongBits(totalAmount) == Double.doubleToLongBits(other.totalAmount)
 				&& Objects.equals(transactionItems, other.transactionItems)
 				&& Objects.equals(transactionOn, other.transactionOn) && type == other.type;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
-	
+
 	@Override
 	public String toString() {
-		return "Transaction [id=" + id + ", transactionOn=" + transactionOn + ", transactionItems=" + transactionItems
-				+ ", soldBy=" + soldBy + ", type=" + type + ", totalAmount=" + totalAmount + "]";
+		return "Transaction [id=" + getId() + ", transactionOn=" + transactionOn + ", transactionItems="
+				+ transactionItems + ", soldBy=" + soldBy + ", type=" + type + ", totalAmount=" + totalAmount + "]";
 	}
 
 }

@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Order {
-	private int id;
+public class Order extends IdProperty{
 	private Product product;
 	private float quantity;
 	private float totalAmount;
@@ -109,7 +108,7 @@ public class Order {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(histories, id, product, quantity, supplier, totalAmount);
+		return Objects.hash(histories, getId(), product, quantity, supplier, totalAmount);
 	}
 
 	/*
@@ -127,7 +126,7 @@ public class Order {
 		if (getClass() != obj.getClass())
 			return false;
 		Order other = (Order) obj;
-		return Objects.equals(histories, other.histories) && id == other.id && Objects.equals(product, other.product)
+		return Objects.equals(histories, other.histories) && getId() == other.getId() && Objects.equals(product, other.product)
 				&& Float.floatToIntBits(quantity) == Float.floatToIntBits(other.quantity)
 				&& Objects.equals(supplier, other.supplier)
 				&& Float.floatToIntBits(totalAmount) == Float.floatToIntBits(other.totalAmount);
@@ -141,7 +140,7 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", product=" + product + ", quantity=" + quantity + ", totalAmount=" + totalAmount
+		return "Order [id=" + getId() + ", product=" + product + ", quantity=" + quantity + ", totalAmount=" + totalAmount
 				+ ", supplier=" + supplier + ", histories=" + histories + "]";
 	}
 

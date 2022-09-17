@@ -2,8 +2,7 @@ package com.novare.minet.model;
 
 import java.util.Objects;
 
-public class Supplier {
-	private int id;
+public class Supplier extends IdProperty {
 	private String name;
 	private String address;
 	private String email;
@@ -23,27 +22,12 @@ public class Supplier {
 	 * @param email
 	 * @param phoneNumber
 	 */
-	public Supplier(int id, String name, String address, String email, String phoneNumber) {
+	public Supplier( String name, String address, String email, String phoneNumber) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	/**
@@ -109,7 +93,7 @@ public class Supplier {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(address, email, id, name, phoneNumber);
+		return Objects.hash(address, email, getId(), name, phoneNumber);
 	}
 	/*
 	 * (non-Javadoc)
@@ -126,7 +110,7 @@ public class Supplier {
 		if (getClass() != obj.getClass())
 			return false;
 		Supplier other = (Supplier) obj;
-		return Objects.equals(address, other.address) && Objects.equals(email, other.email) && id == other.id
+		return Objects.equals(address, other.address) && Objects.equals(email, other.email) && getId() == other.getId() 
 				&& Objects.equals(name, other.name) && Objects.equals(phoneNumber, other.phoneNumber);
 	}
 	/*
@@ -137,7 +121,7 @@ public class Supplier {
 
 	@Override
 	public String toString() {
-		return "Supplier [id=" + id + ", name=" + name + ", address=" + address + ", email=" + email + ", phoneNumber="
+		return "Supplier [id=" + getId() + ", name=" + name + ", address=" + address + ", email=" + email + ", phoneNumber="
 				+ phoneNumber + "]";
 	}
 

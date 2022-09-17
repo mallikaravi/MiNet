@@ -1,26 +1,31 @@
 package com.novare.minet.action;
 
-import com.novare.minet.controller.WelcomeController;
+import com.novare.minet.controller.CashierController;
 import com.novare.minet.model.User;
-import com.novare.minet.service.IWelcomeService;
-import com.novare.minet.serviceimpl.WelcomeServiceImpl;
+import com.novare.minet.service.ICashierService;
+import com.novare.minet.serviceimpl.CashierServiceImpl;
 import com.novare.minet.util.MenuContext;
-import com.novare.minet.view.WelcomeView;
+import com.novare.minet.view.CashierView;
 
 public class CashierMenuAction extends BaseMenuAction {
 
 	public CashierMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
-		WelcomeView view = new WelcomeView("Welcome to MiNet");
-		IWelcomeService model = new WelcomeServiceImpl();
-		WelcomeController controller = new WelcomeController(model, view);
-		if (context == null) {
-			context = MenuContext.WELCOME;
-		} else if (context == MenuContext.LOGIN) {
-			view.setTitle("Login menu options:");
+		String title = "";
+		switch (context) {
+			case COUNTERSALE -> title = " View Sale :";
+			case INVENTORYSTATUS -> title = "  View Inventory Status :";
+			case MYTRANSACTIONS -> title = " View Transactions :";
+			case SEARCHTRANSACTION -> title = " Search Transaction option :";
+			case DELETETRANSACTION -> title = " Delete Transaction option :";
+			case MYORDERS -> title = "View Orders :";
+			case RETURNPRODUCT -> title = "Return Product option :";
+
 		}
-		controller.setMenuVisible(context == MenuContext.WELCOME);
+		CashierView view = new CashierView(title);
+		ICashierService model = new CashierServiceImpl();
+		CashierController controller = new CashierController(model, view);
+		controller.setMenuVisible(context == MenuContext.CASHIER);
 		controller.requestUserInput(context, currentUser);
 	}
-
 }

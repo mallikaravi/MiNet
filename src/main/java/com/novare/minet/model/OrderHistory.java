@@ -3,12 +3,10 @@ package com.novare.minet.model;
 import java.util.Date;
 import java.util.Objects;
 
-public class OrderHistory {
+public class OrderHistory extends IdProperty {
 	public enum OrderStatus {
 		PENDING, WAITING, DELIVERED
 	}
-
-	private int id;
 	private Order order;
 	private Date updatedOn;
 	private OrderStatus status;
@@ -33,20 +31,6 @@ public class OrderHistory {
 		this.updatedOn = updatedOn;
 		this.status = status;
 		this.updateBy = updateBy;
-	}
-
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	/**
@@ -113,7 +97,7 @@ public class OrderHistory {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, order, status, updateBy, updatedOn);
+		return Objects.hash(getId(), order, status, updateBy, updatedOn);
 	}
 
 	/*
@@ -131,7 +115,7 @@ public class OrderHistory {
 		if (getClass() != obj.getClass())
 			return false;
 		OrderHistory other = (OrderHistory) obj;
-		return id == other.id && Objects.equals(order, other.order) && status == other.status
+		return getId() == other.getId()  && Objects.equals(order, other.order) && status == other.status
 				&& Objects.equals(updateBy, other.updateBy) && Objects.equals(updatedOn, other.updatedOn);
 	}
 
@@ -143,7 +127,7 @@ public class OrderHistory {
 
 	@Override
 	public String toString() {
-		return "OrderHistory [id=" + id + ", order=" + order + ", updatedOn=" + updatedOn + ", status=" + status
+		return "OrderHistory [id=" + getId() + ", order=" + order + ", updatedOn=" + updatedOn + ", status=" + status
 				+ ", updateBy=" + updateBy + "]";
 	}
 

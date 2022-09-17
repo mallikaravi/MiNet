@@ -4,16 +4,20 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import com.novare.minet.action.WelcomeMenuAction;
+import com.novare.minet.model.Product;
+import com.novare.minet.model.Role;
+import com.novare.minet.model.Transaction;
+import com.novare.minet.model.TransactionItems;
+import com.novare.minet.model.TransactionType;
 import com.novare.minet.model.User;
 import com.novare.minet.util.DateUtil;
-import com.novare.minet.util.MenuContext;
 
 public class MinetApp {
 
@@ -39,12 +43,37 @@ public class MinetApp {
 	}
 
 	public static void main(String[] args) {
-		User currentUser = null;
 		try {
-			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+//			System.out.println(Ids.get().getUserId());
+//			Ids id=Ids.get();
+//			id.getInventoryHistoryId();
+//			id.done();
+			;
+			User user = new User("FulleName", "UserName", "Password", "Email", "phoneNumber", "address", Role.ADMIN);
+			Transaction transaction = new Transaction(DateUtil.toDate(LocalDateTime.now()), user, TransactionType.SOLD,
+					1000);
+			Product product = new Product("FullName", "Short Name", "Description", 100, 80, 1);
+
+			TransactionItems item = new TransactionItems(product, 2, product.getSellingPrice() * 2);
+			item.setTransaction(transaction);
+
+			transaction.addTransactionItems(item);
+			ObjectMapper mapper = new ObjectMapper();
+			mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
+			String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(transaction);
+			System.out.println(json);
+			Files.write(Paths.get("assets/transaction.json"), json.getBytes());
 		} catch (Exception e) {
-			System.out.println("Error, Not able to run the application !\n Due to the " + e.getMessage());
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
+//		User currentUser = null;
+//		try {
+//			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+//		} catch (Exception e) {
+//			System.out.println("Error, Not able to run the application !\n Due to the " + e.getMessage());
+//		}
 //		List<User> product = List.of(
 //				new User("FulleName", "UserName", "Password", "Email", "phoneNumber", "address", Role.ADMIN),
 //				new User("FulleName", "UserName", "Password", "Email", "phoneNumber", "address", Role.ADMIN));

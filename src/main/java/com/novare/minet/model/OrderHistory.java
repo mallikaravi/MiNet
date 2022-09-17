@@ -3,6 +3,8 @@ package com.novare.minet.model;
 import java.util.Date;
 import java.util.Objects;
 
+import com.novare.minet.util.Ids;
+
 public class OrderHistory extends IdProperty {
 	public enum OrderStatus {
 		PENDING, WAITING, DELIVERED
@@ -17,6 +19,10 @@ public class OrderHistory extends IdProperty {
 	 */
 	public OrderHistory() {
 		super();
+		Ids id = Ids.get();
+		setId(id.getOrderHistoryId());
+		id.close();
+	
 	}
 
 	/**
@@ -26,7 +32,7 @@ public class OrderHistory extends IdProperty {
 	 * @param updateBy
 	 */
 	public OrderHistory(Order order, Date updatedOn, OrderStatus status, User updateBy) {
-		super();
+		this();
 		this.order = order;
 		this.updatedOn = updatedOn;
 		this.status = status;

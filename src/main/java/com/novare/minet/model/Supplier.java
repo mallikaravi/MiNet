@@ -2,6 +2,8 @@ package com.novare.minet.model;
 
 import java.util.Objects;
 
+import com.novare.minet.util.Ids;
+
 public class Supplier extends IdProperty {
 	private String name;
 	private String address;
@@ -13,7 +15,10 @@ public class Supplier extends IdProperty {
 	 */
 	public Supplier() {
 		super();
-	}
+		Ids id = Ids.get();
+		setId(id.getSupplierId());
+		id.close();
+		}
 
 	/**
 	 * @param id
@@ -23,7 +28,7 @@ public class Supplier extends IdProperty {
 	 * @param phoneNumber
 	 */
 	public Supplier( String name, String address, String email, String phoneNumber) {
-		super();
+		this();
 		this.name = name;
 		this.address = address;
 		this.email = email;

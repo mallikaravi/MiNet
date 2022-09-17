@@ -2,6 +2,8 @@ package com.novare.minet.model;
 
 import java.util.Objects;
 
+import com.novare.minet.util.Ids;
+
 public class User extends IdProperty {
 
 	private String fullName;
@@ -13,6 +15,10 @@ public class User extends IdProperty {
 	private Role role;
 
 	public User() {
+		super();
+		Ids id = Ids.get();
+		setId(id.getUserId());
+		id.close();
 	}
 
 	/**
@@ -26,7 +32,7 @@ public class User extends IdProperty {
 	 */
 	public User(String fullName, String userName, String passWord, String email, String phoneNumber, String address,
 			Role role) {
-		super();
+		this();
 		this.fullName = fullName;
 		this.userName = userName;
 		this.passWord = passWord;

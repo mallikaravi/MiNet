@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.novare.minet.util.Ids;
+
 public class Inventory extends IdProperty {
 
 	private Product product;
@@ -12,6 +14,10 @@ public class Inventory extends IdProperty {
 	private List<InventoryHistory> histories = new ArrayList<>();
 
 	public Inventory() {
+		super();
+		Ids id = Ids.get();
+		setId(id.getInventoryId());
+		id.close();
 	}
 
 	/**
@@ -21,7 +27,7 @@ public class Inventory extends IdProperty {
 	 * @param histories
 	 */
 	public Inventory(Product product, double quantity, double orderedQty) {
-		super();
+		this();
 		this.product = product;
 		this.quantity = quantity;
 		this.orderedQty = orderedQty;

@@ -2,8 +2,11 @@ package com.novare.minet.model;
 
 import java.util.Objects;
 
-public class TransactionItems extends IdProperty {
+import com.novare.minet.util.Ids;
+
+public class TransactionItems extends IdProperty{
 	private Product product;
+	private Transaction transaction;
 	private float quantity;
 	private double totalAmount;
 
@@ -12,6 +15,9 @@ public class TransactionItems extends IdProperty {
 	 */
 	public TransactionItems() {
 		super();
+		Ids id = Ids.get();
+		setId(id.getTransactionItemId());
+		id.close();
 	}
 
 	/**
@@ -20,10 +26,25 @@ public class TransactionItems extends IdProperty {
 	 * @param totalAmount
 	 */
 	public TransactionItems(Product product, float quantity, double totalAmount) {
-		super();
+		this();
 		this.product = product;
 		this.quantity = quantity;
 		this.totalAmount = totalAmount;
+	}
+
+
+	/**
+	 * @return the transaction
+	 */
+	public Transaction getTransaction() {
+		return transaction;
+	}
+
+	/**
+	 * @param transaction the transaction to set
+	 */
+	public void setTransaction(Transaction transaction) {
+		this.transaction = transaction;
 	}
 
 	/**

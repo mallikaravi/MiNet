@@ -1,0 +1,12 @@
+{
+  "userId" : 4,
+  "inventoryId" : 0,
+  "inventoryHistoryId" : 0,
+  "orderId" : 0,
+  "orderHistoryId" : 0,
+  "productId" : 0,
+  "productHistoryId" : 0,
+  "supplierId" : 0,
+  "transactionId" : 0,
+  "transactionItemId" : 0
+}

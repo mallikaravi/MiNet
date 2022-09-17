@@ -5,7 +5,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import com.novare.minet.util.Ids;
+
 public class Transaction extends IdProperty {
+
 	private Date transactionOn;
 	private List<TransactionItems> transactionItems = new ArrayList<>();
 	private User soldBy;
@@ -17,6 +20,9 @@ public class Transaction extends IdProperty {
 	 */
 	public Transaction() {
 		super();
+		Ids id = Ids.get();
+		setId(id.getTransactionId());
+		id.close();
 	}
 
 	/**
@@ -26,12 +32,13 @@ public class Transaction extends IdProperty {
 	 * @param totalAmount
 	 */
 	public Transaction(Date transactionOn, User soldBy, TransactionType type, double totalAmount) {
-		super();
+		this();
 		this.transactionOn = transactionOn;
 		this.soldBy = soldBy;
 		this.type = type;
 		this.totalAmount = totalAmount;
 	}
+
 
 	/**
 	 * @return the transactionOn
@@ -57,7 +64,7 @@ public class Transaction extends IdProperty {
 	/**
 	 * @param transactionItems the transactionItems to set
 	 */
-	public void setTransactionItems(TransactionItems transactionItems) {
+	public void addTransactionItems(TransactionItems transactionItems) {
 		getTransactionItems().add(transactionItems);
 	}
 

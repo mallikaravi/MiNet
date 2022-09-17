@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Product extends IdProperty {
+import com.novare.minet.util.Ids;
+
+public class Product extends IdProperty{
+	private Integer id;
 	private String fullName;
 	private String shortName;
 	private String description;
@@ -18,6 +21,9 @@ public class Product extends IdProperty {
 	 */
 	public Product() {
 		super();
+		Ids id = Ids.get();
+		setId(id.getProductId());
+		id.close();
 	}
 
 	/**
@@ -30,13 +36,27 @@ public class Product extends IdProperty {
 	 */
 	public Product(String fullName, String shortName, String description, double sellingPrice, double costPrice,
 			int minQty) {
-		super();
+		this();
 		this.fullName = fullName;
 		this.shortName = shortName;
 		this.description = description;
 		this.sellingPrice = sellingPrice;
 		this.costPrice = costPrice;
 		this.minQty = minQty;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Integer getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	/**

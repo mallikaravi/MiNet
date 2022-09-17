@@ -3,6 +3,8 @@ package com.novare.minet.model;
 import java.util.Date;
 import java.util.Objects;
 
+import com.novare.minet.util.Ids;
+
 public class InventoryHistory extends IdProperty {
 
 	private Date updatedOn;
@@ -11,6 +13,9 @@ public class InventoryHistory extends IdProperty {
 
 	public InventoryHistory() {
 		super();
+		Ids id = Ids.get();
+		setId(id.getInventoryHistoryId());
+		id.close();
 	}
 
 	/**
@@ -19,7 +24,7 @@ public class InventoryHistory extends IdProperty {
 	 * @param updateBy
 	 */
 	public InventoryHistory(Date updatedOn, Inventory inventory, User updateBy) {
-		super();
+		this();
 		this.updatedOn = updatedOn;
 		this.inventory = inventory;
 		this.updateBy = updateBy;

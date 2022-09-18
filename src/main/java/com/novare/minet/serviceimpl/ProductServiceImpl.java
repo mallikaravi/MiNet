@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.novare.minet.action.AdminMenuAction;
+import com.novare.minet.action.CashierMenuAction;
+import com.novare.minet.action.ManagerMenuAction;
 import com.novare.minet.action.ProductMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.Product;
@@ -21,25 +23,25 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 		case 0 -> {
 			switch (currentUser.getRole()) {
 			case ADMIN -> new AdminMenuAction(MenuContext.ADMIN, currentUser);
-			case MANAGER -> new AdminMenuAction(MenuContext.MANAGER, currentUser);
-			case CASHIER -> new AdminMenuAction(MenuContext.CASHIER, currentUser);
+			case MANAGER -> new ManagerMenuAction(MenuContext.MANAGER, currentUser);
+			case CASHIER -> new CashierMenuAction(MenuContext.CASHIER, currentUser);
 			default -> new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
 			}
 		}
 		case 1 -> {
-			new ProductMenuAction(MenuContext.PRODUCT_LIST, currentUser);
+			new ProductMenuAction(MenuContext.LIST, currentUser);
 		}
 		case 2 -> {
-			new ProductMenuAction(MenuContext.CREATE_PRODUCT, currentUser);
+			new ProductMenuAction(MenuContext.CREATE, currentUser);
 		}
 		case 3 -> {
-			new ProductMenuAction(MenuContext.EDIT_PRODUCT, currentUser);
+			new ProductMenuAction(MenuContext.EDIT, currentUser);
 		}
 		case 4 -> {
-			new ProductMenuAction(MenuContext.DELETE_PRODUCT, currentUser);
+			new ProductMenuAction(MenuContext.DELETE, currentUser);
 		}
 		case 5 -> {
-			new ProductMenuAction(MenuContext.SEARCH_PRODUCT, currentUser);
+			new ProductMenuAction(MenuContext.SEARCH, currentUser);
 		}
 
 		default -> throw new IndexOutOfBoundsException();

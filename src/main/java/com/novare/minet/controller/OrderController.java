@@ -26,12 +26,12 @@ public class OrderController extends BaseController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-			case CREATE_ORDER -> createOrder();
-			case DELETE_ORDER -> deleteOrder();
-			case EDIT_ORDER -> editOrder();
-			case ORDER_LIST -> displayOrders();
+			case CREATE -> createOrder();
+			case DELETE -> deleteOrder();
+			case EDIT -> editOrder();
+			case LIST -> displayOrders();
 			case PENDING_ORDERS -> displayPendingOrders();
-			case SEARCH_ORDER -> searchOrders();
+			case SEARCH -> searchOrders();
 			case ORDER_HISTORY -> displayOrderHistory();
 			default -> {
 				selectedOption = getView().getUserInput();

@@ -4,6 +4,7 @@ import com.novare.minet.action.AdminMenuAction;
 import com.novare.minet.action.InventoryMenuAction;
 import com.novare.minet.action.ReportsMenuAction;
 import com.novare.minet.action.SuppliersMenuAction;
+import com.novare.minet.action.TransactionMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.User;
 import com.novare.minet.service.IAdminService;
@@ -23,7 +24,7 @@ public class AdminServiceImpl extends BaseServiceImpl implements IAdminService {
 			new InventoryMenuAction(MenuContext.INVENTORY, currentUser);
 		}
 		case 2 -> {
-			new AdminMenuAction(MenuContext.TRANSACTION_LIST, currentUser);
+			new TransactionMenuAction(MenuContext.TRANSACTION, currentUser);
 
 		}
 		case 3 -> {

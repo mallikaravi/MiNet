@@ -12,12 +12,12 @@ public class CashierView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Start Transaction", "Return Product", "My Transactions", "My Orders", "Inventories", "Products");
+		return List.of("Transactions", "Orders", "Inventories", "Products");
 	}
 
 	@Override
 	public void printNavigationMenu() {
-		PrintHandler.optionBackToMainMenu();
+		PrintHandler.optionLogout();
 
 	}
 }

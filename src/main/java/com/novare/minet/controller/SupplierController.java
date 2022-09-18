@@ -3,7 +3,6 @@ package com.novare.minet.controller;
 import java.util.List;
 
 import com.novare.minet.model.Supplier;
-import com.novare.minet.model.Supplier;
 import com.novare.minet.model.User;
 import com.novare.minet.service.ISupplierService;
 import com.novare.minet.util.MenuContext;
@@ -32,13 +31,10 @@ public class SupplierController extends BaseController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-			case CREATE_SUPPLIER -> createSupplier();
-
-			case EDIT_SUPPLIER -> editSupplier();
-
-			case DELETE_SUPPLIER -> deleteSupplier();
-
-			case SUPPLIER_LIST -> supplierList();
+			case CREATE -> createSupplier();
+			case EDIT -> editSupplier();
+			case DELETE -> deleteSupplier();
+			case LIST -> supplierList();
 			default -> {
 				selectedOption = getView().getUserInput();
 			}

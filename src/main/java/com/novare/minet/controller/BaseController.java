@@ -3,6 +3,7 @@ package com.novare.minet.controller;
 import java.util.Objects;
 
 import javax.security.sasl.AuthenticationException;
+
 import com.novare.minet.model.User;
 import com.novare.minet.service.IBaseService;
 import com.novare.minet.serviceimpl.BaseServiceImpl;

@@ -13,10 +13,10 @@ public class SuppliersMenuAction extends BaseMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case CREATE_SUPPLIER -> title ="Create Suppler Option :";
-		case EDIT_SUPPLIER -> title = "Edit Supplier Option :";
-		case DELETE_SUPPLIER -> title ="Delete Supplier Option:";
-		case SUPPLIER_LIST -> title ="View Suppliers List  :";
+		case CREATE -> title ="Create Suppler Option :";
+		case EDIT -> title = "Edit Supplier Option :";
+		case DELETE -> title ="Delete Supplier Option:";
+		case LIST -> title ="View Suppliers List  :";
 		default -> title="Suplier Menu Options:";
 
 		}

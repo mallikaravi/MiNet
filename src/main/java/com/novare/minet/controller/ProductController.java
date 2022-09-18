@@ -34,11 +34,11 @@ public class ProductController extends BaseController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-			case CREATE_PRODUCT -> createProduct();
-			case PRODUCT_LIST -> productList();
-			case EDIT_PRODUCT -> editProduct();
-			case DELETE_PRODUCT -> deleteProduct();
-			case SEARCH_PRODUCT -> searchProduct();
+			case CREATE -> createProduct();
+			case LIST -> productList();
+			case EDIT -> editProduct();
+			case DELETE -> deleteProduct();
+			case SEARCH -> searchProduct();
 			default -> selectedOption = getView().getUserInput();
 			}
 			getModel().handleOption(selectedOption, getUserSession());

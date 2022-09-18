@@ -13,12 +13,11 @@ public class ManagerMenuAction extends BaseMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case TRANSACTION_LIST -> title ="View Transaction List option :";
-		case INVENTORY -> title ="Inventory option :";
-		case PRODUCT -> title ="Product option :";
-		case SUPPLIERS -> title ="Suppliers option :";
-		default -> title ="Manager Menu options";
-
+		case TRANSACTION -> title = "View Transaction List option :";
+		case INVENTORY -> title = "Inventory option :";
+		case PRODUCT -> title = "Product option :";
+		case SUPPLIERS -> title = "Suppliers option :";
+		default -> title = "Manager Menu options";
 
 		}
 		ManagerView view = new ManagerView(title);

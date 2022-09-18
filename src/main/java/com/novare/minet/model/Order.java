@@ -1,9 +1,11 @@
 package com.novare.minet.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.novare.minet.util.DateUtil;
 import com.novare.minet.util.Ids;
 
 public class Order extends IdProperty {
@@ -11,6 +13,8 @@ public class Order extends IdProperty {
 	private float quantity;
 	private float totalAmount;
 	private Supplier supplier;
+	private OrderStatus status;
+	private User createdBy;
 	private List<OrderHistory> histories = new ArrayList<>();
 
 	public Order() {
@@ -22,14 +26,19 @@ public class Order extends IdProperty {
 	 * @param quantity
 	 * @param totalAmount
 	 * @param supplier
+	 * @param status
+	 * @param createdBy
 	 * @param histories
 	 */
-	public Order(Product product, float quantity, float totalAmount, Supplier supplier) {
-		this();
+	public Order(Product product, float quantity, float totalAmount, Supplier supplier, OrderStatus status,
+			User createdBy) {
+		super();
 		this.product = product;
 		this.quantity = quantity;
 		this.totalAmount = totalAmount;
 		this.supplier = supplier;
+		this.status = status;
+		this.createdBy = createdBy;
 	}
 
 	@Override
@@ -98,6 +107,34 @@ public class Order extends IdProperty {
 	}
 
 	/**
+	 * @return the status
+	 */
+	public OrderStatus getStatus() {
+		return status;
+	}
+
+	/**
+	 * @return the createdBy
+	 */
+	public User getCreatedBy() {
+		return createdBy;
+	}
+
+	/**
+	 * @param createdBy the createdBy to set
+	 */
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(OrderStatus status) {
+		this.status = status;
+	}
+
+	/**
 	 * @return the histories
 	 */
 	public List<OrderHistory> getHistories() {
@@ -107,7 +144,9 @@ public class Order extends IdProperty {
 	/**
 	 * @param histories the histories to set
 	 */
-	public void addHistories(OrderHistory history) {
+	public void addHistories(User user) {
+		OrderHistory history = new OrderHistory(DateUtil.toDate(LocalDateTime.now()), this, user);
+		history.generateId();
 		getHistories().add(history);
 	}
 

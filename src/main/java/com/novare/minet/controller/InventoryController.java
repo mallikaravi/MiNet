@@ -26,10 +26,10 @@ public class InventoryController extends BaseController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-			case INVENTORY_LIST -> displayInventoryList();
-			case CREATE_INVENTORY -> createInventory();
-			case DELETE_INVENTORY -> deleteInventory();
-			case EDIT_INVENTORY -> editInventory();
+			case LIST -> displayInventoryList();
+			case CREATE -> createInventory();
+			case DELETE -> deleteInventory();
+			case EDIT -> editInventory();
 			default -> {
 				selectedOption = getView().getUserInput();
 			}

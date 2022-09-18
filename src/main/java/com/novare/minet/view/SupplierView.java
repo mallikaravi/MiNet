@@ -2,7 +2,6 @@ package com.novare.minet.view;
 
 import java.util.List;
 
-import com.novare.minet.model.Supplier;
 import com.novare.minet.util.PrintHandler;
 
 public class SupplierView extends BaseView {

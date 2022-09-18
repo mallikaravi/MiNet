@@ -11,17 +11,7 @@ public class CashierMenuAction extends BaseMenuAction {
 
 	public CashierMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
-		String title = "";
-		switch (context) {
-		case START_TRANSACTION -> title ="View Transaction :";
-		case PRODUCT -> title ="View Product Options :";
-		case RETURN_PRODUCT -> title ="Return product Option :";
-		case INVENTORY -> title ="Inventory Options :";
-		case TRANSACTION_LIST -> title ="List of Transactions :";
-		default -> title="Cashier Menu Options:";
-
-
-		}
+		String title = "Cashier Menu Options:";
 		CashierView view = new CashierView(title);
 		ICashierService model = new CashierServiceImpl();
 		CashierController controller = new CashierController(model, view);

@@ -30,10 +30,10 @@ public class AdminController extends BaseController {
 
 			case PRODUCT -> viewProduct();
 
-			case TRANSACTION_LIST -> TransactionList();
+			case TRANSACTION -> TransactionList();
 
 			case SUPPLIERS -> viewSuppliers();
-			
+
 			case PAYMENTS -> viewPayments();
 
 			case CASHFLOW -> viewCashFlow();

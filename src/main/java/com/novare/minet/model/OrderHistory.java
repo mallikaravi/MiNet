@@ -6,10 +6,9 @@ import java.util.Objects;
 import com.novare.minet.util.Ids;
 
 public class OrderHistory extends IdProperty {
-	
+
 	private Order order;
 	private Date updatedOn;
-	private OrderStatus status;
 	private User updateBy;
 
 	/**
@@ -25,11 +24,10 @@ public class OrderHistory extends IdProperty {
 	 * @param status
 	 * @param updateBy
 	 */
-	public OrderHistory(Order order, Date updatedOn, OrderStatus status, User updateBy) {
+	public OrderHistory(Date updatedOn, Order order, User updateBy) {
 		this();
 		this.order = order;
 		this.updatedOn = updatedOn;
-		this.status = status;
 		this.updateBy = updateBy;
 	}
 
@@ -71,20 +69,6 @@ public class OrderHistory extends IdProperty {
 	}
 
 	/**
-	 * @return the status
-	 */
-	public OrderStatus getStatus() {
-		return status;
-	}
-
-	/**
-	 * @param status the status to set
-	 */
-	public void setStatus(OrderStatus status) {
-		this.status = status;
-	}
-
-	/**
 	 * @return the updateBy
 	 */
 	public User getUpdateBy() {
@@ -106,7 +90,7 @@ public class OrderHistory extends IdProperty {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), order, status, updateBy, updatedOn);
+		return Objects.hash(getId());
 	}
 
 	/*
@@ -124,8 +108,7 @@ public class OrderHistory extends IdProperty {
 		if (getClass() != obj.getClass())
 			return false;
 		OrderHistory other = (OrderHistory) obj;
-		return getId() == other.getId() && Objects.equals(order, other.order) && status == other.status
-				&& Objects.equals(updateBy, other.updateBy) && Objects.equals(updatedOn, other.updatedOn);
+		return getId() == other.getId();
 	}
 
 	/*
@@ -136,8 +119,8 @@ public class OrderHistory extends IdProperty {
 
 	@Override
 	public String toString() {
-		return "OrderHistory [id=" + getId() + ", order=" + order + ", updatedOn=" + updatedOn + ", status=" + status
-				+ ", updateBy=" + updateBy + "]";
+		return "OrderHistory [id=" + getId() + ", order=" + order + ", updatedOn=" + updatedOn + ", updateBy="
+				+ updateBy + "]";
 	}
 
 }

@@ -24,15 +24,7 @@ public class CashierController extends BaseController {
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
 		try {
 			super.requestUserInput(context, currentUser);
-			int selectedOption = 0;
-			switch (context) {
-			case START_TRANSACTION -> viewTransaction();
-			case RETURN_PRODUCT -> returnProduct();
-			case TRANSACTION_LIST -> viewTransactionList();
-			default -> {
-				selectedOption = getView().getUserInput();
-			}
-			}
+			int selectedOption = getView().getUserInput();
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
 			getView().printInvalidOption();
@@ -41,20 +33,4 @@ public class CashierController extends BaseController {
 			requestUserInput(context, currentUser);
 		}
 	}
-
-	private Object viewTransactionList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private Object returnProduct() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private Object viewTransaction() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

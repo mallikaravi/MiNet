@@ -13,12 +13,12 @@ public class OrderMenuAction extends BaseMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case CREATE_ORDER -> title = "Create Order Option:";
-		case DELETE_ORDER -> title = "Delete Order Option:";
-		case EDIT_ORDER -> title = "Delete Order Option :";
-		case ORDER_LIST -> title = "List of Orders Option :";
+		case CREATE -> title = "Create Order Option:";
+		case DELETE -> title = "Delete Order Option:";
+		case EDIT -> title = "Delete Order Option :";
+		case LIST -> title = "List of Orders Option :";
 		case PENDING_ORDERS -> title = "Pending Order Option:";
-		case SEARCH_ORDER -> title = "Search Order Option :";
+		case SEARCH -> title = "Search Order Option :";
 		case ORDER_HISTORY -> title = "Display Order History Option :";
 		default -> title = "Order Option:";
 		}

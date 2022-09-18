@@ -19,16 +19,16 @@ public class SupplierServiceImpl extends BaseServiceImpl implements ISupplierSer
 			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
 		}
 		case 2 -> {
-			new SuppliersMenuAction(MenuContext.CREATE_SUPPLIER, currentUser);
+			new SuppliersMenuAction(MenuContext.CREATE, currentUser);
 		}
 		case 3 -> {
-			new SuppliersMenuAction(MenuContext.EDIT_SUPPLIER, currentUser);
+			new SuppliersMenuAction(MenuContext.EDIT, currentUser);
 		}
 		case 4 -> {
-			new SuppliersMenuAction(MenuContext.DELETE_SUPPLIER, currentUser);
+			new SuppliersMenuAction(MenuContext.DELETE, currentUser);
 		}
 		case 5 -> {
-			new SuppliersMenuAction(MenuContext.SUPPLIER_LIST, currentUser);
+			new SuppliersMenuAction(MenuContext.LIST, currentUser);
 		}
 
 		default -> throw new IndexOutOfBoundsException();
@@ -51,7 +51,7 @@ public class SupplierServiceImpl extends BaseServiceImpl implements ISupplierSer
 	@Override
 	public Supplier delete(Supplier supplier) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Supplier>suppliers = ServiceUtil.loadModel(Supplier.class, STORAGE);
+		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, STORAGE);
 		suppliers.remove(supplier);
 		ServiceUtil.saveModel(suppliers, STORAGE);
 		return supplier;

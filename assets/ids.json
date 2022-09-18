@@ -4,9 +4,9 @@
   "inventoryHistoryId" : 1,
   "orderId" : 1,
   "orderHistoryId" : 1,
-  "productId" : 4,
-  "productHistoryId" : 4,
-  "supplierId" : 4,
+  "productId" : 5,
+  "productHistoryId" : 5,
+  "supplierId" : 5,
   "transactionId" : 1,
   "transactionItemId" : 1
 }

@@ -1,9 +1,11 @@
 package com.novare.minet.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.novare.minet.util.DateUtil;
 import com.novare.minet.util.Ids;
 
 public class Inventory extends IdProperty {
@@ -91,7 +93,10 @@ public class Inventory extends IdProperty {
 	/**
 	 * @param histories the histories to set
 	 */
-	public void addHistories(InventoryHistory history) {
+	public void addHistories(User user) {
+		InventoryHistory history = new InventoryHistory(DateUtil.toDate(LocalDateTime.now()), this, user);
+		history.generateId();
+		getHistories().add(history);
 		getHistories().add(history);
 	}
 

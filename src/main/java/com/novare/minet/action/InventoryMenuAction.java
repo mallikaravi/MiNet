@@ -14,10 +14,10 @@ public class InventoryMenuAction extends BaseMenuAction {
 		String title = "";
 
 		switch (context) {
-		case CREATE_INVENTORY -> title = " Create Inventory Option:";
-		case EDIT_INVENTORY -> title = " View Inventory Option:";
-		case DELETE_INVENTORY -> title = "Create Inventory Option :";
-		case INVENTORY_LIST -> title = "List of Inventory Option :";
+		case CREATE -> title = " Create Inventory Option:";
+		case EDIT -> title = " View Inventory Option:";
+		case DELETE -> title = "Create Inventory Option :";
+		case LIST -> title = "List of Inventory Option :";
 		default -> title = "Inventory Option:";
 		}
 		InventoryView view = new InventoryView(title);

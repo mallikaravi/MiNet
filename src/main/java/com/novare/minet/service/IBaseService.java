@@ -1,5 +1,8 @@
 package com.novare.minet.service;
 
+import java.util.List;
+
+import com.novare.minet.model.Supplier;
 import com.novare.minet.model.User;
 
 public interface IBaseService {
@@ -8,15 +11,6 @@ public interface IBaseService {
 
 	boolean isValidUser(User current) throws Exception;
 
-	User findByUserName(String userName) throws Exception;
+	List<Supplier> getAllSuppliers() throws Exception;
 
-	User deleteUser(User user) throws Exception;
-
-	User updateUser(User user) throws Exception;
-
-	User updatePassword(User user) throws Exception;
-
-	User login(User user) throws Exception;
-
-	User createUser(User user) throws Exception;
 }

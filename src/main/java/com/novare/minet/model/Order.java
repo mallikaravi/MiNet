@@ -15,9 +15,6 @@ public class Order extends IdProperty {
 
 	public Order() {
 		super();
-		Ids id = Ids.get();
-		setId(id.getOrderId());
-		id.close();
 	}
 
 	/**
@@ -33,6 +30,15 @@ public class Order extends IdProperty {
 		this.quantity = quantity;
 		this.totalAmount = totalAmount;
 		this.supplier = supplier;
+	}
+
+	@Override
+	public void generateId() {
+		super.generateId();
+		Ids id = Ids.get();
+		int orderId = id.getOrderId();
+		setId(orderId);
+		id.close();
 	}
 
 	/**

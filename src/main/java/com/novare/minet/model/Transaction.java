@@ -20,9 +20,6 @@ public class Transaction extends IdProperty {
 	 */
 	public Transaction() {
 		super();
-		Ids id = Ids.get();
-		setId(id.getTransactionId());
-		id.close();
 	}
 
 	/**
@@ -39,6 +36,14 @@ public class Transaction extends IdProperty {
 		this.totalAmount = totalAmount;
 	}
 
+	@Override
+	public void generateId() {
+		super.generateId();
+		Ids id = Ids.get();
+		int transactionId = id.getTransactionId();
+		setId(transactionId);
+		id.close();
+	}
 
 	/**
 	 * @return the transactionOn

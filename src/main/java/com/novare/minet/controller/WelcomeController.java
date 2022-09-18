@@ -8,7 +8,7 @@ import javax.security.sasl.AuthenticationException;
 
 import com.novare.minet.model.Role;
 import com.novare.minet.model.User;
-import com.novare.minet.service.IWelcomeService;
+import com.novare.minet.service.IUserService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.util.ServiceUtil;
 import com.novare.minet.view.WelcomeView;
@@ -16,13 +16,13 @@ import com.novare.minet.view.WelcomeView;
 public class WelcomeController extends BaseController {
 	private User newUser = new User();
 
-	public WelcomeController(IWelcomeService model, WelcomeView view) {
+	public WelcomeController(IUserService model, WelcomeView view) {
 		super(model, view);
 	}
 
 	@Override
-	public IWelcomeService getModel() {
-		return (IWelcomeService) super.getModel();
+	public IUserService getModel() {
+		return (IUserService) super.getModel();
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class WelcomeController extends BaseController {
 			switch (context) {
 			case SIGNUP -> {
 				createUser();
-				selectedOption = 2;
+				selectedOption = 1;
 			}
 			case LOGIN -> {
 				try {

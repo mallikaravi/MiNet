@@ -12,8 +12,7 @@ public class CashierView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Inventory Status", "My Transactions", "My Orders", "CounterSale", "Return Product",
-				"Search Transaction", "Delete Transaction");
+		return List.of("Start Transaction", "Return Product", "My Transactions", "My Orders", "Inventorys", "Product");
 	}
 
 	@Override

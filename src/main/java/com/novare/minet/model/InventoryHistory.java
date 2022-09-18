@@ -13,9 +13,6 @@ public class InventoryHistory extends IdProperty {
 
 	public InventoryHistory() {
 		super();
-		Ids id = Ids.get();
-		setId(id.getInventoryHistoryId());
-		id.close();
 	}
 
 	/**
@@ -28,6 +25,15 @@ public class InventoryHistory extends IdProperty {
 		this.updatedOn = updatedOn;
 		this.inventory = inventory;
 		this.updateBy = updateBy;
+	}
+
+	@Override
+	public void generateId() {
+		super.generateId();
+		Ids id = Ids.get();
+		int inventoryHistoryId = id.getInventoryHistoryId();
+		setId(inventoryHistoryId);
+		id.close();
 	}
 
 	/**

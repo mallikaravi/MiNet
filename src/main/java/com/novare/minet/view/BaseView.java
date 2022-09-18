@@ -90,7 +90,7 @@ public abstract class BaseView {
 		}
 	}
 
-	public void waitForDecision() {
+	public boolean waitForDecision() {
 		printMessage("\n\n");
 		printMessage("[C] Continue\n");
 		printMessage("[Q] Quit\n");
@@ -103,7 +103,11 @@ public abstract class BaseView {
 				printMessage("BYE !");
 				System.exit(0);
 			}
+			if(input.equalsIgnoreCase("C")) {
+				return true;
+			}
 		}
+		return wait;
 
 	}
 
@@ -132,6 +136,18 @@ public abstract class BaseView {
 			return getUserText();
 		}
 
+	}
+
+	public Double getUserInputDouble() {
+		String input = getUserTerminal().nextLine();
+		try {
+			Double selection = Double.parseDouble(input);
+			return selection;
+		} catch (Exception exception) {
+			printInvalidOption();
+			printUserRequest();
+			return getUserInputDouble();
+		}
 	}
 
 	public int getSelectedOptionFromMenu(int menuItems) {

@@ -39,6 +39,27 @@ public class ServiceUtil {
 		Files.write(Paths.get("assets/user.json"), json.getBytes());
 	}
 
+	public static <T> List<T> loadModel(Class<T> modelClass, String storage) {
+		List<T> modelData = new ArrayList<>();
+		try {
+			ObjectMapper mapper = new ObjectMapper();
+			mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
+			CollectionType javaType = mapper.getTypeFactory().constructCollectionType(List.class, modelClass);
+			modelData = mapper.readValue(Paths.get(storage).toFile(), javaType);
+			return modelData;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return modelData;
+		}
+	}
+
+	public static <T> void saveModel(List<T> models, String storage) throws JsonProcessingException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
+		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(models);
+		Files.write(Paths.get(storage), json.getBytes());
+	}
+
 	/**
 	 * THis method is used for encryption of password.
 	 * 

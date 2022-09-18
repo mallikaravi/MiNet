@@ -1,4 +1,5 @@
 [ {
+  "uuid" : "402d6900-0190-434f-a17f-73f1c6617884",
   "id" : 1,
   "fullName" : "Kumarbabu Ravi",
   "userName" : "kumar",
@@ -8,6 +9,7 @@
   "address" : "abc",
   "role" : "ADMIN"
 }, {
+  "uuid" : "3522916b-c5d8-4354-8e9a-3cc8d88efa73",
   "id" : 2,
   "fullName" : "Malleswari",
   "userName" : "mallika",
@@ -17,6 +19,7 @@
   "address" : "old street,kista",
   "role" : "CASHIER"
 }, {
+  "uuid" : "aad21d20-678c-466e-8128-0882836083fd",
   "id" : 3,
   "fullName" : "Rishitha Ravi",
   "userName" : "rishi",
@@ -25,4 +28,14 @@
   "phoneNumber" : "259332",
   "address" : "old street,kista",
   "role" : "MANAGER"
+}, {
+  "uuid" : "9df98e14-2fe2-4291-93b9-52c7f6d78fdb",
+  "id" : 5,
+  "fullName" : "Jeshitha",
+  "userName" : "jeshi",
+  "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+  "email" : "12121",
+  "phoneNumber" : "1234",
+  "address" : "12122",
+  "role" : "ADMIN"
 } ]

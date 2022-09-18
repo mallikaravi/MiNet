@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import com.novare.minet.util.Ids;
 
-public class TransactionItems extends IdProperty{
+public class TransactionItems extends IdProperty {
 	private Product product;
 	private Transaction transaction;
 	private float quantity;
@@ -15,9 +15,6 @@ public class TransactionItems extends IdProperty{
 	 */
 	public TransactionItems() {
 		super();
-		Ids id = Ids.get();
-		setId(id.getTransactionItemId());
-		id.close();
 	}
 
 	/**
@@ -32,6 +29,14 @@ public class TransactionItems extends IdProperty{
 		this.totalAmount = totalAmount;
 	}
 
+	@Override
+	public void generateId() {
+		super.generateId();
+		Ids id = Ids.get();
+		int transactionItemId = id.getTransactionItemId();
+		setId(transactionItemId);
+		id.close();
+	}
 
 	/**
 	 * @return the transaction

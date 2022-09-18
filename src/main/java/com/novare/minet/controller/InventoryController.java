@@ -27,15 +27,10 @@ public class InventoryController extends BaseController {
 			int selectedOption = 0;
 			switch (context) {
 			case INVENTORY_LIST -> viewInventoryList();
-
 			case CREATE_ORDER -> createOrder();
-
 			case ORDER_LIST -> OrderList();
-
 			case PENDING_ORDERS -> PendingOrder();
-
 			case SEARCH_ORDER -> searchOrder();
-
 			default -> {
 				selectedOption = getView().getUserInput();
 			}
@@ -50,27 +45,22 @@ public class InventoryController extends BaseController {
 	}
 
 	private Object searchOrder() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	private Object PendingOrder() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	private Object OrderList() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	private Object createOrder() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	private Object viewInventoryList() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

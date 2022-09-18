@@ -15,9 +15,6 @@ public class ProductHistory extends IdProperty {
 	 */
 	public ProductHistory() {
 		super();
-		Ids id = Ids.get();
-		setId(id.getProductHistoryId());
-		id.close();
 	}
 
 	/**
@@ -30,6 +27,15 @@ public class ProductHistory extends IdProperty {
 		this.updatedOn = updatedOn;
 		this.product = product;
 		this.updateBy = updateBy;
+	}
+
+	@Override
+	public void generateId() {
+		super.generateId();
+		Ids id = Ids.get();
+		int productHistoryId = id.getProductHistoryId();
+		setId(productHistoryId);
+		id.close();
 	}
 
 	/**

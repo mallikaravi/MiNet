@@ -1,6 +1,8 @@
 package com.novare.minet.serviceimpl;
 
 import com.novare.minet.action.CashierMenuAction;
+import com.novare.minet.action.InventoryMenuAction;
+import com.novare.minet.action.ProductMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.User;
 import com.novare.minet.service.ICashierService;
@@ -11,31 +13,28 @@ public class CashierServiceImpl extends BaseServiceImpl implements ICashierServi
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
 		switch (selectedOption) {
-		case 1 -> {
+		case 0 -> {
 			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
 		}
-		case 2 -> {
+		case 1 -> {
 			new CashierMenuAction(MenuContext.START_TRANSACTION, currentUser);
 		}
+		case 2 -> {
+			new CashierMenuAction(MenuContext.RETURN_PRODUCT, currentUser);
+		}
 		case 3 -> {
-			new CashierMenuAction(MenuContext.PRODUCT, currentUser);
-
+			new CashierMenuAction(MenuContext.TRANSACTION_LIST, currentUser);
 		}
 		case 4 -> {
-			new CashierMenuAction(MenuContext.RETURN_PRODUCT, currentUser);
-
+			new CashierMenuAction(MenuContext.ORDER_LIST, currentUser);
 		}
 		case 5 -> {
-			new CashierMenuAction(MenuContext.INVENTORY, currentUser);
-
+			new InventoryMenuAction(MenuContext.INVENTORY, currentUser);
 		}
 		case 6 -> {
-			new CashierMenuAction(MenuContext.TRANSACTION_LIST, currentUser);
-
+			new ProductMenuAction(MenuContext.PRODUCT, currentUser);
 		}
 		default -> throw new IndexOutOfBoundsException();
 		}
-
 	}
-
 }

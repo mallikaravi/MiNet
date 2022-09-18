@@ -15,9 +15,6 @@ public class Inventory extends IdProperty {
 
 	public Inventory() {
 		super();
-		Ids id = Ids.get();
-		setId(id.getInventoryId());
-		id.close();
 	}
 
 	/**
@@ -31,6 +28,15 @@ public class Inventory extends IdProperty {
 		this.product = product;
 		this.quantity = quantity;
 		this.orderedQty = orderedQty;
+	}
+
+	@Override
+	public void generateId() {
+		super.generateId();
+		Ids id = Ids.get();
+		int inventoryId = id.getInventoryId();
+		setId(inventoryId);
+		id.close();
 	}
 
 	/**

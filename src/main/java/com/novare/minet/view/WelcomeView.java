@@ -12,7 +12,7 @@ public class WelcomeView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("SignUp", "Login");
+		return List.of("Login", "SignUp");
 	}
 
 	public void printNavigationMenu() {

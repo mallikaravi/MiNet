@@ -1,7 +1,11 @@
 package com.novare.minet.controller;
+
+import java.util.Objects;
+
 import javax.security.sasl.AuthenticationException;
 import com.novare.minet.model.User;
 import com.novare.minet.service.IBaseService;
+import com.novare.minet.serviceimpl.BaseServiceImpl;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.BaseView;
 
@@ -34,6 +38,7 @@ public class BaseController {
 
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
 		setUserSession(currentUser);
+		((BaseServiceImpl)model).setCurrentUser(currentUser);
 		if (currentUser != null && !getModel().isValidUser(currentUser)) {
 			throw new AuthenticationException();
 		}
@@ -85,4 +90,11 @@ public class BaseController {
 		this.view = view;
 	}
 
+	protected boolean isNull(Object object) {
+		return Objects.isNull(object);
+	}
+
+	protected boolean isNotNull(Object object) {
+		return Objects.nonNull(object);
+	}
 }

@@ -1,5 +1,9 @@
 package com.novare.minet.controller;
 
+import java.util.List;
+
+import com.novare.minet.model.Product;
+import com.novare.minet.model.Supplier;
 import com.novare.minet.model.User;
 import com.novare.minet.service.IBaseService;
 import com.novare.minet.service.IProductService;
@@ -9,9 +13,10 @@ import com.novare.minet.view.ProductView;
 
 public class ProductController extends BaseController {
 
+	private Product newProduct = new Product();
+
 	public ProductController(IBaseService model, BaseView view) {
 		super(model, view);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -30,18 +35,11 @@ public class ProductController extends BaseController {
 			int selectedOption = 0;
 			switch (context) {
 			case CREATE_PRODUCT -> createProduct();
-
 			case PRODUCT_LIST -> productList();
-
 			case EDIT_PRODUCT -> editProduct();
-
 			case DELETE_PRODUCT -> deleteProduct();
-
 			case SEARCH_PRODUCT -> searchProduct();
-
-			default -> {
-				selectedOption = getView().getUserInput();
-			}
+			default -> selectedOption = getView().getUserInput();
 			}
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
@@ -52,29 +50,85 @@ public class ProductController extends BaseController {
 		}
 	}
 
-	private Object searchProduct() {
-		// TODO Auto-generated method stub
-		return null;
+	private void searchProduct() {
 	}
 
-	private Object editProduct() {
-		// TODO Auto-generated method stub
-		return null;
+	private void editProduct() throws Exception {
+		List<Product> productList = getModel().getAll();
+		if (productList == null || productList.isEmpty()) {
+			return;
+		}
+
+		int selection = getView().askForEdit(productList);
+		if (selection > 0) {
+			Product selectedProduct = productList.get(selection - 1);
+
+			if (!getView().askProductShortName().isEmpty()) {
+				selectedProduct.setShortName(getView().askProductShortName());
+			}
+			if (!getView().askProductDescription().isEmpty()) {
+				selectedProduct.setDescription(getView().askProductDescription());
+			}
+			selectedProduct.setMinQty(getView().askProductMinQty());
+			selectedProduct.setSellingPrice(getView().askProductSellingPrice());
+			selectedProduct.setCostPrice(getView().askProductCostPrice());
+			List<Supplier> allSuppliers = getModel().getAllSuppliers();
+			if (allSuppliers == null || allSuppliers.isEmpty()) {
+				// TODO FIXME should be deleted
+				Supplier supplier = new Supplier("Gelaxy", "UK", "abc@delete.com", "1235");
+				supplier.generateId();
+				allSuppliers = List.of(supplier);
+			}
+
+			selection = getView().askDefaultSupplier(allSuppliers);
+			selectedProduct.setDefaultSupplier(allSuppliers.get(selection));
+			getModel().update(selectedProduct);
+			getView().printSaveMessage();
+			getView().waitForDecision();
+
+		}
+
 	}
 
-	private Object createProduct() {
-		// TODO Auto-generated method stub
-		return null;
+	private void createProduct() throws Exception {
+		if (isNull(newProduct.getFullName())) {
+			newProduct.setFullName(getView().askProductFullName());
+		}
+		if (isNull(newProduct.getShortName())) {
+			newProduct.setShortName(getView().askProductShortName());
+		}
+		if (isNull(newProduct.getDescription())) {
+			newProduct.setDescription(getView().askProductDescription());
+		}
+		if (isNull(newProduct.getMinQty())) {
+			newProduct.setMinQty(getView().askProductMinQty());
+		}
+		if (isNull(newProduct.getSellingPrice())) {
+			newProduct.setSellingPrice(getView().askProductSellingPrice());
+		}
+		if (isNull(newProduct.getCostPrice())) {
+			newProduct.setCostPrice(getView().askProductCostPrice());
+		}
+		if (isNull(newProduct.getDefaultSupplier())) {
+			List<Supplier> allSuppliers = getModel().getAllSuppliers();
+			if (allSuppliers == null || allSuppliers.isEmpty()) {
+				// TODO FIXME should be deleted
+				Supplier supplier = new Supplier("Gelaxy", "UK", "abc@delete.com", "1235");
+				supplier.generateId();
+				allSuppliers = List.of(supplier);
+			}
+			int selection = getView().askDefaultSupplier(allSuppliers);
+			newProduct.setDefaultSupplier(allSuppliers.get(selection));
+		}
+		getModel().create(newProduct);
+		getView().printSaveMessage();
+		getView().waitForDecision();
 	}
 
-	private Object productList() {
-		// TODO Auto-generated method stub
-		return null;
+	private void productList() {
 	}
 
-	private Object deleteProduct() {
-		// TODO Auto-generated method stub
-		return null;
+	private void deleteProduct() {
 	}
 
 }

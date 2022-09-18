@@ -16,9 +16,6 @@ public class User extends IdProperty {
 
 	public User() {
 		super();
-		Ids id = Ids.get();
-		setId(id.getUserId());
-		id.close();
 	}
 
 	/**
@@ -40,7 +37,15 @@ public class User extends IdProperty {
 		this.phoneNumber = phoneNumber;
 		this.address = address;
 		this.role = role;
+	}
 
+	@Override
+	public void generateId() {
+		super.generateId();
+		Ids id = Ids.get();
+		int userId = id.getUserId();
+		setId(userId);
+		id.close();
 	}
 
 	/**

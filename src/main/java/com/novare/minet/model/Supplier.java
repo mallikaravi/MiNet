@@ -15,24 +15,29 @@ public class Supplier extends IdProperty {
 	 */
 	public Supplier() {
 		super();
-		Ids id = Ids.get();
-		setId(id.getSupplierId());
-		id.close();
-		}
+	}
 
 	/**
-	 * @param id
 	 * @param name
 	 * @param address
 	 * @param email
 	 * @param phoneNumber
 	 */
-	public Supplier( String name, String address, String email, String phoneNumber) {
+	public Supplier(String name, String address, String email, String phoneNumber) {
 		this();
 		this.name = name;
 		this.address = address;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
+	}
+
+	@Override
+	public void generateId() {
+		super.generateId();
+		Ids id = Ids.get();
+		int supplierId = id.getSupplierId();
+		setId(supplierId);
+		id.close();
 	}
 
 	/**
@@ -98,7 +103,7 @@ public class Supplier extends IdProperty {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(address, email, getId(), name, phoneNumber);
+		return Objects.hash(getId(), getName());
 	}
 	/*
 	 * (non-Javadoc)
@@ -115,8 +120,7 @@ public class Supplier extends IdProperty {
 		if (getClass() != obj.getClass())
 			return false;
 		Supplier other = (Supplier) obj;
-		return Objects.equals(address, other.address) && Objects.equals(email, other.email) && getId() == other.getId() 
-				&& Objects.equals(name, other.name) && Objects.equals(phoneNumber, other.phoneNumber);
+		return getId() == other.getId() && getName().equals(other.getName());
 	}
 	/*
 	 * (non-Javadoc)
@@ -126,8 +130,7 @@ public class Supplier extends IdProperty {
 
 	@Override
 	public String toString() {
-		return "Supplier [id=" + getId() + ", name=" + name + ", address=" + address + ", email=" + email + ", phoneNumber="
-				+ phoneNumber + "]";
+		return name.toUpperCase() + " [" + address + " @ "+ phoneNumber + "]";
 	}
 
 }

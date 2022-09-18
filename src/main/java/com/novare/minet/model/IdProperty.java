@@ -3,10 +3,11 @@ package com.novare.minet.model;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 //@JsonIdentityInfo(scope = IdProperty.class, generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "id", resolver = MiNetObjectIdResolver.class)
-@JsonIdentityInfo(scope = IdProperty.class, generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.UUIDGenerator.class, property = "uuid")
 public class IdProperty {
 //	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private Integer id;
@@ -23,6 +24,10 @@ public class IdProperty {
 	 */
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+	public void generateId() {
 	}
 	/*
 	 * (non-Javadoc)

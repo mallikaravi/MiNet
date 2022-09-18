@@ -1,19 +1,22 @@
 package com.novare.minet.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.novare.minet.util.DateUtil;
 import com.novare.minet.util.Ids;
 
-public class Product extends IdProperty{
+public class Product extends IdProperty {
 	private Integer id;
 	private String fullName;
 	private String shortName;
 	private String description;
-	private double sellingPrice;
-	private double costPrice;
-	private int minQty;
+	private Double sellingPrice;
+	private Double costPrice;
+	private Integer minQty;
+	private Supplier defaultSupplier;
 	private List<ProductHistory> histories = new ArrayList<>();
 
 	/**
@@ -21,9 +24,6 @@ public class Product extends IdProperty{
 	 */
 	public Product() {
 		super();
-		Ids id = Ids.get();
-		setId(id.getProductId());
-		id.close();
 	}
 
 	/**
@@ -34,8 +34,8 @@ public class Product extends IdProperty{
 	 * @param costPrice
 	 * @param minQty
 	 */
-	public Product(String fullName, String shortName, String description, double sellingPrice, double costPrice,
-			int minQty) {
+	public Product(String fullName, String shortName, String description, Double sellingPrice, Double costPrice,
+			Integer minQty) {
 		this();
 		this.fullName = fullName;
 		this.shortName = shortName;
@@ -43,6 +43,15 @@ public class Product extends IdProperty{
 		this.sellingPrice = sellingPrice;
 		this.costPrice = costPrice;
 		this.minQty = minQty;
+	}
+
+	@Override
+	public void generateId() {
+		super.generateId();
+		Ids id = Ids.get();
+		int productId = id.getProductId();
+		setId(productId);
+		id.close();
 	}
 
 	/**
@@ -104,42 +113,42 @@ public class Product extends IdProperty{
 	/**
 	 * @return the sellingPrice
 	 */
-	public double getSellingPrice() {
+	public Double getSellingPrice() {
 		return sellingPrice;
 	}
 
 	/**
 	 * @param sellingPrice the sellingPrice to set
 	 */
-	public void setSellingPrice(double sellingPrice) {
+	public void setSellingPrice(Double sellingPrice) {
 		this.sellingPrice = sellingPrice;
 	}
 
 	/**
 	 * @return the costPrice
 	 */
-	public double getCostPrice() {
+	public Double getCostPrice() {
 		return costPrice;
 	}
 
 	/**
 	 * @param costPrice the costPrice to set
 	 */
-	public void setCostPrice(double costPrice) {
+	public void setCostPrice(Double costPrice) {
 		this.costPrice = costPrice;
 	}
 
 	/**
 	 * @return the minQty
 	 */
-	public int getMinQty() {
+	public Integer getMinQty() {
 		return minQty;
 	}
 
 	/**
 	 * @param minQty the minQty to set
 	 */
-	public void setMinQty(int minQty) {
+	public void setMinQty(Integer minQty) {
 		this.minQty = minQty;
 	}
 
@@ -153,7 +162,9 @@ public class Product extends IdProperty{
 	/**
 	 * @param histories the histories to set
 	 */
-	public void setHistories(ProductHistory history) {
+	public void addHistories(User user) {
+		ProductHistory history = new ProductHistory(DateUtil.toDate(LocalDateTime.now()), this, user);
+		history.generateId();
 		getHistories().add(history);
 	}
 
@@ -163,9 +174,23 @@ public class Product extends IdProperty{
 	 * @see java.lang.Object#hashCode()
 	 */
 
+	/**
+	 * @return the defaultSupplier
+	 */
+	public Supplier getDefaultSupplier() {
+		return defaultSupplier;
+	}
+
+	/**
+	 * @param defaultSupplier the defaultSupplier to set
+	 */
+	public void setDefaultSupplier(Supplier defaultSupplier) {
+		this.defaultSupplier = defaultSupplier;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(costPrice, description, fullName, histories, getId(), minQty, sellingPrice, shortName);
+		return Objects.hash(getId());
 	}
 
 	/*
@@ -183,11 +208,7 @@ public class Product extends IdProperty{
 		if (getClass() != obj.getClass())
 			return false;
 		Product other = (Product) obj;
-		return Double.doubleToLongBits(costPrice) == Double.doubleToLongBits(other.costPrice)
-				&& Objects.equals(description, other.description) && Objects.equals(fullName, other.fullName)
-				&& Objects.equals(histories, other.histories) && getId() == other.getId() && minQty == other.minQty
-				&& Double.doubleToLongBits(sellingPrice) == Double.doubleToLongBits(other.sellingPrice)
-				&& Objects.equals(shortName, other.shortName);
+		return getId() == other.getId();
 	}
 
 	/*
@@ -198,9 +219,7 @@ public class Product extends IdProperty{
 
 	@Override
 	public String toString() {
-		return "Product [id=" + getId() + ", fullName=" + fullName + ", shortName=" + shortName + ", description="
-				+ description + ", sellingPrice=" + sellingPrice + ", costPrice=" + costPrice + ", minQty=" + minQty
-				+ ", histories=" + histories + "]";
+		return fullName.toUpperCase() + "[" + shortName.toUpperCase() + "]";
 	}
 
 }

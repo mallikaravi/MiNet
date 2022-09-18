@@ -10,6 +10,7 @@ public class AdminServiceImpl extends BaseServiceImpl implements IAdminService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
+		
 		switch (selectedOption) {
 		case 1 -> {
 			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);

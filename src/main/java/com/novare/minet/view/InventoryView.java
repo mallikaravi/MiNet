@@ -12,12 +12,11 @@ public class InventoryView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("List Of Inventories", "Create Order", "List Of Orders", "Search Order", "Pending Order");
+		return List.of("All", "Create Order", "List Of Orders", "Search Order", "Pending Orders");
 	}
 
 	@Override
 	public void printNavigationMenu() {
 		PrintHandler.optionBackToMainMenu();
-
 	}
 }

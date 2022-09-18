@@ -9,6 +9,7 @@ public class OrderHistory extends IdProperty {
 	public enum OrderStatus {
 		PENDING, WAITING, DELIVERED
 	}
+
 	private Order order;
 	private Date updatedOn;
 	private OrderStatus status;
@@ -19,10 +20,6 @@ public class OrderHistory extends IdProperty {
 	 */
 	public OrderHistory() {
 		super();
-		Ids id = Ids.get();
-		setId(id.getOrderHistoryId());
-		id.close();
-	
 	}
 
 	/**
@@ -37,6 +34,15 @@ public class OrderHistory extends IdProperty {
 		this.updatedOn = updatedOn;
 		this.status = status;
 		this.updateBy = updateBy;
+	}
+
+	@Override
+	public void generateId() {
+		super.generateId();
+		Ids id = Ids.get();
+		int orderHistoryId = id.getOrderHistoryId();
+		setId(orderHistoryId);
+		id.close();
 	}
 
 	/**
@@ -121,7 +127,7 @@ public class OrderHistory extends IdProperty {
 		if (getClass() != obj.getClass())
 			return false;
 		OrderHistory other = (OrderHistory) obj;
-		return getId() == other.getId()  && Objects.equals(order, other.order) && status == other.status
+		return getId() == other.getId() && Objects.equals(order, other.order) && status == other.status
 				&& Objects.equals(updateBy, other.updateBy) && Objects.equals(updatedOn, other.updatedOn);
 	}
 

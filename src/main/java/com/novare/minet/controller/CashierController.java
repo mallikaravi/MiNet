@@ -27,15 +27,8 @@ public class CashierController extends BaseController {
 			int selectedOption = 0;
 			switch (context) {
 			case START_TRANSACTION -> viewTransaction();
-
-			case PRODUCT -> viewProduct();
-
 			case RETURN_PRODUCT -> returnProduct();
-
-			case INVENTORY -> viewInventory();
-
 			case TRANSACTION_LIST -> viewTransactionList();
-
 			default -> {
 				selectedOption = getView().getUserInput();
 			}
@@ -54,17 +47,7 @@ public class CashierController extends BaseController {
 		return null;
 	}
 
-	private Object viewInventory() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	private Object returnProduct() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	private Object viewProduct() {
 		// TODO Auto-generated method stub
 		return null;
 	}

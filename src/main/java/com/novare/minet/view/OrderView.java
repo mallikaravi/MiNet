@@ -12,8 +12,7 @@ public class OrderView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Order List", "Create Order", "Edit Order", "Deleate Order", "Pending Orders", "Search Order",
-				"History");
+		return List.of("List", "Create", "Edit", "Delete", "Pending", "Search", "History");
 	}
 
 	@Override

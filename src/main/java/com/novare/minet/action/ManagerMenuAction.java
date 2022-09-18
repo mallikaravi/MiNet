@@ -11,15 +11,7 @@ public class ManagerMenuAction extends BaseMenuAction {
 
 	public ManagerMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
-		String title = "";
-		switch (context) {
-		case TRANSACTION -> title = "View Transaction List option :";
-		case INVENTORY -> title = "Inventory option :";
-		case PRODUCT -> title = "Product option :";
-		case SUPPLIERS -> title = "Suppliers option :";
-		default -> title = "Manager Menu options";
-
-		}
+		String title = "Manager Menu options";
 		ManagerView view = new ManagerView(title);
 		IManagerService model = new ManagerServiceImpl();
 		ManagerController controller = new ManagerController(model, view);

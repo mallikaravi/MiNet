@@ -12,7 +12,7 @@ public class InventoryView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("All", "Create Inventory", "Edit Inventory", "Delete Inventory");
+		return List.of("Create","Edit","Delete","List","Search");
 	}
 
 	@Override

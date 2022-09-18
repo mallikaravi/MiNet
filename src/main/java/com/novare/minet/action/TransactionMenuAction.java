@@ -17,6 +17,7 @@ public class TransactionMenuAction extends BaseMenuAction {
 		case RETURN_PRODUCT -> title = "Return Product option : :";
 		case LIST -> title = "Transaction List Option :";
 		case SEARCH -> title = "Search Transaction Option :";
+		case EDIT->title = "Edit Transaction Option :";
 		default -> title = "Transaction Menu options";
 
 		}

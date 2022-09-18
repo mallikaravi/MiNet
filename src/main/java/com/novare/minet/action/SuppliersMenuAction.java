@@ -16,9 +16,9 @@ public class SuppliersMenuAction extends BaseMenuAction {
 		case CREATE -> title ="Create Suppler Option :";
 		case EDIT -> title = "Edit Supplier Option :";
 		case DELETE -> title ="Delete Supplier Option:";
-		case LIST -> title ="View Suppliers List  :";
-		default -> title="Suplier Menu Options:";
-
+		case LIST -> title ="View Suppliers List :";
+		case SEARCH -> title ="Search Supplier Option:";
+		default -> title="Supplier Menu Options:";
 		}
 		SupplierView view = new SupplierView(title);
 		ISupplierService model = new SupplierServiceImpl();

@@ -12,12 +12,12 @@ public class AdminView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Payments", "cashFlow", "Profits", "Review Transactions");
+		return List.of("Inventory","Transaction","Products","Suppliers","Payments","cashFlow","Profits","Order","Reports");
 	}
 
 	@Override
 	public void printNavigationMenu() {
-		PrintHandler.optionBackToMainMenu();
+		PrintHandler.optionLogout();
 
 	}
 

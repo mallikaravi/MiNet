@@ -26,11 +26,7 @@ public class ReportController extends BaseController {
 			int selectedOption = 0;
 			switch (context) {
 			case BEST_SELLING_PRODUCTS -> bestSellingProducts();
-
 			case PRODUCT_PROFITS -> productProfits();
-
-			
-
 			default -> {
 				selectedOption = getView().getUserInput();
 			}

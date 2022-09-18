@@ -13,7 +13,7 @@ public class TransactionView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Start", "Return", "My Transactions", "Search");
+		return List.of("Create","Edit","Delete","List", "Search","Return Product");
 	}
 
 	@Override

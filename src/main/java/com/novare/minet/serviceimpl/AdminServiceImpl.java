@@ -2,6 +2,8 @@ package com.novare.minet.serviceimpl;
 
 import com.novare.minet.action.AdminMenuAction;
 import com.novare.minet.action.InventoryMenuAction;
+import com.novare.minet.action.OrderMenuAction;
+import com.novare.minet.action.ProductMenuAction;
 import com.novare.minet.action.ReportsMenuAction;
 import com.novare.minet.action.SuppliersMenuAction;
 import com.novare.minet.action.TransactionMenuAction;
@@ -28,26 +30,30 @@ public class AdminServiceImpl extends BaseServiceImpl implements IAdminService {
 
 		}
 		case 3 -> {
-			new SuppliersMenuAction(MenuContext.SUPPLIERS, currentUser);
+			new ProductMenuAction(MenuContext.PRODUCT, currentUser);
 
 		}
 		case 4 -> {
-			new AdminMenuAction(MenuContext.PAYMENTS, currentUser);
+			new SuppliersMenuAction(MenuContext.SUPPLIERS, currentUser);
 
 		}
 		case 5 -> {
-			new AdminMenuAction(MenuContext.CASHFLOW, currentUser);
+			new AdminMenuAction(MenuContext.PAYMENTS, currentUser);
 
 		}
 		case 6 -> {
+			new AdminMenuAction(MenuContext.CASHFLOW, currentUser);
+
+		}
+		case 7 -> {
 			new AdminMenuAction(MenuContext.PROFITS, currentUser);
 
 		}
-		case 7-> {
-			new AdminMenuAction(MenuContext.ORDER_HISTORY, currentUser);
+		case 8-> {
+			new OrderMenuAction(MenuContext.ORDER, currentUser);
 
 		}
-		case 8 -> {
+		case 9 -> {
 			new ReportsMenuAction(MenuContext.REPORTS, currentUser);
 
 		}

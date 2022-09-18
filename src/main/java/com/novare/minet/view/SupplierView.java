@@ -12,7 +12,7 @@ public class SupplierView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Create Supplier, Edit Supplier, Delete Supplier, Supplier List");
+		return List.of("Create", "Edit", "Delete", "List","Search");
 	}
 
 	@Override

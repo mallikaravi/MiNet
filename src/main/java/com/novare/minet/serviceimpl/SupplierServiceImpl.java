@@ -2,6 +2,9 @@ package com.novare.minet.serviceimpl;
 
 import java.util.List;
 
+import com.novare.minet.action.AdminMenuAction;
+import com.novare.minet.action.CashierMenuAction;
+import com.novare.minet.action.ManagerMenuAction;
 import com.novare.minet.action.SuppliersMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.Supplier;
@@ -14,7 +17,16 @@ public class SupplierServiceImpl extends BaseServiceImpl implements ISupplierSer
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
+
 		switch (selectedOption) {
+		case 0 -> {
+			switch (currentUser.getRole()) {
+			case ADMIN -> new AdminMenuAction(MenuContext.ADMIN, currentUser);
+			case MANAGER -> new ManagerMenuAction(MenuContext.MANAGER, currentUser);
+			case CASHIER -> new CashierMenuAction(MenuContext.CASHIER, currentUser);
+			default -> new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+			}
+		}
 		case 1 -> {
 			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
 		}

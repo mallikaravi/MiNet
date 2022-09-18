@@ -14,19 +14,19 @@ public class ManagerServiceImpl extends BaseServiceImpl implements IManagerServi
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
 		switch (selectedOption) {
-		case 1 -> {
+		case 0 -> {
 			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
 		}
-		case 2 -> {
+		case 1 -> {
 			new TransactionMenuAction(MenuContext.TRANSACTION, currentUser);
 		}
-		case 3 -> {
+		case 2 -> {
 			new InventoryMenuAction(MenuContext.INVENTORY, currentUser);
 		}
-		case 4 -> {
+		case 3 -> {
 			new ProductMenuAction(MenuContext.PRODUCT, currentUser);
 		}
-		case 5 -> {
+		case 4 -> {
 			new SuppliersMenuAction(MenuContext.SUPPLIERS, currentUser);
 		}
 		default -> throw new IndexOutOfBoundsException();

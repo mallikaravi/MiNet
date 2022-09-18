@@ -13,9 +13,9 @@ public class ReportsMenuAction  extends BaseMenuAction{
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case BEST_SELLING_PRODUCTS -> title = " View Best Selling Products Option:";
-		case PRODUCT_PROFITS -> title = " Product Profits Option :";
-		default -> title = "ProductReport Menu options";
+		case BEST_SELLING_PRODUCTS -> title ="View Best Selling Products Option:";
+		case PRODUCT_PROFITS -> title ="Product Profits Option :";
+		default -> title ="Product Report Menu options";
 
 		}
 		ReportView view = new ReportView(title);

@@ -1,5 +1,6 @@
 package com.novare.minet.serviceimpl;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -94,6 +95,21 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 		ServiceUtil.checkAssetFolder();
 		List<Product> products = ServiceUtil.loadModel(Product.class, STORAGE);
 		return products;
+	}
+
+	@Override
+	public List<Product> find(String search) throws Exception {
+		ServiceUtil.checkAssetFolder();
+		List<Product> products = ServiceUtil.loadModel(Product.class, STORAGE);
+		List<Product> result = new ArrayList<>();
+		for (Product product : products) {
+			boolean contains = product.getFullName().toLowerCase().contains(search)
+					|| product.getShortName().toLowerCase().contains(search);
+			if (contains) {
+				result.add(product);
+			}
+		}
+		return result;
 	}
 
 }

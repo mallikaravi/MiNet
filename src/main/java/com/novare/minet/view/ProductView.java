@@ -61,7 +61,7 @@ public class ProductView extends BaseView {
 	public int askForEdit(List<?> productList) {
 		printMessage("Select the product for edit: ");
 		setMenuOptionsInRow(productList);
-		int selection = getSelectedOptionFromMenu(productList.size())-1;
+		int selection = getSelectedOptionFromMenu(productList.size()) - 1;
 		printMessage("Do you want to edit " + productList.get(selection) + " [Yes/No]: ");
 		return askConfirmationYesOrNo() ? selection : -1;
 
@@ -70,11 +70,10 @@ public class ProductView extends BaseView {
 	public int askForDelete(List<Product> productList) {
 		printMessage("Select the product for delete: ");
 		setMenuOptionsInRow(productList);
-		int selection = getSelectedOptionFromMenu(productList.size())-1;
+		int selection = getSelectedOptionFromMenu(productList.size()) - 1;
 		printMessage("Do you want to delete " + productList.get(selection) + " [Yes/No]: ");
 		return askConfirmationYesOrNo() ? selection : -1;
 
 	}
-
 
 }

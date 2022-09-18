@@ -50,7 +50,16 @@ public class ProductController extends BaseController {
 		}
 	}
 
-	private void searchProduct() {
+	private void searchProduct() throws Exception {
+		String askSearch = getView().askSearch();
+		List<Product> find = getModel().find(askSearch);
+		if (find.isEmpty()) {
+			getView().displayResultNotFound();
+			return;
+		} else {
+			getView().setMenuOptions(find, false);
+		}
+		getView().waitForDecision();
 	}
 
 	private void editProduct() throws Exception {

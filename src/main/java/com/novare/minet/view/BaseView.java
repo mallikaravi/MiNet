@@ -191,10 +191,14 @@ public abstract class BaseView {
 
 	public void displayResultNotFound() {
 		printMessage("");
-		printMessage("-----------------------------");
-		printMessage("Result not found ! ");
-		printMessage("-----------------------------");
+		printMessage("-----------------------------\n");
+		printMessage("No results found ! \n");
+		printMessage("-----------------------------\n");
 		printMessage("");
 	}
 
+	public String askSearch() {
+		printMessage("Enter Search keyword: ");
+		return getUserText();
+	}
 }

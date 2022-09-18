@@ -16,5 +16,7 @@ public interface IProductService extends IBaseService {
 
 	Product findByShortName(String shortName) throws Exception;
 
+	List<Product> find(String search) throws Exception;
+
 	List<Product> getAll() throws Exception;
 }

@@ -35,9 +35,8 @@ public class SupplierController extends BaseController {
 			case EDIT -> editSupplier();
 			case DELETE -> deleteSupplier();
 			case LIST -> supplierList();
-			default -> {
-				selectedOption = getView().getUserInput();
-			}
+			case SEARCH -> searchSupplier();
+			default -> selectedOption = getView().getUserInput();
 			}
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
@@ -48,18 +47,30 @@ public class SupplierController extends BaseController {
 		}
 	}
 
+	private void searchSupplier() throws Exception {
+		String askSearch = getView().askSearch();
+		List<Supplier> findSupplier = getModel().find(askSearch);
+		if (findSupplier.isEmpty()) {
+			getView().displayResultNotFound();
+			return;
+		} else {
+			getView().setMenuOptions(findSupplier, false);
+		}
+		getView().waitForDecision();
+	}
+
 	private void createSupplier() throws Exception {
 		if (isNull(newSupplier.getName())) {
 			newSupplier.setName(getView().askSupplierName());
 		}
 		if (isNull(newSupplier.getAddress())) {
-			newSupplier.setName(getView().askSupplierAddress());
+			newSupplier.setAddress(getView().askSupplierAddress());
 		}
 		if (isNull(newSupplier.getEmail())) {
-			newSupplier.setName(getView().askSupplierEmail());
+			newSupplier.setEmail(getView().askSupplierEmail());
 		}
 		if (isNull(newSupplier.getPhoneNumber())) {
-			newSupplier.setName(getView().askSupplierPhoneNumber());
+			newSupplier.setPhoneNumber(getView().askSupplierPhoneNumber());
 		}
 		getModel().create(newSupplier);
 		getView().printSaveMessage();

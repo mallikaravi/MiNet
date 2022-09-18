@@ -130,7 +130,6 @@ public class Supplier extends IdProperty {
 
 	@Override
 	public String toString() {
-		return name.toUpperCase() + " [" + address + " @ "+ phoneNumber + "]";
+		return name.toUpperCase() + " [" + address + " @ " + phoneNumber + "]";
 	}
-
 }

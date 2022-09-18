@@ -12,7 +12,7 @@ public class AdminView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Inventory","Transaction","Products","Suppliers","Payments","cashFlow","Profits","Order","Reports");
+		return List.of("Transaction", "Products", "Suppliers", "Payments", "cashFlow", "Profits", "Order", "Reports");
 	}
 
 	@Override

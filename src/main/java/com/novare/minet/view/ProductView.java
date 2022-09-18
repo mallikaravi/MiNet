@@ -57,4 +57,9 @@ public class ProductView extends BaseView {
 		return getSelectedOptionFromMenu(allSuppliers.size()) - 1;
 	}
 
+	public Double askProductAvailQty() {
+		printMessage("Available Quantity: ");
+		return getUserInputDouble();
+	}
+
 }

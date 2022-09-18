@@ -2,6 +2,7 @@ package com.novare.minet.service;
 
 import java.util.List;
 
+import com.novare.minet.model.Inventory;
 import com.novare.minet.model.Product;
 
 public interface IProductService extends IBaseService {
@@ -9,6 +10,8 @@ public interface IProductService extends IBaseService {
 	String STORAGE = "assets/products.json";
 
 	Product create(Product product) throws Exception;
+
+	Inventory create(Inventory inventory) throws Exception;
 
 	Product update(Product product) throws Exception;
 
@@ -18,5 +21,8 @@ public interface IProductService extends IBaseService {
 
 	List<Product> find(String search) throws Exception;
 
-	List<Product> getAll() throws Exception;
+	Inventory delete(Inventory inventory) throws Exception;
+
+	List<Inventory> getAll() throws Exception;
+
 }

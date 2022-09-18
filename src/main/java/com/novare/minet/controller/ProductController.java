@@ -2,6 +2,7 @@ package com.novare.minet.controller;
 
 import java.util.List;
 
+import com.novare.minet.model.Inventory;
 import com.novare.minet.model.Product;
 import com.novare.minet.model.Supplier;
 import com.novare.minet.model.User;
@@ -63,7 +64,7 @@ public class ProductController extends BaseController {
 	}
 
 	private void editProduct() throws Exception {
-		List<Product> productList = getModel().getAll();
+		List<Product> productList = getModel().getAllProducts();
 		if (productList == null || productList.isEmpty()) {
 			getView().displayResultNotFound();
 			getView().waitForDecision();
@@ -131,13 +132,16 @@ public class ProductController extends BaseController {
 			int selection = getView().askDefaultSupplier(allSuppliers);
 			newProduct.setDefaultSupplier(allSuppliers.get(selection));
 		}
+		Double availQty = getView().askProductAvailQty();
+		Inventory inventory = new Inventory(newProduct, availQty, 0);
 		getModel().create(newProduct);
+		getModel().create(inventory);
 		getView().printSaveMessage();
 		getView().waitForDecision();
 	}
 
 	private void productList() throws Exception {
-		List<Product> productList = getModel().getAll();
+		List<Product> productList = getModel().getAllProducts();
 		if (productList == null || productList.isEmpty()) {
 			getView().displayResultNotFound();
 		} else {
@@ -149,7 +153,7 @@ public class ProductController extends BaseController {
 
 	private void deleteProduct() throws Exception {
 
-		List<Product> productList = getModel().getAll();
+		List<Product> productList = getModel().getAllProducts();
 		if (productList == null || productList.isEmpty()) {
 			getView().displayResultNotFound();
 			getView().waitForDecision();

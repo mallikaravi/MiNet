@@ -1,11 +1,17 @@
 package com.novare.minet.controller;
 
+import java.util.List;
+
+import com.novare.minet.model.Inventory;
+import com.novare.minet.model.Product;
 import com.novare.minet.model.User;
 import com.novare.minet.service.IInventoryService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.InventoryView;
 
 public class InventoryController extends BaseController {
+
+	private Inventory newInventory = new Inventory();
 
 	public InventoryController(IInventoryService model, InventoryView view) {
 		super(model, view);
@@ -43,13 +49,18 @@ public class InventoryController extends BaseController {
 		}
 	}
 
+	private void createInventory() throws Exception {
+		List<Product> allProducts = getModel().getAllProducts();
+		
+//		if (isNull(newInventory.getFullName())) {
+//			newProduct.setFullName(getView().askProductFullName());
+//		}
+	}
+
 	private void editInventory() {
 	}
 
 	private void deleteInventory() {
-	}
-
-	private void createInventory() {
 	}
 
 	private void displayInventoryList() {

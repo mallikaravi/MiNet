@@ -9,6 +9,7 @@ import com.novare.minet.action.CashierMenuAction;
 import com.novare.minet.action.ManagerMenuAction;
 import com.novare.minet.action.ProductMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
+import com.novare.minet.model.Inventory;
 import com.novare.minet.model.Product;
 import com.novare.minet.model.User;
 import com.novare.minet.service.IProductService;
@@ -61,6 +62,17 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 	}
 
 	@Override
+	public Inventory create(Inventory inventory) throws Exception {
+		ServiceUtil.checkAssetFolder();
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, STORAGE);
+		inventory.generateId();
+		inventory.addHistories(getCurrentUser());
+		inventories.add(inventory);
+		ServiceUtil.saveModel(inventories, STORAGE);
+		return inventory;
+	}
+
+	@Override
 	public Product update(Product product) throws Exception {
 		ServiceUtil.checkAssetFolder();
 		List<Product> products = ServiceUtil.loadModel(Product.class, STORAGE);
@@ -99,13 +111,6 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 	}
 
 	@Override
-	public List<Product> getAll() throws Exception {
-		ServiceUtil.checkAssetFolder();
-		List<Product> products = ServiceUtil.loadModel(Product.class, STORAGE);
-		return products;
-	}
-
-	@Override
 	public List<Product> find(String search) throws Exception {
 		ServiceUtil.checkAssetFolder();
 		List<Product> products = ServiceUtil.loadModel(Product.class, STORAGE);
@@ -120,4 +125,19 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 		return result;
 	}
 
+	@Override
+	public Inventory delete(Inventory inventory) throws Exception {
+		ServiceUtil.checkAssetFolder();
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, STORAGE);
+		inventories.remove(inventory);
+		ServiceUtil.saveModel(inventories, STORAGE);
+		return inventory;
+	}
+
+	@Override
+	public List<Inventory> getAll() throws Exception {
+		ServiceUtil.checkAssetFolder();
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, STORAGE);
+		return inventories;
+	}
 }

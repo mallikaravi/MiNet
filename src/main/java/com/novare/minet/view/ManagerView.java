@@ -12,7 +12,7 @@ public class ManagerView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Transaction","Inventories","Products","Suppliers");
+		return List.of("Transaction", "Products", "Suppliers");
 	}
 
 	@Override

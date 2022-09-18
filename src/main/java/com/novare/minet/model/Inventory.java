@@ -11,7 +11,7 @@ import com.novare.minet.util.Ids;
 public class Inventory extends IdProperty {
 
 	private Product product;
-	private double quantity;
+	private double availQty;
 	private double orderedQty;
 	private List<InventoryHistory> histories = new ArrayList<>();
 
@@ -25,10 +25,10 @@ public class Inventory extends IdProperty {
 	 * @param orderedQty
 	 * @param histories
 	 */
-	public Inventory(Product product, double quantity, double orderedQty) {
+	public Inventory(Product product, double availQty, double orderedQty) {
 		this();
 		this.product = product;
-		this.quantity = quantity;
+		this.availQty = availQty;
 		this.orderedQty = orderedQty;
 	}
 
@@ -56,17 +56,17 @@ public class Inventory extends IdProperty {
 	}
 
 	/**
-	 * @return the quantity
+	 * @return the availQty
 	 */
-	public double getQuantity() {
-		return quantity;
+	public double getAvailQty() {
+		return availQty;
 	}
 
 	/**
-	 * @param quantity the quantity to set
+	 * @param availQty the availQty to set
 	 */
-	public void setQuantity(double quantity) {
-		this.quantity = quantity;
+	public void setAvailQty(double availQty) {
+		this.availQty = availQty;
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class Inventory extends IdProperty {
 
 	@Override
 	public String toString() {
-		return "Inventory [id=" + getId() + ", product=" + product + ", quantity=" + quantity + ", orderedQty="
+		return "Inventory [id=" + getId() + ", product=" + product + ", quantity=" + availQty + ", orderedQty="
 				+ orderedQty + ", histories=" + histories + "]";
 	}
 

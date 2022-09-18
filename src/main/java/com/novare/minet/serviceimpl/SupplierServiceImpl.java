@@ -69,11 +69,4 @@ public class SupplierServiceImpl extends BaseServiceImpl implements ISupplierSer
 		return supplier;
 	}
 
-	@Override
-	public List<Supplier> getAll() throws Exception {
-		ServiceUtil.checkAssetFolder();
-		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, STORAGE);
-		return suppliers;
-	}
-
 }

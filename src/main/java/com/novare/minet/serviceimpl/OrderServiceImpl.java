@@ -11,7 +11,6 @@ import com.novare.minet.action.OrderMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.Order;
 import com.novare.minet.model.OrderStatus;
-import com.novare.minet.model.Role;
 import com.novare.minet.model.User;
 import com.novare.minet.service.IOrderService;
 import com.novare.minet.util.MenuContext;
@@ -101,11 +100,25 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
 		List<Order> result = new ArrayList<>();
 		for (Order order : orders) {
-			if (order.getStatus().equals(OrderStatus.PENDING) && getCurrentUser().getRole() != Role.CASHIER) {
-				result.add(order);
+			if (order.getStatus().equals(OrderStatus.PENDING)) {
+				filterByUserRole(result, order);
 			}
 		}
 		return result;
+	}
+
+	private void filterByUserRole(List<Order> result, Order order) {
+		switch (getCurrentUser().getRole()) {
+		case CASHIER -> {
+			boolean contains = order.getCreatedBy().equals(getCurrentUser());
+			if (contains) {
+				result.add(order);
+			}
+		}
+		default -> {
+			result.add(order);
+		}
+		}
 	}
 
 	@Override
@@ -114,7 +127,7 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
 		List<Order> result = new ArrayList<>();
 		for (Order order : orders) {
-			boolean contains = order.getStatus().name().contains(keyword);
+			boolean contains = order.getStatus().name().contains(keyword.toUpperCase());
 			if (contains) {
 				result.add(order);
 			}
@@ -126,9 +139,9 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 	public List<Order> getAll() throws Exception {
 		ServiceUtil.checkAssetFolder();
 		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
+		List<Order> result = new ArrayList<>();
 		switch (getCurrentUser().getRole()) {
 		case CASHIER -> {
-			List<Order> result = new ArrayList<>();
 			for (Order order : orders) {
 				boolean contains = order.getCreatedBy().equals(getCurrentUser());
 				if (contains) {

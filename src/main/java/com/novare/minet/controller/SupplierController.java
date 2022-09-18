@@ -67,7 +67,7 @@ public class SupplierController extends BaseController {
 	}
 
 	private void supplierList() throws Exception {
-		List<Supplier> SupplierList = getModel().getAll();
+		List<Supplier> SupplierList = getModel().getAllSuppliers();
 		if (SupplierList == null || SupplierList.isEmpty()) {
 			getView().displayResultNotFound();
 		} else {
@@ -78,7 +78,7 @@ public class SupplierController extends BaseController {
 	}
 
 	private void deleteSupplier() throws Exception {
-		List<Supplier> SupplierList = getModel().getAll();
+		List<Supplier> SupplierList = getModel().getAllSuppliers();
 		if (SupplierList == null || SupplierList.isEmpty()) {
 			getView().displayResultNotFound();
 			getView().waitForDecision();
@@ -96,7 +96,7 @@ public class SupplierController extends BaseController {
 	}
 
 	private void editSupplier() throws Exception {
-		List<Supplier> SupplierList = getModel().getAll();
+		List<Supplier> SupplierList = getModel().getAllSuppliers();
 		if (SupplierList == null || SupplierList.isEmpty()) {
 			getView().displayResultNotFound();
 			getView().waitForDecision();

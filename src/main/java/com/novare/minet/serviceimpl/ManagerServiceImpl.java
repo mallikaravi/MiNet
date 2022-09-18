@@ -1,6 +1,5 @@
 package com.novare.minet.serviceimpl;
 
-import com.novare.minet.action.InventoryMenuAction;
 import com.novare.minet.action.ProductMenuAction;
 import com.novare.minet.action.SuppliersMenuAction;
 import com.novare.minet.action.TransactionMenuAction;
@@ -20,13 +19,13 @@ public class ManagerServiceImpl extends BaseServiceImpl implements IManagerServi
 		case 1 -> {
 			new TransactionMenuAction(MenuContext.TRANSACTION, currentUser);
 		}
+//		case 2 -> {
+//			new InventoryMenuAction(MenuContext.INVENTORY, currentUser);
+//		}
 		case 2 -> {
-			new InventoryMenuAction(MenuContext.INVENTORY, currentUser);
-		}
-		case 3 -> {
 			new ProductMenuAction(MenuContext.PRODUCT, currentUser);
 		}
-		case 4 -> {
+		case 3 -> {
 			new SuppliersMenuAction(MenuContext.SUPPLIERS, currentUser);
 		}
 		default -> throw new IndexOutOfBoundsException();

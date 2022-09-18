@@ -6,10 +6,7 @@ import java.util.Objects;
 import com.novare.minet.util.Ids;
 
 public class OrderHistory extends IdProperty {
-	public enum OrderStatus {
-		PENDING, WAITING, DELIVERED
-	}
-
+	
 	private Order order;
 	private Date updatedOn;
 	private OrderStatus status;

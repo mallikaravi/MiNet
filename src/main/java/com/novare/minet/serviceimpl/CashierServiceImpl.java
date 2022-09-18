@@ -2,6 +2,7 @@ package com.novare.minet.serviceimpl;
 
 import com.novare.minet.action.CashierMenuAction;
 import com.novare.minet.action.InventoryMenuAction;
+import com.novare.minet.action.OrderMenuAction;
 import com.novare.minet.action.ProductMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.User;
@@ -26,7 +27,7 @@ public class CashierServiceImpl extends BaseServiceImpl implements ICashierServi
 			new CashierMenuAction(MenuContext.TRANSACTION_LIST, currentUser);
 		}
 		case 4 -> {
-			new CashierMenuAction(MenuContext.ORDER_LIST, currentUser);
+			new OrderMenuAction(MenuContext.ORDER, currentUser);
 		}
 		case 5 -> {
 			new InventoryMenuAction(MenuContext.INVENTORY, currentUser);

@@ -26,11 +26,10 @@ public class InventoryController extends BaseController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-			case INVENTORY_LIST -> viewInventoryList();
-			case CREATE_ORDER -> createOrder();
-			case ORDER_LIST -> OrderList();
-			case PENDING_ORDERS -> PendingOrder();
-			case SEARCH_ORDER -> searchOrder();
+			case INVENTORY_LIST -> displayInventoryList();
+			case CREATE_INVENTORY -> createInventory();
+			case DELETE_INVENTORY -> deleteInventory();
+			case EDIT_INVENTORY -> editInventory();
 			default -> {
 				selectedOption = getView().getUserInput();
 			}
@@ -44,23 +43,15 @@ public class InventoryController extends BaseController {
 		}
 	}
 
-	private Object searchOrder() {
-		return null;
+	private void editInventory() {
 	}
 
-	private Object PendingOrder() {
-		return null;
+	private void deleteInventory() {
 	}
 
-	private Object OrderList() {
-		return null;
+	private void createInventory() {
 	}
 
-	private Object createOrder() {
-		return null;
-	}
-
-	private Object viewInventoryList() {
-		return null;
+	private void displayInventoryList() {
 	}
 }

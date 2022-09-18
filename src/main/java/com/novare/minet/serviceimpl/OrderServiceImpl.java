@@ -1,16 +1,17 @@
 package com.novare.minet.serviceimpl;
 
 import com.novare.minet.action.AdminMenuAction;
-import com.novare.minet.action.InventoryMenuAction;
+import com.novare.minet.action.OrderMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.User;
-import com.novare.minet.service.IInventoryService;
+import com.novare.minet.service.IOrderService;
 import com.novare.minet.util.MenuContext;
 
-public class InventoryServiceImpl extends BaseServiceImpl implements IInventoryService {
+public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
+
 		switch (selectedOption) {
 		case 0 -> {
 			switch (currentUser.getRole()) {
@@ -21,22 +22,25 @@ public class InventoryServiceImpl extends BaseServiceImpl implements IInventoryS
 			}
 		}
 		case 1 -> {
-			new InventoryMenuAction(MenuContext.INVENTORY_LIST, currentUser);
+			new OrderMenuAction(MenuContext.ORDER_LIST, currentUser);
 		}
 		case 2 -> {
-			new InventoryMenuAction(MenuContext.CREATE_INVENTORY, currentUser);
+			new OrderMenuAction(MenuContext.CREATE_INVENTORY, currentUser);
 		}
 		case 3 -> {
-			new InventoryMenuAction(MenuContext.CREATE_ORDER, currentUser);
+			new OrderMenuAction(MenuContext.EDIT_ORDER, currentUser);
 		}
 		case 4 -> {
-			new InventoryMenuAction(MenuContext.ORDER_LIST, currentUser);
+			new OrderMenuAction(MenuContext.DELETE_ORDER, currentUser);
 		}
 		case 5 -> {
-			new InventoryMenuAction(MenuContext.PENDING_ORDERS, currentUser);
+			new OrderMenuAction(MenuContext.PENDING_ORDERS, currentUser);
 		}
 		case 6 -> {
-			new InventoryMenuAction(MenuContext.SEARCH_ORDER, currentUser);
+			new OrderMenuAction(MenuContext.SEARCH_ORDER, currentUser);
+		}
+		case 7 -> {
+			new OrderMenuAction(MenuContext.ORDER_HISTORY, currentUser);
 		}
 		default -> throw new IndexOutOfBoundsException();
 		}

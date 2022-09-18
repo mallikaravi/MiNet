@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import com.novare.minet.action.CashierMenuAction;
+import com.novare.minet.action.AdminMenuAction;
 import com.novare.minet.action.ProductMenuAction;
+import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.Product;
 import com.novare.minet.model.User;
 import com.novare.minet.service.IProductService;
@@ -18,7 +19,12 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
 		switch (selectedOption) {
 		case 0 -> {
-			new CashierMenuAction(MenuContext.CASHIER, currentUser);
+			switch (currentUser.getRole()) {
+			case ADMIN -> new AdminMenuAction(MenuContext.ADMIN, currentUser);
+			case MANAGER -> new AdminMenuAction(MenuContext.MANAGER, currentUser);
+			case CASHIER -> new AdminMenuAction(MenuContext.CASHIER, currentUser);
+			default -> new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+			}
 		}
 		case 1 -> {
 			new ProductMenuAction(MenuContext.PRODUCT_LIST, currentUser);

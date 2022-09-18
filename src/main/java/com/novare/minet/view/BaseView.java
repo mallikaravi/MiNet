@@ -197,6 +197,24 @@ public abstract class BaseView {
 		printMessage("");
 	}
 
+	public int askForEdit(List<?> items) {
+		printMessage("Select the item for edit: ");
+		setMenuOptionsInRow(items);
+		int selection = getSelectedOptionFromMenu(items.size()) - 1;
+		printMessage("Do you want to edit " + items.get(selection) + " [Yes/No]: ");
+		return askConfirmationYesOrNo() ? selection : -1;
+
+	}
+
+	public int askForDelete(List<?> items) {
+		printMessage("Select the item for delete: ");
+		setMenuOptionsInRow(items);
+		int selection = getSelectedOptionFromMenu(items.size()) - 1;
+		printMessage("Do you want to delete " + items.get(selection) + " [Yes/No]: ");
+		return askConfirmationYesOrNo() ? selection : -1;
+
+	}
+
 	public String askSearch() {
 		printMessage("Enter Search keyword: ");
 		return getUserText();

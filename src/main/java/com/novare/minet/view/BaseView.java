@@ -25,8 +25,14 @@ public abstract class BaseView {
 	}
 
 	public void setMenuOptions(List<?> menuOptions) {
+		setMenuOptions(menuOptions, true);
+	}
+
+	public void setMenuOptions(List<?> menuOptions, boolean navigation) {
 		PrintHandler.optionList(menuOptions);
-		printNavigationMenu();
+		if (navigation) {
+			printNavigationMenu();
+		}
 
 	}
 
@@ -103,7 +109,7 @@ public abstract class BaseView {
 				printMessage("BYE !");
 				System.exit(0);
 			}
-			if(input.equalsIgnoreCase("C")) {
+			if (input.equalsIgnoreCase("C")) {
 				return true;
 			}
 		}
@@ -181,6 +187,14 @@ public abstract class BaseView {
 			printUserRequest();
 			return readPassword();
 		}
+	}
+
+	public void displayResultNotFound() {
+		printMessage("");
+		printMessage("-----------------------------");
+		printMessage("Result not found ! ");
+		printMessage("-----------------------------");
+		printMessage("");
 	}
 
 }

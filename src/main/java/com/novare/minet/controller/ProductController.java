@@ -56,12 +56,14 @@ public class ProductController extends BaseController {
 	private void editProduct() throws Exception {
 		List<Product> productList = getModel().getAll();
 		if (productList == null || productList.isEmpty()) {
+			getView().displayResultNotFound();
+			getView().waitForDecision();
 			return;
 		}
 
 		int selection = getView().askForEdit(productList);
-		if (selection > 0) {
-			Product selectedProduct = productList.get(selection - 1);
+		if (selection > -1) {
+			Product selectedProduct = productList.get(selection);
 
 			if (!getView().askProductShortName().isEmpty()) {
 				selectedProduct.setShortName(getView().askProductShortName());
@@ -125,10 +127,35 @@ public class ProductController extends BaseController {
 		getView().waitForDecision();
 	}
 
-	private void productList() {
+	private void productList() throws Exception {
+		List<Product> productList = getModel().getAll();
+		if (productList == null || productList.isEmpty()) {
+			getView().displayResultNotFound();
+		} else {
+			getView().setMenuOptions(productList, false);
+		}
+		getView().waitForDecision();
+
 	}
 
-	private void deleteProduct() {
+	private void deleteProduct() throws Exception {
+
+		List<Product> productList = getModel().getAll();
+		if (productList == null || productList.isEmpty()) {
+			getView().displayResultNotFound();
+			getView().waitForDecision();
+			return;
+		}
+
+		int selection = getView().askForDelete(productList);
+		if (selection > -1) {
+			Product selectedProduct = productList.get(selection);
+			getModel().delete(selectedProduct);
+			getView().printSaveMessage();
+			getView().waitForDecision();
+
+		}
+
 	}
 
 }

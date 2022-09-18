@@ -2,6 +2,7 @@ package com.novare.minet.view;
 
 import java.util.List;
 
+import com.novare.minet.model.Product;
 import com.novare.minet.util.PrintHandler;
 
 public class ProductView extends BaseView {
@@ -60,10 +61,20 @@ public class ProductView extends BaseView {
 	public int askForEdit(List<?> productList) {
 		printMessage("Select the product for edit: ");
 		setMenuOptionsInRow(productList);
-		int selection = getSelectedOptionFromMenu(productList.size());
+		int selection = getSelectedOptionFromMenu(productList.size())-1;
 		printMessage("Do you want to edit " + productList.get(selection) + " [Yes/No]: ");
-		return askConfirmationYesOrNo() ? selection : 0;
+		return askConfirmationYesOrNo() ? selection : -1;
 
 	}
+
+	public int askForDelete(List<Product> productList) {
+		printMessage("Select the product for delete: ");
+		setMenuOptionsInRow(productList);
+		int selection = getSelectedOptionFromMenu(productList.size())-1;
+		printMessage("Do you want to delete " + productList.get(selection) + " [Yes/No]: ");
+		return askConfirmationYesOrNo() ? selection : -1;
+
+	}
+
 
 }

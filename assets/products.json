@@ -1,39 +1,5 @@
 [ {
-  "uuid" : "e5cf9f48-0d30-4703-9953-b95b80330647",
-  "id" : 2,
-  "fullName" : "sdfsdf",
-  "shortName" : "sdfsf",
-  "description" : "ssdfsdf",
-  "sellingPrice" : 2.0,
-  "costPrice" : 2.0,
-  "minQty" : 2,
-  "defaultSupplier" : {
-    "uuid" : "cf0eb9d4-b560-4458-976b-e4e0c67a9769",
-    "id" : 2,
-    "name" : "Gelaxy",
-    "address" : "UK",
-    "email" : "abc@delete.com",
-    "phoneNumber" : "1235"
-  },
-  "histories" : [ {
-    "uuid" : "2c1b957b-fa35-46b1-bf41-09f4565047bc",
-    "id" : 2,
-    "updatedOn" : "18-09-2022 01:56:56",
-    "product" : "e5cf9f48-0d30-4703-9953-b95b80330647",
-    "updateBy" : {
-      "uuid" : "f3d13a09-4136-44f6-9a03-4a8a32487459",
-      "id" : 2,
-      "fullName" : "Malleswari",
-      "userName" : "mallika",
-      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-      "email" : "abc@gmail.com",
-      "phoneNumber" : "259332",
-      "address" : "old street,kista",
-      "role" : "CASHIER"
-    }
-  } ]
-}, {
-  "uuid" : "1f12da9e-c663-4e1a-85bd-586cf14f9b5e",
+  "uuid" : "96fbd8de-24f7-422a-920b-d15bd6424acc",
   "id" : 3,
   "fullName" : "santoor soap",
   "shortName" : "SANSOAP",
@@ -42,7 +8,7 @@
   "costPrice" : 12.0,
   "minQty" : 1,
   "defaultSupplier" : {
-    "uuid" : "3da6696d-6a27-4e54-ac99-11b7da67e414",
+    "uuid" : "4557f19d-989e-41f1-95e2-ca567e804d1c",
     "id" : 3,
     "name" : "Gelaxy",
     "address" : "UK",
@@ -50,12 +16,12 @@
     "phoneNumber" : "1235"
   },
   "histories" : [ {
-    "uuid" : "2994471f-64dd-40c8-86bf-64533dd9744c",
+    "uuid" : "4212c330-4d8a-47a3-890d-1ec1c9b1644a",
     "id" : 3,
     "updatedOn" : "18-09-2022 01:59:36",
-    "product" : "1f12da9e-c663-4e1a-85bd-586cf14f9b5e",
+    "product" : "96fbd8de-24f7-422a-920b-d15bd6424acc",
     "updateBy" : {
-      "uuid" : "aa4bf52b-3e4e-43fa-be27-20b8bd69ef97",
+      "uuid" : "257ae5d6-b042-4177-8091-5eb24a8ed2f8",
       "id" : 2,
       "fullName" : "Malleswari",
       "userName" : "mallika",

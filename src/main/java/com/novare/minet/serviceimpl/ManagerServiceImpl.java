@@ -1,6 +1,9 @@
 package com.novare.minet.serviceimpl;
 
+import com.novare.minet.action.InventoryMenuAction;
 import com.novare.minet.action.ManagerMenuAction;
+import com.novare.minet.action.ProductMenuAction;
+import com.novare.minet.action.SuppliersMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.User;
 import com.novare.minet.service.IManagerService;
@@ -18,13 +21,13 @@ public class ManagerServiceImpl extends BaseServiceImpl implements IManagerServi
 				new ManagerMenuAction(MenuContext.TRANSACTION_LIST, currentUser);
 			}
 			case 3 -> {
-				new ManagerMenuAction(MenuContext.INVENTORY, currentUser);
+				new InventoryMenuAction(MenuContext.INVENTORY, currentUser);
 			}
 			case 4 -> {
-				new ManagerMenuAction(MenuContext.PRODUCT, currentUser);
+				new ProductMenuAction(MenuContext.PRODUCT, currentUser);
 			}
 			case 5 -> {
-				new ManagerMenuAction(MenuContext.SUPPLIERS, currentUser);
+				new SuppliersMenuAction(MenuContext.SUPPLIERS, currentUser);
 			}
 			default -> throw new IndexOutOfBoundsException();
 

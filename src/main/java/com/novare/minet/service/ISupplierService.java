@@ -12,5 +12,7 @@ public interface ISupplierService extends IBaseService {
 	Supplier update(Supplier supplier) throws Exception;
 
 	Supplier delete(Supplier supplier) throws Exception;
+	
+	List<Supplier> getAll() throws Exception;
 
 }

@@ -13,15 +13,17 @@ public class AdminMenuAction extends BaseMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case INVENTORY -> title = " View Inventory  :";
-		case PRODUCT -> title = " View Products  :";
-		case TRANSACTION_LIST -> title = " View Transaction List  :";
-		case SUPPLIERS -> title = " View Suppliers  :";
-		case PAYMENTS -> title = " View Payments :";
-		case CASHFLOW -> title = "  View CashFlow :";
-		case PROFITS -> title = " View Profits :";
-		case ORDER_HISTORY -> title = "Order History:";
-		case REPORTS-> title = "View Reports :";
+		case INVENTORY -> title ="View Inventory  :";
+		case PRODUCT -> title ="View Products  :";
+		case TRANSACTION_LIST -> title ="View Transaction List  :";
+		case SUPPLIERS -> title ="View Suppliers  :";
+		case PAYMENTS -> title ="View Payments :";
+		case CASHFLOW -> title ="View CashFlow :";
+		case PROFITS -> title ="View Profits :";
+		case ORDER_HISTORY -> title ="Order History:";
+		case REPORTS-> title ="View Reports :";
+		default -> title="Admin Menu Options:";
+
 		}
 		AdminView view = new AdminView(title);
 		IAdminService model = new AdminServiceImpl();

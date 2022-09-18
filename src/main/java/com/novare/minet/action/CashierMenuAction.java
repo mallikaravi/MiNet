@@ -13,11 +13,13 @@ public class CashierMenuAction extends BaseMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case START_TRANSACTION -> title = " View Transaction :";
-		case PRODUCT -> title = "  View Product Options :";
-		case RETURN_PRODUCT -> title = "Return product Option :";
-		case INVENTORY -> title = "Inventory Options :";
-		case TRANSACTION_LIST -> title = "List of Transactions :";
+		case START_TRANSACTION -> title ="View Transaction :";
+		case PRODUCT -> title ="View Product Options :";
+		case RETURN_PRODUCT -> title ="Return product Option :";
+		case INVENTORY -> title ="Inventory Options :";
+		case TRANSACTION_LIST -> title ="List of Transactions :";
+		default -> title="Cashier Menu Options:";
+
 
 		}
 		CashierView view = new CashierView(title);

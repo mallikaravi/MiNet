@@ -1,11 +1,17 @@
 package com.novare.minet.controller;
 
+import java.util.List;
+
+import com.novare.minet.model.Supplier;
+import com.novare.minet.model.Supplier;
 import com.novare.minet.model.User;
 import com.novare.minet.service.ISupplierService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.SupplierView;
 
 public class SupplierController extends BaseController {
+
+	private Supplier newSupplier = new Supplier();
 
 	public SupplierController(ISupplierService model, SupplierView view) {
 		super(model, view);
@@ -26,13 +32,13 @@ public class SupplierController extends BaseController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-			case CREATE_SUPPLY -> createSupply();
+			case CREATE_SUPPLIER -> createSupplier();
 
-			case EDIT_SUPPLY -> editSupply();
+			case EDIT_SUPPLIER -> editSupplier();
 
-			case DELETE_SUPPLY -> deleteSupply();
+			case DELETE_SUPPLIER -> deleteSupplier();
 
-			case SUPPLY_LIST -> supplyList();
+			case SUPPLIER_LIST -> supplierList();
 			default -> {
 				selectedOption = getView().getUserInput();
 			}
@@ -46,23 +52,78 @@ public class SupplierController extends BaseController {
 		}
 	}
 
-	private Object supplyList() {
-		// TODO Auto-generated method stub
-		return null;
+	private void createSupplier() throws Exception {
+		if (isNull(newSupplier.getName())) {
+			newSupplier.setName(getView().askSupplierName());
+		}
+		if (isNull(newSupplier.getAddress())) {
+			newSupplier.setName(getView().askSupplierAddress());
+		}
+		if (isNull(newSupplier.getEmail())) {
+			newSupplier.setName(getView().askSupplierEmail());
+		}
+		if (isNull(newSupplier.getPhoneNumber())) {
+			newSupplier.setName(getView().askSupplierPhoneNumber());
+		}
+		getModel().create(newSupplier);
+		getView().printSaveMessage();
+		getView().waitForDecision();
 	}
 
-	private Object deleteSupply() {
-		// TODO Auto-generated method stub
-		return null;
+	private void supplierList() throws Exception {
+		List<Supplier> SupplierList = getModel().getAll();
+		if (SupplierList == null || SupplierList.isEmpty()) {
+			getView().displayResultNotFound();
+		} else {
+			getView().setMenuOptions(SupplierList, false);
+		}
+		getView().waitForDecision();
+
 	}
 
-	private Object editSupply() {
-		// TODO Auto-generated method stub
-		return null;
+	private void deleteSupplier() throws Exception {
+		List<Supplier> SupplierList = getModel().getAll();
+		if (SupplierList == null || SupplierList.isEmpty()) {
+			getView().displayResultNotFound();
+			getView().waitForDecision();
+			return;
+		}
+		int selection = getView().askForDelete(SupplierList);
+		if (selection > -1) {
+			Supplier selectedSupplier = SupplierList.get(selection);
+			getModel().delete(selectedSupplier);
+			getView().printSaveMessage();
+			getView().waitForDecision();
+
+		}
+
 	}
 
-	private Object createSupply() {
-		// TODO Auto-generated method stub
-		return null;
+	private void editSupplier() throws Exception {
+		List<Supplier> SupplierList = getModel().getAll();
+		if (SupplierList == null || SupplierList.isEmpty()) {
+			getView().displayResultNotFound();
+			getView().waitForDecision();
+			return;
+		}
+		int selection = getView().askForEdit(SupplierList);
+		if (selection > -1) {
+			Supplier selectedSupplier = SupplierList.get(selection);
+
+			if (!getView().askSupplierName().isEmpty()) {
+				selectedSupplier.setName(getView().askSupplierName());
+			}
+			if (!getView().askSupplierAddress().isEmpty()) {
+				selectedSupplier.setAddress(getView().askSupplierAddress());
+			}
+			selectedSupplier.setEmail(getView().askSupplierEmail());
+			selectedSupplier.setPhoneNumber(getView().askSupplierPhoneNumber());
+			getModel().update(selectedSupplier);
+			getView().printSaveMessage();
+			getView().waitForDecision();
+
+		}
+
 	}
+
 }

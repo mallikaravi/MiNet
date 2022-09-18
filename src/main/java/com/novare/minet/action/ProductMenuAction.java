@@ -13,12 +13,12 @@ public class ProductMenuAction extends BaseMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case CREATE_PRODUCT -> title = "Create Product Option :";
-		case PRODUCT_LIST -> title = "Product List option : :";
-		case EDIT_PRODUCT -> title = "Edit Product Option :";
-		case DELETE_PRODUCT -> title = "Delete Product Option :";
-		case SEARCH_PRODUCT -> title = "Search product Option :";
-		default -> title = "Product Menu options";
+		case CREATE_PRODUCT -> title ="Create Product Option :";
+		case PRODUCT_LIST -> title ="Product List option : :";
+		case EDIT_PRODUCT -> title ="Edit Product Option :";
+		case DELETE_PRODUCT -> title ="Delete Product Option :";
+		case SEARCH_PRODUCT -> title ="Search product Option :";
+		default -> title ="Product Menu options";
 
 		}
 		ProductView view = new ProductView(title);

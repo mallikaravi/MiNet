@@ -137,8 +137,7 @@ public class Inventory extends IdProperty {
 
 	@Override
 	public String toString() {
-		return "Inventory [id=" + getId() + ", product=" + product + ", quantity=" + availQty + ", orderedQty="
-				+ orderedQty + ", histories=" + histories + "]";
+		return product.toString();
 	}
 
 }

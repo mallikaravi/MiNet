@@ -13,7 +13,7 @@ public class TransactionView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Create","Edit","Delete","List", "Search","Return Product");
+		return List.of("Start", "Return",  "List", "Search");
 	}
 
 	@Override
@@ -22,4 +22,29 @@ public class TransactionView extends BaseView {
 
 	}
 
+	public int askSearchWithNumber() {
+		printMessage("Enter Search Transaction ID: ");
+		return getUserInput();
+	}
+
+	public String askSearchProdWithNameOrId() {
+		printMessage("Enter Product (ID | Full Name | Short Name): ");
+		return getUserText();
+	}
+
+	public int askForChooseProduct(List<?> items) {
+		printMessage("Choose the product: ");
+		setMenuOptionsInRow(items);
+		return getSelectedOptionFromMenu(items.size()) - 1;
+	}
+
+	public Integer askProductQty() {
+		printMessage("Product Quantity: ");
+		return getUserInput();
+	}
+
+	public boolean askMoreSale() {
+		printMessage("Continue transaction [Yes/No]:");
+		return askConfirmationYesOrNo();
+	}
 }

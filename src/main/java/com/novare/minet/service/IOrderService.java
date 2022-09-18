@@ -22,6 +22,8 @@ public interface IOrderService extends IBaseService {
 
 	List<Order> findAllPending() throws Exception;
 
+	List<Order> findAllWaiting() throws Exception;
+
 	List<Order> search(String keyword) throws Exception;
 
 	List<Order> getAll() throws Exception;

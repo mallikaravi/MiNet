@@ -12,6 +12,8 @@ import java.util.List;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
+import com.novare.minet.model.Inventory;
+import com.novare.minet.model.Order;
 import com.novare.minet.model.User;
 
 public class ServiceUtil {
@@ -90,5 +92,14 @@ public class ServiceUtil {
 			return true;
 		}
 		throw new FileNotFoundException("Asset Folder doesn't exist, Bye !");
+	}
+
+	public static String printOrderDetails(Order order, Inventory inventory, User currentUser) {
+		StringBuilder builder = new StringBuilder();
+		builder.append(String.format("| %62s |%n", "").replace(' ', '-'));
+		builder.append(String.format("| Hello,%-55s |%n", currentUser.getFullName()));
+		builder.append(String.format("| %-19s:%42s |%n", "Order Status", order.getStatus()));
+		builder.append(String.format("| %62s |%n", "").replace(' ', '-'));
+		return builder.toString();
 	}
 }

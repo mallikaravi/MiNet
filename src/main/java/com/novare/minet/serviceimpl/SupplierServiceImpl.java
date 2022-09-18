@@ -10,7 +10,6 @@ import com.novare.minet.action.CashierMenuAction;
 import com.novare.minet.action.ManagerMenuAction;
 import com.novare.minet.action.SuppliersMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
-import com.novare.minet.model.Product;
 import com.novare.minet.model.Supplier;
 import com.novare.minet.model.User;
 import com.novare.minet.service.ISupplierService;

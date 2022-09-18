@@ -156,4 +156,17 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 		}
 	}
 
+	@Override
+	public List<Order> findAllWaiting() throws Exception {
+		ServiceUtil.checkAssetFolder();
+		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
+		List<Order> result = new ArrayList<>();
+		for (Order order : orders) {
+			if (order.getStatus().equals(OrderStatus.WAITING)) {
+				filterByUserRole(result, order);
+			}
+		}
+		return result;
+	}
+
 }

@@ -10,8 +10,8 @@ import com.novare.minet.util.Ids;
 
 public class Order extends IdProperty {
 	private Product product;
-	private float quantity;
-	private float totalAmount;
+	private Double quantity;
+	private Double totalAmount;
 	private Supplier supplier;
 	private OrderStatus status;
 	private User createdBy;
@@ -30,7 +30,7 @@ public class Order extends IdProperty {
 	 * @param createdBy
 	 * @param histories
 	 */
-	public Order(Product product, float quantity, float totalAmount, Supplier supplier, OrderStatus status,
+	public Order(Product product, Double quantity, Double totalAmount, Supplier supplier, OrderStatus status,
 			User createdBy) {
 		super();
 		this.product = product;
@@ -67,28 +67,28 @@ public class Order extends IdProperty {
 	/**
 	 * @return the quantity
 	 */
-	public float getQuantity() {
+	public Double getQuantity() {
 		return quantity;
 	}
 
 	/**
 	 * @param quantity the quantity to set
 	 */
-	public void setQuantity(float quantity) {
+	public void setQuantity(Double quantity) {
 		this.quantity = quantity;
 	}
 
 	/**
 	 * @return the totalAmount
 	 */
-	public float getTotalAmount() {
+	public Double getTotalAmount() {
 		return totalAmount;
 	}
 
 	/**
 	 * @param totalAmount the totalAmount to set
 	 */
-	public void setTotalAmount(float totalAmount) {
+	public void setTotalAmount(Double totalAmount) {
 		this.totalAmount = totalAmount;
 	}
 
@@ -158,7 +158,7 @@ public class Order extends IdProperty {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(histories, getId(), product, quantity, supplier, totalAmount);
+		return Objects.hash(getId());
 	}
 
 	/*
@@ -176,11 +176,7 @@ public class Order extends IdProperty {
 		if (getClass() != obj.getClass())
 			return false;
 		Order other = (Order) obj;
-		return Objects.equals(histories, other.histories) && getId() == other.getId()
-				&& Objects.equals(product, other.product)
-				&& Float.floatToIntBits(quantity) == Float.floatToIntBits(other.quantity)
-				&& Objects.equals(supplier, other.supplier)
-				&& Float.floatToIntBits(totalAmount) == Float.floatToIntBits(other.totalAmount);
+		return getId() == other.getId();
 	}
 
 	/*
@@ -191,8 +187,7 @@ public class Order extends IdProperty {
 
 	@Override
 	public String toString() {
-		return "Order [id=" + getId() + ", product=" + product + ", quantity=" + quantity + ", totalAmount="
-				+ totalAmount + ", supplier=" + supplier + ", histories=" + histories + "]";
+		return "Order [id=" + getId() + ", Status=" + status  + "]";
 	}
 
 }

@@ -39,7 +39,7 @@ public abstract class BaseServiceImpl implements IBaseService {
 	}
 
 	@Override
-	public Inventory update(Inventory inventory) throws Exception {
+	public Inventory updateInventory(Inventory inventory) throws Exception {
 		ServiceUtil.checkAssetFolder();
 		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, IInventoryService.STORAGE);
 		Iterator<Inventory> iterator = inventories.iterator();
@@ -81,4 +81,38 @@ public abstract class BaseServiceImpl implements IBaseService {
 		}
 		return result;
 	}
+
+	@Override
+	public Inventory findInventoryByProductId(Integer prodcutId) throws Exception {
+		ServiceUtil.checkAssetFolder();
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, IInventoryService.STORAGE);
+		for (Inventory inventory : inventories) {
+			if (inventory.getProduct().getId() == prodcutId) {
+				return inventory;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public List<Product> findByProductNameOrId(String search) throws Exception {
+		ServiceUtil.checkAssetFolder();
+		List<Product> products = ServiceUtil.loadModel(Product.class, IProductService.STORAGE);
+		List<Product> result = new ArrayList<>();
+		for (Product product : products) {
+			boolean contains = false;
+			try {
+				Integer productId = Integer.parseInt(search);
+				contains = product.getId() == productId;
+			} catch (Exception e) {
+				contains = product.getFullName().toLowerCase().contains(search.toLowerCase())
+						|| product.getShortName().toLowerCase().contains(search.toLowerCase());
+			}
+			if (contains) {
+				result.add(product);
+			}
+		}
+		return result;
+	}
+
 }

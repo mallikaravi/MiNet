@@ -13,7 +13,7 @@ public interface IBaseService {
 
 	boolean isValidUser(User current) throws Exception;
 
-	Inventory update(Inventory inventory) throws Exception;
+	Inventory updateInventory(Inventory inventory) throws Exception;
 
 	List<Supplier> getAllSuppliers() throws Exception;
 
@@ -21,4 +21,7 @@ public interface IBaseService {
 
 	List<Inventory> getAllOutOfStockProducts() throws Exception;
 
+	List<Product> findByProductNameOrId(String search) throws Exception;
+
+	Inventory findInventoryByProductId(Integer prodcutId) throws Exception;
 }

@@ -53,7 +53,7 @@ public class ProductController extends BaseController {
 
 	private void searchProduct() throws Exception {
 		String askSearch = getView().askSearch();
-		List<Product> find = getModel().find(askSearch);
+		List<Product> find = getModel().findByProductNameOrId(askSearch);
 		if (find.isEmpty()) {
 			getView().displayResultNotFound();
 			return;
@@ -64,7 +64,7 @@ public class ProductController extends BaseController {
 	}
 
 	private void editProduct() throws Exception {
-		List<Product> productList = getModel().getAllProducts();
+		List<Inventory> productList = getModel().getAllInventories();
 		if (productList == null || productList.isEmpty()) {
 			getView().displayResultNotFound();
 			getView().waitForDecision();
@@ -73,7 +73,8 @@ public class ProductController extends BaseController {
 
 		int selection = getView().askForEdit(productList);
 		if (selection > -1) {
-			Product selectedProduct = productList.get(selection);
+			Inventory inventory = productList.get(selection);
+			Product selectedProduct = inventory.getProduct();
 
 			if (!getView().askProductShortName().isEmpty()) {
 				selectedProduct.setShortName(getView().askProductShortName());
@@ -85,16 +86,17 @@ public class ProductController extends BaseController {
 			selectedProduct.setSellingPrice(getView().askProductSellingPrice());
 			selectedProduct.setCostPrice(getView().askProductCostPrice());
 			List<Supplier> allSuppliers = getModel().getAllSuppliers();
-			if (allSuppliers == null || allSuppliers.isEmpty()) {
-				// TODO FIXME should be deleted
-				Supplier supplier = new Supplier("Gelaxy", "UK", "abc@delete.com", "1235");
-				supplier.generateId();
-				allSuppliers = List.of(supplier);
-			}
-
 			selection = getView().askDefaultSupplier(allSuppliers);
 			selectedProduct.setDefaultSupplier(allSuppliers.get(selection));
+
+			Double availQty = getView().askProductAvailQty();
+			inventory.setAvailQty(availQty);
+
 			getModel().update(selectedProduct);
+
+			// Delete Inventory
+			getModel().updateInventory(inventory);
+
 			getView().printSaveMessage();
 			getView().waitForDecision();
 
@@ -123,25 +125,22 @@ public class ProductController extends BaseController {
 		}
 		if (isNull(newProduct.getDefaultSupplier())) {
 			List<Supplier> allSuppliers = getModel().getAllSuppliers();
-			if (allSuppliers == null || allSuppliers.isEmpty()) {
-				// TODO FIXME should be deleted
-				Supplier supplier = new Supplier("Gelaxy", "UK", "abc@delete.com", "1235");
-				supplier.generateId();
-				allSuppliers = List.of(supplier);
-			}
 			int selection = getView().askDefaultSupplier(allSuppliers);
 			newProduct.setDefaultSupplier(allSuppliers.get(selection));
 		}
 		Double availQty = getView().askProductAvailQty();
-		Inventory inventory = new Inventory(newProduct, availQty, 0);
 		getModel().create(newProduct);
-		getModel().create(inventory);
+
+		// Create Inventory
+		Inventory inventory = new Inventory(newProduct, availQty, 0);
+		getModel().createInventory(inventory);
+
 		getView().printSaveMessage();
 		getView().waitForDecision();
 	}
 
 	private void productList() throws Exception {
-		List<Product> productList = getModel().getAllProducts();
+		List<Inventory> productList = getModel().getAllInventories();
 		if (productList == null || productList.isEmpty()) {
 			getView().displayResultNotFound();
 		} else {
@@ -152,8 +151,7 @@ public class ProductController extends BaseController {
 	}
 
 	private void deleteProduct() throws Exception {
-
-		List<Product> productList = getModel().getAllProducts();
+		List<Inventory> productList = getModel().getAllInventories();
 		if (productList == null || productList.isEmpty()) {
 			getView().displayResultNotFound();
 			getView().waitForDecision();
@@ -162,8 +160,13 @@ public class ProductController extends BaseController {
 
 		int selection = getView().askForDelete(productList);
 		if (selection > -1) {
-			Product selectedProduct = productList.get(selection);
+			Inventory inventory = productList.get(selection);
+			Product selectedProduct = inventory.getProduct();
+
 			getModel().delete(selectedProduct);
+			// Delete Inventory
+			getModel().deleteInventory(inventory);
+
 			getView().printSaveMessage();
 			getView().waitForDecision();
 

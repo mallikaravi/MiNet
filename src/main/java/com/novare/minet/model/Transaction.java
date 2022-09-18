@@ -1,10 +1,12 @@
 package com.novare.minet.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+import com.novare.minet.util.DateUtil;
 import com.novare.minet.util.Ids;
 
 public class Transaction extends IdProperty {
@@ -13,7 +15,7 @@ public class Transaction extends IdProperty {
 	private List<TransactionItems> transactionItems = new ArrayList<>();
 	private User soldBy;
 	private TransactionType type;
-	private double totalAmount;
+	private Double totalAmount;
 
 	/**
 	 * 
@@ -28,12 +30,11 @@ public class Transaction extends IdProperty {
 	 * @param type
 	 * @param totalAmount
 	 */
-	public Transaction(Date transactionOn, User soldBy, TransactionType type, double totalAmount) {
+	public Transaction(User soldBy, TransactionType type) {
 		this();
-		this.transactionOn = transactionOn;
+		this.transactionOn = DateUtil.toDate(LocalDateTime.now());
 		this.soldBy = soldBy;
 		this.type = type;
-		this.totalAmount = totalAmount;
 	}
 
 	@Override
@@ -43,6 +44,14 @@ public class Transaction extends IdProperty {
 		int transactionId = id.getTransactionId();
 		setId(transactionId);
 		id.close();
+	}
+
+	public void calculateAmount() {
+		Double totalAmount = Double.valueOf(0);
+		for (TransactionItems transactionItems : transactionItems) {
+			totalAmount += transactionItems.getTotalAmount();
+		}
+		setTotalAmount(totalAmount);
 	}
 
 	/**
@@ -104,14 +113,14 @@ public class Transaction extends IdProperty {
 	/**
 	 * @return the totalAmount
 	 */
-	public double getTotalAmount() {
+	public Double getTotalAmount() {
 		return totalAmount;
 	}
 
 	/**
 	 * @param totalAmount the totalAmount to set
 	 */
-	public void setTotalAmount(double totalAmount) {
+	public void setTotalAmount(Double totalAmount) {
 		this.totalAmount = totalAmount;
 	}
 
@@ -123,7 +132,7 @@ public class Transaction extends IdProperty {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), soldBy, totalAmount, transactionItems, transactionOn, type);
+		return Objects.hash(getId());
 	}
 
 	/*
@@ -141,10 +150,7 @@ public class Transaction extends IdProperty {
 		if (getClass() != obj.getClass())
 			return false;
 		Transaction other = (Transaction) obj;
-		return getId() == other.getId() && Objects.equals(soldBy, other.soldBy)
-				&& Double.doubleToLongBits(totalAmount) == Double.doubleToLongBits(other.totalAmount)
-				&& Objects.equals(transactionItems, other.transactionItems)
-				&& Objects.equals(transactionOn, other.transactionOn) && type == other.type;
+		return getId() == other.getId();
 	}
 
 	/*

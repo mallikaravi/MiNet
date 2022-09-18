@@ -11,7 +11,7 @@ public interface IProductService extends IBaseService {
 
 	Product create(Product product) throws Exception;
 
-	Inventory create(Inventory inventory) throws Exception;
+	Inventory createInventory(Inventory inventory) throws Exception;
 
 	Product update(Product product) throws Exception;
 
@@ -19,10 +19,10 @@ public interface IProductService extends IBaseService {
 
 	Product findByShortName(String shortName) throws Exception;
 
-	List<Product> find(String search) throws Exception;
+	Inventory deleteInventory(Inventory inventory) throws Exception;
 
-	Inventory delete(Inventory inventory) throws Exception;
+	Inventory updateInventory(Inventory inventory) throws Exception;
 
-	List<Inventory> getAll() throws Exception;
+	List<Inventory> getAllInventories() throws Exception;
 
 }

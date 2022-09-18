@@ -119,8 +119,7 @@ public class OrderHistory extends IdProperty {
 
 	@Override
 	public String toString() {
-		return "OrderHistory [id=" + getId() + ", order=" + order + ", updatedOn=" + updatedOn + ", updateBy="
-				+ updateBy + "]";
+		return "OrderHistory [id=" + getId() + ", updatedOn=" + updatedOn + ", updateBy=" + updateBy + "]";
 	}
 
 }

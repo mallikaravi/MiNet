@@ -51,6 +51,7 @@ public class TransactionServiceImpl extends BaseServiceImpl implements ITransact
 		ServiceUtil.checkAssetFolder();
 		List<Transaction> transactions = ServiceUtil.loadModel(Transaction.class, STORAGE);
 		transaction.generateId();
+		transaction.calculateAmount();
 		transactions.add(transaction);
 		ServiceUtil.saveModel(transactions, STORAGE);
 		return transaction;

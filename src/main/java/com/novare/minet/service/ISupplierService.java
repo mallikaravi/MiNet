@@ -2,7 +2,6 @@ package com.novare.minet.service;
 
 import java.util.List;
 
-import com.novare.minet.model.Product;
 import com.novare.minet.model.Supplier;
 
 public interface ISupplierService extends IBaseService {

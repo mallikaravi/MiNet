@@ -1,15 +1,15 @@
 [ {
-  "uuid" : "fd23690b-559e-4e35-9f05-7b14d1ccc0d3",
-  "id" : 7,
-  "name" : "1234345",
-  "address" : null,
-  "email" : null,
-  "phoneNumber" : null
+  "uuid" : "a6c6b621-3ded-4a1c-a46c-cb5124e6ca03",
+  "id" : 9,
+  "name" : "Galaxy Inc",
+  "address" : "UK",
+  "email" : "galaxy@gmail.com",
+  "phoneNumber" : "+48-12345678"
 }, {
-  "uuid" : "0eb82714-deec-4962-9f24-fde9453671d7",
-  "id" : 8,
-  "name" : "sdfsdfsdfs",
-  "address" : "hjkk",
-  "email" : "ghk@gmail",
-  "phoneNumber" : "12345"
+  "uuid" : "f8caad0c-26c3-49af-93ab-3f467aa17bee",
+  "id" : 10,
+  "name" : "Apple Inc",
+  "address" : "USA",
+  "email" : "apple@hotmail.com",
+  "phoneNumber" : "+1-123456789"
 } ]

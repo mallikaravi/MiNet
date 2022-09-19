@@ -33,10 +33,10 @@ public class OrderController extends MiNetController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
+			case LIST -> displayOrders();
 			case CREATE -> createOrder();
 			case DELETE -> deleteOrder();
-			case EDIT -> displayWaitingOrders(); // Receive Orders Or Waiting for delivery
-			case LIST -> displayOrders();
+			case WAITING_ORDERS -> displayWaitingOrders(); 
 			case PENDING_ORDERS -> displayPendingOrders();
 			case SEARCH -> searchOrders();
 			default -> {

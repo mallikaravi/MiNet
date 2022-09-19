@@ -40,7 +40,7 @@ public class OrderServiceImpl extends MiNetServiceImpl implements IOrderService 
 			new OrderMenuAction(MenuContext.DELETE, currentUser);
 		}
 		case 4 -> {
-			new OrderMenuAction(MenuContext.EDIT, currentUser);
+			new OrderMenuAction(MenuContext.WAITING_ORDERS, currentUser);
 		}
 		case 5 -> {
 			new OrderMenuAction(MenuContext.PENDING_ORDERS, currentUser);

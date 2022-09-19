@@ -15,7 +15,7 @@ public class OrderMenuAction extends MiNetMenuAction {
 		switch (context) {
 		case CREATE -> title = "Create Order Options:";
 		case DELETE -> title = "Delete Order Options:";
-		case EDIT -> title = "Waiting Order Options:";
+		case WAITING_ORDERS -> title = "Waiting Order Options:";
 		case LIST -> title = "List of Orders Options:";
 		case PENDING_ORDERS -> title = "Pending Order Options:";
 		case SEARCH -> title = "Search Order Options:";

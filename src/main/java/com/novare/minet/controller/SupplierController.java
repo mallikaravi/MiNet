@@ -117,12 +117,14 @@ public class SupplierController extends MiNetController {
 		if (selection > -1) {
 			Supplier selectedSupplier = SupplierList.get(selection);
 
-			if (!getView().askSupplierName().isEmpty()) {
-				selectedSupplier.setName(getView().askSupplierName());
-			}
-			if (!getView().askSupplierAddress().isEmpty()) {
-				selectedSupplier.setAddress(getView().askSupplierAddress());
-			}
+			/*
+			 * if (!getView().askSupplierName().isEmpty()) {
+			 * selectedSupplier.setName(getView().askSupplierName()); } if
+			 * (!getView().askSupplierAddress().isEmpty()) {
+			 * selectedSupplier.setAddress(getView().askSupplierAddress()); }
+			 */
+			selectedSupplier.setName(getView().askSupplierName());
+			selectedSupplier.setAddress(getView().askSupplierAddress());
 			selectedSupplier.setEmail(getView().askSupplierEmail());
 			selectedSupplier.setPhoneNumber(getView().askSupplierPhoneNumber());
 			getModel().update(selectedSupplier);

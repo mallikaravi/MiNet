@@ -1,12 +1,12 @@
 {
-"userId" : 8,
-  "inventoryId" : 12,
-  "inventoryHistoryId" : 33,
+  "userId" : 6,
+  "inventoryId" : 7,
+  "inventoryHistoryId" : 8,
   "orderId" : 2,
-  "orderHistoryId" : 4,
-  "productId" : 16,
-  "productHistoryId" : 16,
-  "supplierId" : 11,
-  "transactionId" : 10,
-  "transactionItemId" : 16
+  "orderHistoryId" : 2,
+  "productId" : 7,
+  "productHistoryId" : 7,
+  "supplierId" : 7,
+  "transactionId" : 2,
+  "transactionItemId" : 2
 }

@@ -1,93 +1,61 @@
 [ {
-  "uuid" : "1061cdd9-7fcf-460f-ad63-8d69adcfdac8",
+  "uuid" : "c59a2f17-f1f2-4eee-8f9b-856ab10a514a",
   "id" : 1,
   "product" : {
-    "uuid" : "9ed353c2-b487-4a46-823e-c910a9494025",
-    "id" : 14,
-    "fullName" : "Apple iPhone",
-    "shortName" : "APPPHONE",
-    "description" : "Nice design and user friendly",
-    "sellingPrice" : 12000.0,
-    "costPrice" : 5000.0,
+    "uuid" : "78743981-5fc2-4b76-9ffe-025455c9ad19",
+    "id" : 6,
+    "fullName" : "OnePlus 10 Pro.",
+    "shortName" : "OnePlus",
+    "description" : "From benchmarks to the cameras, this phone is incredibly good",
+    "sellingPrice" : 20000.0,
+    "costPrice" : 15000.0,
     "minQty" : 1,
     "defaultSupplier" : {
-      "uuid" : "f4d8682a-0134-435e-ab42-20fc2d9f88c4",
-      "id" : 10,
-      "name" : "Apple Inc",
-      "address" : "USA",
-      "email" : "apple@hotmail.com",
-      "phoneNumber" : "+1-123456789"
+      "uuid" : "1700f4ca-286f-4c95-999e-c473166c8888",
+      "id" : 1,
+      "name" : "AGC Incorporated",
+      "address" : "Japan",
+      "email" : "agc@gmail.com",
+      "phoneNumber" : "+81 568834892"
     },
     "histories" : [ {
-      "uuid" : "948815e4-33bf-4ae7-8b90-e4f5e9316ec2",
-      "id" : 14,
-      "updatedOn" : "19-09-2022 00:11:13",
-      "product" : "9ed353c2-b487-4a46-823e-c910a9494025",
+      "uuid" : "ddcb53f1-ee8b-4295-8dbf-9d192e1abb82",
+      "id" : 6,
+      "updatedOn" : "19-09-2022 18:27:32",
+      "product" : "78743981-5fc2-4b76-9ffe-025455c9ad19",
       "updateBy" : {
-        "uuid" : "7dc14d97-e281-45c1-bea7-f2578f121753",
-        "id" : 2,
-        "fullName" : "Malleswari",
-        "userName" : "mallika",
+        "uuid" : "61fa23b2-23c7-47ae-a159-2ff7d00bff03",
+        "id" : 3,
+        "fullName" : "Rishitha ravi",
+        "userName" : "rishi",
         "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-        "email" : "abc@gmail.com",
-        "phoneNumber" : "259332",
-        "address" : "old street,kista",
-        "role" : "CASHIER"
+        "email" : "rishi@gmail.com",
+        "phoneNumber" : "+91 9877044667",
+        "address" : "Golconda,Bangalore",
+        "role" : "MANAGER"
       }
     } ]
   },
-  "quantity" : 100.0,
-  "totalAmount" : 500000.0,
-  "supplier" : "f4d8682a-0134-435e-ab42-20fc2d9f88c4",
-  "status" : "DELIVERED",
+  "quantity" : 20.0,
+  "totalAmount" : 300000.0,
+  "supplier" : "1700f4ca-286f-4c95-999e-c473166c8888",
+  "status" : "PENDING",
   "createdBy" : {
-    "uuid" : "ae21dded-ff29-40eb-b3dd-b548347fdae1",
-    "id" : 2,
-    "fullName" : "Malleswari",
-    "userName" : "mallika",
+    "uuid" : "de6b5615-2509-46c6-addd-4ea342b04511",
+    "id" : 3,
+    "fullName" : "Rishitha ravi",
+    "userName" : "rishi",
     "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-    "email" : "abc@gmail.com",
-    "phoneNumber" : "259332",
-    "address" : "old street,kista",
-    "role" : "CASHIER"
+    "email" : "rishi@gmail.com",
+    "phoneNumber" : "+91 9877044667",
+    "address" : "Golconda,Bangalore",
+    "role" : "MANAGER"
   },
   "histories" : [ {
-    "uuid" : "499ef619-0ada-4f83-8960-e39372b5cc41",
+    "uuid" : "fb75a58c-469f-45c9-8c0b-bf344b747e74",
     "id" : 1,
-    "order" : "1061cdd9-7fcf-460f-ad63-8d69adcfdac8",
-    "updatedOn" : "19-09-2022 00:36:12",
-    "updateBy" : "ae21dded-ff29-40eb-b3dd-b548347fdae1"
-  }, {
-    "uuid" : "2ac51dc0-e3b6-418e-aaf9-203f9fe03e07",
-    "id" : 2,
-    "order" : "1061cdd9-7fcf-460f-ad63-8d69adcfdac8",
-    "updatedOn" : "19-09-2022 00:54:41",
-    "updateBy" : {
-      "uuid" : "9a48a160-cb5d-47ad-b655-0261349d133e",
-      "id" : 1,
-      "fullName" : "Kumarbabu Ravi",
-      "userName" : "kumar",
-      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-      "email" : "k",
-      "phoneNumber" : "0",
-      "address" : "abc",
-      "role" : "ADMIN"
-    }
-  }, {
-    "uuid" : "a08cc8e5-814d-43b5-9f26-9b38a72e4c6e",
-    "id" : 3,
-    "order" : "1061cdd9-7fcf-460f-ad63-8d69adcfdac8",
-    "updatedOn" : "19-09-2022 00:55:31",
-    "updateBy" : {
-      "uuid" : "ebd5c5eb-aaaf-4c8e-8d5c-91665c8ee7a2",
-      "id" : 1,
-      "fullName" : "Kumarbabu Ravi",
-      "userName" : "kumar",
-      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-      "email" : "k",
-      "phoneNumber" : "0",
-      "address" : "abc",
-      "role" : "ADMIN"
-    }
+    "order" : "c59a2f17-f1f2-4eee-8f9b-856ab10a514a",
+    "updatedOn" : "19-09-2022 18:34:38",
+    "updateBy" : "de6b5615-2509-46c6-addd-4ea342b04511"
   } ]
 } ]

@@ -16,7 +16,7 @@ public class TransactionView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Start", "Return", "List", "Search");
+		return List.of("List", "Start", "Return", "Search");
 	}
 
 	@Override

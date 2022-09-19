@@ -1,15 +1,43 @@
 [ {
-  "uuid" : "a6c6b621-3ded-4a1c-a46c-cb5124e6ca03",
-  "id" : 9,
-  "name" : "Galaxy Inc",
-  "address" : "UK",
-  "email" : "galaxy@gmail.com",
-  "phoneNumber" : "+48-12345678"
+  "uuid" : "897706fa-c27b-40bf-aa07-60096aa65b9b",
+  "id" : 1,
+  "name" : "AGC Incorporated",
+  "address" : "Japan",
+  "email" : "agc@gmail.com",
+  "phoneNumber" : "+81 568834892"
 }, {
-  "uuid" : "f8caad0c-26c3-49af-93ab-3f467aa17bee",
-  "id" : 10,
-  "name" : "Apple Inc",
+  "uuid" : "d8f3031c-4777-4975-b30a-82e79dc282e2",
+  "id" : 2,
+  "name" : "3M Company",
+  "address" : "Unites States",
+  "email" : "company@gmail.com",
+  "phoneNumber" : "+1 545679965445"
+}, {
+  "uuid" : "4c72e1d1-11af-425b-a2a1-3d80ad31c217",
+  "id" : 3,
+  "name" : "Flex Limited",
+  "address" : "Unites States",
+  "email" : "flex@gmail.com",
+  "phoneNumber" : "+1 65678398459"
+}, {
+  "uuid" : "f5ab8905-d7d4-4cb0-b7c9-2754bd044189",
+  "id" : 4,
+  "name" : "Advantest Corp",
+  "address" : "Japan",
+  "email" : "advantest@gmail.com",
+  "phoneNumber" : "+81 345689890"
+}, {
+  "uuid" : "3aec7374-f4d8-44fa-97d3-32a2c43d3817",
+  "id" : 5,
+  "name" : "Elentec co., Ltd.",
+  "address" : "India",
+  "email" : "elentec@gmail.com",
+  "phoneNumber" : "+91 7646547738"
+}, {
+  "uuid" : "c827d167-aa73-431b-befe-2766fd425d9c",
+  "id" : 6,
+  "name" : "Hitachi Ltd.",
   "address" : "USA",
-  "email" : "apple@hotmail.com",
-  "phoneNumber" : "+1-123456789"
+  "email" : "hitachi@gmail.com",
+  "phoneNumber" : "+1 56677389292"
 } ]

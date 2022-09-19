@@ -1,460 +1,60 @@
 [ {
-  "uuid" : "caa77dca-f75c-4655-bf8a-dff6a046b00b",
-  "id" : 5,
-  "transactionOn" : "19-09-2022 00:21:26",
+  "uuid" : "c8f2b2a6-e1c2-4ced-8166-98942a99f9e3",
+  "id" : 1,
+  "transactionOn" : "19-09-2022 18:28:09",
   "transactionItems" : [ {
-    "uuid" : "23933510-6573-459d-a045-3be51106d5fd",
-    "id" : 6,
+    "uuid" : "08365777-bb9d-4f65-ae7c-fbead946e81b",
+    "id" : 1,
     "product" : {
-      "uuid" : "d08918c9-3d1d-4a29-b452-97c5df0ac88c",
-      "id" : 14,
-      "fullName" : "Apple iPhone",
-      "shortName" : "APPPHONE",
-      "description" : "Nice design and user friendly",
-      "sellingPrice" : 12000.0,
-      "costPrice" : 5000.0,
+      "uuid" : "5eb74ef4-75d9-4268-bd2f-4fe471d32e6a",
+      "id" : 6,
+      "fullName" : "OnePlus 10 Pro.",
+      "shortName" : "OnePlus",
+      "description" : "From benchmarks to the cameras, this phone is incredibly good",
+      "sellingPrice" : 20000.0,
+      "costPrice" : 15000.0,
       "minQty" : 1,
       "defaultSupplier" : {
-        "uuid" : "0eb93315-70d2-4d96-989d-b6ef15589d49",
-        "id" : 10,
-        "name" : "Apple Inc",
-        "address" : "USA",
-        "email" : "apple@hotmail.com",
-        "phoneNumber" : "+1-123456789"
+        "uuid" : "08be91ad-77c5-4159-8d7f-7284e8068278",
+        "id" : 1,
+        "name" : "AGC Incorporated",
+        "address" : "Japan",
+        "email" : "agc@gmail.com",
+        "phoneNumber" : "+81 568834892"
       },
       "histories" : [ {
-        "uuid" : "2459884d-42c3-49d1-9e39-8f686df91e6f",
-        "id" : 14,
-        "updatedOn" : "19-09-2022 00:11:13",
-        "product" : "d08918c9-3d1d-4a29-b452-97c5df0ac88c",
+        "uuid" : "aa557f19-6d78-4504-9f92-d66ce6f46dd4",
+        "id" : 6,
+        "updatedOn" : "19-09-2022 18:27:32",
+        "product" : "5eb74ef4-75d9-4268-bd2f-4fe471d32e6a",
         "updateBy" : {
-          "uuid" : "f0736ecd-9b5c-4408-99a2-687c6a4eda7d",
-          "id" : 2,
-          "fullName" : "Malleswari",
-          "userName" : "mallika",
+          "uuid" : "1dbb9cf6-0efd-4548-89b2-926c7c845e3f",
+          "id" : 3,
+          "fullName" : "Rishitha ravi",
+          "userName" : "rishi",
           "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-          "email" : "abc@gmail.com",
-          "phoneNumber" : "259332",
-          "address" : "old street,kista",
-          "role" : "CASHIER"
+          "email" : "rishi@gmail.com",
+          "phoneNumber" : "+91 9877044667",
+          "address" : "Golconda,Bangalore",
+          "role" : "MANAGER"
         }
       } ]
     },
     "transaction" : null,
-    "quantity" : 0.0,
-    "totalAmount" : 1188000.0
-  }, {
-    "uuid" : "179d0dcd-48c5-48a1-a953-668e997f18ed",
-    "id" : 7,
-    "product" : {
-      "uuid" : "c517ac8a-aafe-4524-b3f7-38ffa72861d0",
-      "id" : 15,
-      "fullName" : "Samsung Tablet Xi",
-      "shortName" : "SAMTABXI",
-      "description" : "Good for kids and personal commputer",
-      "sellingPrice" : 10000.0,
-      "costPrice" : 4000.0,
-      "minQty" : 1,
-      "defaultSupplier" : {
-        "uuid" : "5cb64aec-4e21-44d5-8998-5e4225903f57",
-        "id" : 9,
-        "name" : "Galaxy Inc",
-        "address" : "UK",
-        "email" : "galaxy@gmail.com",
-        "phoneNumber" : "+48-12345678"
-      },
-      "histories" : [ {
-        "uuid" : "94bd4d47-22d8-4cef-81c1-ba6bdf2a1a42",
-        "id" : 15,
-        "updatedOn" : "19-09-2022 00:13:09",
-        "product" : "c517ac8a-aafe-4524-b3f7-38ffa72861d0",
-        "updateBy" : {
-          "uuid" : "6672e15a-0033-4d96-a629-de5b35a778cd",
-          "id" : 2,
-          "fullName" : "Malleswari",
-          "userName" : "mallika",
-          "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-          "email" : "abc@gmail.com",
-          "phoneNumber" : "259332",
-          "address" : "old street,kista",
-          "role" : "CASHIER"
-        }
-      } ]
-    },
-    "transaction" : null,
-    "quantity" : 0.0,
-    "totalAmount" : 500000.0
+    "quantity" : 9.0,
+    "totalAmount" : 180000.0
   } ],
   "soldBy" : {
-    "uuid" : "ff06c7f9-fd70-472f-adf8-a6ed8322432e",
-    "id" : 2,
-    "fullName" : "Malleswari",
-    "userName" : "mallika",
+    "uuid" : "36c28137-b8a6-4e5a-b71c-0ec8bc71a070",
+    "id" : 3,
+    "fullName" : "Rishitha ravi",
+    "userName" : "rishi",
     "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-    "email" : "abc@gmail.com",
-    "phoneNumber" : "259332",
-    "address" : "old street,kista",
-    "role" : "CASHIER"
+    "email" : "rishi@gmail.com",
+    "phoneNumber" : "+91 9877044667",
+    "address" : "Golconda,Bangalore",
+    "role" : "MANAGER"
   },
   "type" : "SALE",
-  "totalAmount" : 1688000.0
-}, {
-  "uuid" : "c243ba95-d271-44ec-addf-efb7c1146ab3",
-  "id" : 6,
-  "transactionOn" : "19-09-2022 00:27:47",
-  "transactionItems" : [ {
-    "uuid" : "2880d73e-54bd-472f-8246-9ff2965e936d",
-    "id" : 9,
-    "product" : {
-      "uuid" : "a4ff838b-e601-47a0-b20c-af77269fbad1",
-      "id" : 14,
-      "fullName" : "Apple iPhone",
-      "shortName" : "APPPHONE",
-      "description" : "Nice design and user friendly",
-      "sellingPrice" : 12000.0,
-      "costPrice" : 5000.0,
-      "minQty" : 1,
-      "defaultSupplier" : {
-        "uuid" : "fff8267c-0f7d-437d-829e-2ce1d9f03a8c",
-        "id" : 10,
-        "name" : "Apple Inc",
-        "address" : "USA",
-        "email" : "apple@hotmail.com",
-        "phoneNumber" : "+1-123456789"
-      },
-      "histories" : [ {
-        "uuid" : "241a3f9e-bbea-4499-9c60-195f4d1893db",
-        "id" : 14,
-        "updatedOn" : "19-09-2022 00:11:13",
-        "product" : "a4ff838b-e601-47a0-b20c-af77269fbad1",
-        "updateBy" : {
-          "uuid" : "9351241d-8f42-4b48-a740-9e11f2151f8a",
-          "id" : 2,
-          "fullName" : "Malleswari",
-          "userName" : "mallika",
-          "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-          "email" : "abc@gmail.com",
-          "phoneNumber" : "259332",
-          "address" : "old street,kista",
-          "role" : "CASHIER"
-        }
-      } ]
-    },
-    "transaction" : null,
-    "quantity" : 0.0,
-    "totalAmount" : 1188000.0
-  }, {
-    "uuid" : "c3b7eee7-6465-4d5f-a36e-94c3cd28f9a5",
-    "id" : 10,
-    "product" : {
-      "uuid" : "0c9e7ee9-1b39-4d58-b437-d400a8f84e46",
-      "id" : 15,
-      "fullName" : "Samsung Tablet Xi",
-      "shortName" : "SAMTABXI",
-      "description" : "Good for kids and personal commputer",
-      "sellingPrice" : 10000.0,
-      "costPrice" : 4000.0,
-      "minQty" : 1,
-      "defaultSupplier" : {
-        "uuid" : "5a7b36e4-79bc-40c6-b2f6-7499eebb6e4e",
-        "id" : 9,
-        "name" : "Galaxy Inc",
-        "address" : "UK",
-        "email" : "galaxy@gmail.com",
-        "phoneNumber" : "+48-12345678"
-      },
-      "histories" : [ {
-        "uuid" : "e5a5039b-001e-4e0d-95e0-2c73cd459fb3",
-        "id" : 15,
-        "updatedOn" : "19-09-2022 00:13:09",
-        "product" : "0c9e7ee9-1b39-4d58-b437-d400a8f84e46",
-        "updateBy" : {
-          "uuid" : "280d33c3-bba1-468d-8bd5-e795ebba5699",
-          "id" : 2,
-          "fullName" : "Malleswari",
-          "userName" : "mallika",
-          "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-          "email" : "abc@gmail.com",
-          "phoneNumber" : "259332",
-          "address" : "old street,kista",
-          "role" : "CASHIER"
-        }
-      } ]
-    },
-    "transaction" : null,
-    "quantity" : 0.0,
-    "totalAmount" : 500000.0
-  } ],
-  "soldBy" : {
-    "uuid" : "1e05eb15-fa76-47dc-9602-9f447f9296dd",
-    "id" : 2,
-    "fullName" : "Malleswari",
-    "userName" : "mallika",
-    "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-    "email" : "abc@gmail.com",
-    "phoneNumber" : "259332",
-    "address" : "old street,kista",
-    "role" : "CASHIER"
-  },
-  "type" : "SALE",
-  "totalAmount" : 1688000.0
-}, {
-  "uuid" : "a97dbdfa-7120-4922-b731-e785c3dc4f20",
-  "id" : 7,
-  "transactionOn" : "19-09-2022 00:29:33",
-  "transactionItems" : [ {
-    "uuid" : "c30a861b-4ac2-4b10-a036-269c0aa1124a",
-    "id" : 11,
-    "product" : {
-      "uuid" : "fd472525-ae6c-483a-9f32-ddfed2ca30f5",
-      "id" : 14,
-      "fullName" : "Apple iPhone",
-      "shortName" : "APPPHONE",
-      "description" : "Nice design and user friendly",
-      "sellingPrice" : 12000.0,
-      "costPrice" : 5000.0,
-      "minQty" : 1,
-      "defaultSupplier" : {
-        "uuid" : "211c2a3b-bf0e-4fef-8e53-81bfa51fabf5",
-        "id" : 10,
-        "name" : "Apple Inc",
-        "address" : "USA",
-        "email" : "apple@hotmail.com",
-        "phoneNumber" : "+1-123456789"
-      },
-      "histories" : [ {
-        "uuid" : "de609a35-ae41-4356-99a2-1a6b77c63ce1",
-        "id" : 14,
-        "updatedOn" : "19-09-2022 00:11:13",
-        "product" : "fd472525-ae6c-483a-9f32-ddfed2ca30f5",
-        "updateBy" : {
-          "uuid" : "128c3d41-f976-4584-b499-182b9034fdf7",
-          "id" : 2,
-          "fullName" : "Malleswari",
-          "userName" : "mallika",
-          "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-          "email" : "abc@gmail.com",
-          "phoneNumber" : "259332",
-          "address" : "old street,kista",
-          "role" : "CASHIER"
-        }
-      } ]
-    },
-    "transaction" : null,
-    "quantity" : 0.0,
-    "totalAmount" : 1188000.0
-  }, {
-    "uuid" : "f2596fb1-54df-4f9e-9e65-c77d3ed7a749",
-    "id" : 12,
-    "product" : {
-      "uuid" : "6a8d04dd-022a-4a77-b0db-3a04b046a096",
-      "id" : 15,
-      "fullName" : "Samsung Tablet Xi",
-      "shortName" : "SAMTABXI",
-      "description" : "Good for kids and personal commputer",
-      "sellingPrice" : 10000.0,
-      "costPrice" : 4000.0,
-      "minQty" : 1,
-      "defaultSupplier" : {
-        "uuid" : "08999260-4b41-4b26-8951-9189daa421c6",
-        "id" : 9,
-        "name" : "Galaxy Inc",
-        "address" : "UK",
-        "email" : "galaxy@gmail.com",
-        "phoneNumber" : "+48-12345678"
-      },
-      "histories" : [ {
-        "uuid" : "eddd0171-c2a3-4392-a453-930bf2bd6010",
-        "id" : 15,
-        "updatedOn" : "19-09-2022 00:13:09",
-        "product" : "6a8d04dd-022a-4a77-b0db-3a04b046a096",
-        "updateBy" : {
-          "uuid" : "9469ee04-e4a6-4c84-ab8f-d3c2981e8996",
-          "id" : 2,
-          "fullName" : "Malleswari",
-          "userName" : "mallika",
-          "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-          "email" : "abc@gmail.com",
-          "phoneNumber" : "259332",
-          "address" : "old street,kista",
-          "role" : "CASHIER"
-        }
-      } ]
-    },
-    "transaction" : null,
-    "quantity" : 0.0,
-    "totalAmount" : 500000.0
-  } ],
-  "soldBy" : {
-    "uuid" : "4a649020-af8d-4a6b-9f1d-12c42e69117f",
-    "id" : 2,
-    "fullName" : "Malleswari",
-    "userName" : "mallika",
-    "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-    "email" : "abc@gmail.com",
-    "phoneNumber" : "259332",
-    "address" : "old street,kista",
-    "role" : "CASHIER"
-  },
-  "type" : "SALE",
-  "totalAmount" : 1688000.0
-}, {
-  "uuid" : "1ab5fa41-a150-4dd8-91d8-b68121afda2b",
-  "id" : 8,
-  "transactionOn" : "19-09-2022 00:31:09",
-  "transactionItems" : [ {
-    "uuid" : "a0993d6c-cf6d-46df-ac36-da739d44939e",
-    "id" : 13,
-    "product" : {
-      "uuid" : "e0c5bf37-b374-44be-9fb6-02bc9ada2d8e",
-      "id" : 14,
-      "fullName" : "Apple iPhone",
-      "shortName" : "APPPHONE",
-      "description" : "Nice design and user friendly",
-      "sellingPrice" : 12000.0,
-      "costPrice" : 5000.0,
-      "minQty" : 1,
-      "defaultSupplier" : {
-        "uuid" : "ba0595e2-3b83-4f84-8362-7f2d2ecfa947",
-        "id" : 10,
-        "name" : "Apple Inc",
-        "address" : "USA",
-        "email" : "apple@hotmail.com",
-        "phoneNumber" : "+1-123456789"
-      },
-      "histories" : [ {
-        "uuid" : "9db838cc-4d94-421f-a24b-04e5e54210db",
-        "id" : 14,
-        "updatedOn" : "19-09-2022 00:11:13",
-        "product" : "e0c5bf37-b374-44be-9fb6-02bc9ada2d8e",
-        "updateBy" : {
-          "uuid" : "f72300a1-8323-458d-a1fe-73d4be13dcd6",
-          "id" : 2,
-          "fullName" : "Malleswari",
-          "userName" : "mallika",
-          "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-          "email" : "abc@gmail.com",
-          "phoneNumber" : "259332",
-          "address" : "old street,kista",
-          "role" : "CASHIER"
-        }
-      } ]
-    },
-    "transaction" : null,
-    "quantity" : 10.0,
-    "totalAmount" : 120000.0
-  }, {
-    "uuid" : "17a1d730-f8ad-46c4-9743-564502760897",
-    "id" : 14,
-    "product" : {
-      "uuid" : "2713ff5e-e5d4-4fcf-aee2-7746b9e83927",
-      "id" : 15,
-      "fullName" : "Samsung Tablet Xi",
-      "shortName" : "SAMTABXI",
-      "description" : "Good for kids and personal commputer",
-      "sellingPrice" : 10000.0,
-      "costPrice" : 4000.0,
-      "minQty" : 1,
-      "defaultSupplier" : {
-        "uuid" : "0a996cff-d12e-493d-93c7-9f877c9a4143",
-        "id" : 9,
-        "name" : "Galaxy Inc",
-        "address" : "UK",
-        "email" : "galaxy@gmail.com",
-        "phoneNumber" : "+48-12345678"
-      },
-      "histories" : [ {
-        "uuid" : "d19bc4be-82cf-4033-b6fd-7dac6caba786",
-        "id" : 15,
-        "updatedOn" : "19-09-2022 00:13:09",
-        "product" : "2713ff5e-e5d4-4fcf-aee2-7746b9e83927",
-        "updateBy" : {
-          "uuid" : "735f91c5-6058-4429-86d7-efece364f37d",
-          "id" : 2,
-          "fullName" : "Malleswari",
-          "userName" : "mallika",
-          "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-          "email" : "abc@gmail.com",
-          "phoneNumber" : "259332",
-          "address" : "old street,kista",
-          "role" : "CASHIER"
-        }
-      } ]
-    },
-    "transaction" : null,
-    "quantity" : 10.0,
-    "totalAmount" : 100000.0
-  } ],
-  "soldBy" : {
-    "uuid" : "821fca49-a73b-4cfc-a6ed-1929bdfa52b4",
-    "id" : 2,
-    "fullName" : "Malleswari",
-    "userName" : "mallika",
-    "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-    "email" : "abc@gmail.com",
-    "phoneNumber" : "259332",
-    "address" : "old street,kista",
-    "role" : "CASHIER"
-  },
-  "type" : "SALE",
-  "totalAmount" : 220000.0
-}, {
-  "uuid" : "125e2537-6aa0-41d0-9278-aba2212a408a",
-  "id" : 9,
-  "transactionOn" : "19-09-2022 00:33:00",
-  "transactionItems" : [ {
-    "uuid" : "711bc33d-3b72-4f0e-b1e7-87ef69b60c65",
-    "id" : 15,
-    "product" : {
-      "uuid" : "fd6b1cf9-5346-4055-8338-95839743231a",
-      "id" : 14,
-      "fullName" : "Apple iPhone",
-      "shortName" : "APPPHONE",
-      "description" : "Nice design and user friendly",
-      "sellingPrice" : 12000.0,
-      "costPrice" : 5000.0,
-      "minQty" : 1,
-      "defaultSupplier" : {
-        "uuid" : "1f22fcb8-4633-4c4b-81bd-2da33b43eee4",
-        "id" : 10,
-        "name" : "Apple Inc",
-        "address" : "USA",
-        "email" : "apple@hotmail.com",
-        "phoneNumber" : "+1-123456789"
-      },
-      "histories" : [ {
-        "uuid" : "0617c1e7-bf59-4e4e-b738-5a22fe38411a",
-        "id" : 14,
-        "updatedOn" : "19-09-2022 00:11:13",
-        "product" : "fd6b1cf9-5346-4055-8338-95839743231a",
-        "updateBy" : {
-          "uuid" : "f0aa4521-d32a-4807-a3cc-b6e367dfd801",
-          "id" : 2,
-          "fullName" : "Malleswari",
-          "userName" : "mallika",
-          "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-          "email" : "abc@gmail.com",
-          "phoneNumber" : "259332",
-          "address" : "old street,kista",
-          "role" : "CASHIER"
-        }
-      } ]
-    },
-    "transaction" : null,
-    "quantity" : 89.0,
-    "totalAmount" : 1068000.0
-  } ],
-  "soldBy" : {
-    "uuid" : "9d750ea6-19b7-4de2-a9a0-cda5454a486b",
-    "id" : 2,
-    "fullName" : "Malleswari",
-    "userName" : "mallika",
-    "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-    "email" : "abc@gmail.com",
-    "phoneNumber" : "259332",
-    "address" : "old street,kista",
-    "role" : "CASHIER"
-  },
-  "type" : "SALE",
-  "totalAmount" : 1068000.0
+  "totalAmount" : 180000.0
 } ]

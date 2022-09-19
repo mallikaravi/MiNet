@@ -48,7 +48,6 @@ public class TransactionController extends MiNetController {
 			}
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (InsufficientResourcesException e) {
-			getView().printUserRequest();
 			setMenuVisible(false);
 			requestUserInput(context, currentUser);
 		} catch (Exception e) {
@@ -107,6 +106,8 @@ public class TransactionController extends MiNetController {
 			getModel().updateInventory(inventory);
 		}
 		getView().setMenuOptions(newTransaction.getTransactionItems(), false);
+
+		printReceipt(newTransaction);
 		getView().printSaveMessage();
 		getView().waitForDecision();
 
@@ -127,7 +128,10 @@ public class TransactionController extends MiNetController {
 	}
 
 	private void createTransactionItem(List<Product> findByProductNameOrId) throws Exception {
-		int selection = getView().askForChooseProduct(findByProductNameOrId);
+
+		String printProductDetails = printProductDetails(findByProductNameOrId);
+
+		int selection = getView().askForChooseProduct(printProductDetails, findByProductNameOrId);
 		Product product = findByProductNameOrId.get(selection);
 		int quantity = getView().askProductQty();
 		Inventory inventory = getModel().findInventoryByProductId(product.getId());
@@ -140,5 +144,54 @@ public class TransactionController extends MiNetController {
 			items.generateId();
 			newTransaction.addTransactionItems(items);
 		}
+	}
+
+	/**
+	 * Formating the text
+	 * 
+	 * @throws Exception
+	 */
+
+	private String printProductDetails(List<Product> products) throws Exception {
+		StringBuilder builder = new StringBuilder();
+		builder.append(String.format("| %85s |%n", "").replace(' ', '-'));
+		builder.append(String.format("| %-5s| %-5s| %-20s| %-15s| %10s|  %10s|  %7s|%n", "S.No", "ID", "Name",
+				"Short Name", "Price", "Avail Qty", "Min Qty"));
+		builder.append(String.format("| %85s |%n", "").replace(' ', '-'));
+
+		int count = 1;
+		for (Product product : products) {
+			Inventory inventory = getModel().findInventoryByProductId(product.getId());
+			builder.append(String.format("| %-5s| %-5s| %-20s| %-15s| %10s|  %10s|  %7s|%n", count, product.getId(),
+					product.getFullName(), product.getShortName(), product.getSellingPrice(), inventory.getAvailQty(),
+					product.getMinQty()));
+			count++;
+		}
+		builder.append(String.format("| %85s |%n", "").replace(' ', '-'));
+		return builder.toString();
+	}
+
+	private String printReceipt(Transaction transaction) throws Exception {
+		StringBuilder builder = new StringBuilder();
+		return builder.toString();
+	}
+
+	private String printTransactionDetails(Transaction transaction) throws Exception {
+		StringBuilder builder = new StringBuilder();
+		builder.append(String.format("| %85s |%n", "").replace(' ', '-'));
+		builder.append(String.format("| %-5s| %-5s| %-20s| %-15s| %10s|  %10s|  %7s|%n", "S.No", "ID", "Name",
+				"Short Name", "Price", "Avail Qty", "Min Qty"));
+		builder.append(String.format("| %85s |%n", "").replace(' ', '-'));
+
+		int count = 1;
+		for (TransactionItems items : transaction.getTransactionItems()) {
+//			Inventory inventory = getModel().findInventoryByProductId(product.getId());
+//			builder.append(String.format("| %-5s| %-5s| %-20s| %-15s| %10s|  %10s|  %7s|%n", count, product.getId(),
+//					product.getFullName(), product.getShortName(), product.getSellingPrice(), inventory.getAvailQty(),
+//					product.getMinQty()));
+			count++;
+		}
+		builder.append(String.format("| %85s |%n", "").replace(' ', '-'));
+		return builder.toString();
 	}
 }

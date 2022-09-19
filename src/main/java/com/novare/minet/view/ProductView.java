@@ -26,33 +26,27 @@ public class ProductView extends BaseView {
 	}
 
 	public String askProductFullName() {
-		printMessage("Product Full Name: ");
-		return getUserText();
+		return getUserText("Full Name: ");
 	}
 
 	public String askProductShortName() {
-		printMessage("Product Short Name: ");
-		return getUserText();
+		return getUserText("Short Name: ");
 	}
 
 	public String askProductDescription() {
-		printMessage("Product Description: ");
-		return getUserText();
+		return getUserText("Description: ");
 	}
 
 	public Integer askProductMinQty() {
-		printMessage("Product Minimum Quantity: ");
-		return getUserInput();
+		return getUserInput("Minimum Quantity: ");
 	}
 
 	public Double askProductSellingPrice() {
-		printMessage("Selling Price: ");
-		return getUserInputDouble();
+		return getUserInputDouble("Selling Price: ");
 	}
 
 	public Double askProductCostPrice() {
-		printMessage("Purchase Price: ");
-		return getUserInputDouble();
+		return getUserInputDouble("Purchase Price: ");
 	}
 
 	public int askDefaultSupplier(List<?> allSuppliers) {
@@ -62,8 +56,7 @@ public class ProductView extends BaseView {
 	}
 
 	public Double askProductAvailQty() {
-		printMessage("Available Quantity: ");
-		return getUserInputDouble();
+		return getUserInputDouble("Available Quantity: ");
 	}
 
 }

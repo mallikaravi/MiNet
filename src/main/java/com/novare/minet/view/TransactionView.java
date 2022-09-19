@@ -8,7 +8,6 @@ public class TransactionView extends BaseView {
 
 	public TransactionView(String title) {
 		super(title);
-		// TODO Auto-generated constructor stub
 	}
 
 	public TransactionView(String appHeader, String title) {
@@ -17,7 +16,7 @@ public class TransactionView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Start", "Return",  "List", "Search");
+		return List.of("Start", "Return", "List", "Search");
 	}
 
 	@Override
@@ -27,24 +26,21 @@ public class TransactionView extends BaseView {
 	}
 
 	public int askSearchWithNumber() {
-		printMessage("Enter Search Transaction ID: ");
-		return getUserInput();
+		return getUserInput("Enter Search Transaction ID: ");
 	}
 
 	public String askSearchProdWithNameOrId() {
-		printMessage("Enter Product (ID | Full Name | Short Name): ");
-		return getUserText();
+		return getUserText("Enter Product (ID | Full Name | Short Name): ");
 	}
 
-	public int askForChooseProduct(List<?> items) {
-		printMessage("Choose the product: ");
-		setMenuOptionsInRow(items);
+	public int askForChooseProduct(String printProductDetails, List<?> items) {
+		printMessage("Products hit: \n");
+		printMessage(printProductDetails);
 		return getSelectedOptionFromMenu(items.size()) - 1;
 	}
 
 	public Integer askProductQty() {
-		printMessage("Product Quantity: ");
-		return getUserInput();
+		return getUserInput("Product Quantity: ");
 	}
 
 	public boolean askMoreSale() {

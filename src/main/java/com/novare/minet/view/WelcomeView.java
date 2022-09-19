@@ -24,26 +24,22 @@ public class WelcomeView extends BaseView {
 	}
 
 	public String askUserFullName() {
-		printMessage("Enter User full name: ");
-		return getUserText();
+		return getUserText("Enter User full name: ");
 
 	}
 
 	public String askPhoneNumber() {
-		printMessage("Enter Phone number: ");
-		return getUserText();
+		return getUserText("Enter Phone number: ");
 
 	}
 
 	public String askAddress() {
-		printMessage("Enter Address: ");
-		return getUserText();
+		return getUserText("Enter Address: ");
 
 	}
 
 	public String askEmail() {
-		printMessage("Enter Email id: ");
-		return getUserText();
+		return getUserText("Enter Email id: ");
 
 	}
 

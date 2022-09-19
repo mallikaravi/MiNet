@@ -26,22 +26,18 @@ public class SupplierView extends BaseView {
 	}
 
 	public String askSupplierName() {
-		printMessage("Supplier Name: ");
-		return getUserText();
+		return getUserText("Name: ");
 	}
 
 	public String askSupplierAddress() {
-		printMessage("Supplier Address: ");
-		return getUserText();
+		return getUserText("Address: ");
 	}
 
 	public String askSupplierEmail() {
-		printMessage("Supplier Email: ");
-		return getUserText();
+		return getUserText("Email: ");
 	}
 
 	public String askSupplierPhoneNumber() {
-		printMessage("Supplier phoneNumber: ");
-		return getUserText();
+		return getUserText("Phone Number: ");
 	}
 }

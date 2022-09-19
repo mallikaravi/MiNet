@@ -26,8 +26,7 @@ public class OrderView extends BaseView {
 	}
 
 	public Double askForOrderQuantity() {
-		printMessage("Enter Order Quantity: ");
-		return getUserInputDouble();
+		return getUserInputDouble("Enter Order Quantity: ");
 	}
 
 	public int askOrderSelectionToApprove(List<?> items) {

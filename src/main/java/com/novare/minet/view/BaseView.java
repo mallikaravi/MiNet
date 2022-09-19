@@ -60,8 +60,7 @@ public abstract class BaseView {
 	public String readPassword() {
 		Console console = System.console();
 		if (console == null) {
-			printMessage("Enter Password: ");
-			return getUserText();
+			return getUserText("Enter Password: ");
 		}
 		char[] pwd = console.readPassword("Enter Password: ");
 		return new String(pwd);
@@ -127,19 +126,24 @@ public abstract class BaseView {
 	}
 
 	public int getUserInput() {
-		String input = getUserTerminal().nextLine();
+		return getUserInput("");
+	}
+
+	public int getUserInput(String message) {
 		try {
+			printMessage(message);
+			String input = getUserTerminal().nextLine();
 			int selection = Integer.parseInt(input);
 			return selection;
 		} catch (Exception exception) {
 			printInvalidOption();
-			printUserRequest();
-			return getUserInput();
+			return getUserInput(message);
 		}
 	}
 
-	public String getUserText() {
+	public String getUserText(String message) {
 		try {
+			printMessage(message);
 			String input = getUserTerminal().nextLine();
 			if (input.isEmpty()) {
 				throw new IllegalArgumentException();
@@ -147,21 +151,20 @@ public abstract class BaseView {
 			return input;
 		} catch (Exception exception) {
 			printInvalidOption();
-			printUserRequest();
-			return getUserText();
+			return getUserText(message);
 		}
 
 	}
 
-	public Double getUserInputDouble() {
-		String input = getUserTerminal().nextLine();
+	public Double getUserInputDouble(String message) {
 		try {
+			printMessage(message);
+			String input = getUserTerminal().nextLine();
 			Double selection = Double.parseDouble(input);
 			return selection;
 		} catch (Exception exception) {
 			printInvalidOption();
-			printUserRequest();
-			return getUserInputDouble();
+			return getUserInputDouble(message);
 		}
 	}
 
@@ -179,8 +182,7 @@ public abstract class BaseView {
 	}
 
 	public String askUserName() {
-		printMessage("Enter User name: ");
-		return getUserText();
+		return getUserText("Enter User name: ");
 
 	}
 
@@ -233,8 +235,7 @@ public abstract class BaseView {
 	}
 
 	public String askSearch() {
-		printMessage("Enter Search keyword: ");
-		return getUserText();
+		return getUserText("Enter Search keyword: ");
 	}
 
 }

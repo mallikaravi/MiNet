@@ -82,5 +82,4 @@ public class ServiceUtil {
 		builder.append(String.format("| %62s |%n", "").replace(' ', '-'));
 		return builder.toString();
 	}
-
 }

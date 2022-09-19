@@ -31,16 +31,16 @@ public class SupplierServiceImpl extends MiNetServiceImpl implements ISupplierSe
 			}
 		}
 		case 1 -> {
-			new SuppliersMenuAction(MenuContext.CREATE, currentUser);
+			new SuppliersMenuAction(MenuContext.LIST, currentUser);
 		}
 		case 2 -> {
-			new SuppliersMenuAction(MenuContext.EDIT, currentUser);
+			new SuppliersMenuAction(MenuContext.CREATE, currentUser);
 		}
 		case 3 -> {
-			new SuppliersMenuAction(MenuContext.DELETE, currentUser);
+			new SuppliersMenuAction(MenuContext.EDIT, currentUser);
 		}
 		case 4 -> {
-			new SuppliersMenuAction(MenuContext.LIST, currentUser);
+			new SuppliersMenuAction(MenuContext.DELETE, currentUser);
 		}
 		case 5 -> {
 			new SuppliersMenuAction(MenuContext.SEARCH, currentUser);

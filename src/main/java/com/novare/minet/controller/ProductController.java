@@ -76,12 +76,12 @@ public class ProductController extends MiNetController {
 			Inventory inventory = productList.get(selection);
 			Product selectedProduct = inventory.getProduct();
 
-			/*if (!getView().askProductShortName().isEmpty()) {
-				selectedProduct.setShortName(getView().askProductShortName());
-			}
-			if (!getView().askProductDescription().isEmpty()) {
-				selectedProduct.setDescription(getView().askProductDescription());
-			}*/
+			/*
+			 * if (!getView().askProductShortName().isEmpty()) {
+			 * selectedProduct.setShortName(getView().askProductShortName()); } if
+			 * (!getView().askProductDescription().isEmpty()) {
+			 * selectedProduct.setDescription(getView().askProductDescription()); }
+			 */
 			selectedProduct.setShortName(getView().askProductShortName());
 			selectedProduct.setDescription(getView().askProductDescription());
 			selectedProduct.setMinQty(getView().askProductMinQty());

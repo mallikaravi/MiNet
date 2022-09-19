@@ -29,13 +29,13 @@ public class TransactionServiceImpl extends MiNetServiceImpl implements ITransac
 			}
 		}
 		case 1 -> {
-			new TransactionMenuAction(MenuContext.CREATE, currentUser);
+			new TransactionMenuAction(MenuContext.LIST, currentUser);
 		}
 		case 2 -> {
-			new TransactionMenuAction(MenuContext.RETURN_PRODUCT, currentUser);
+			new TransactionMenuAction(MenuContext.CREATE, currentUser);
 		}
 		case 3 -> {
-			new TransactionMenuAction(MenuContext.LIST, currentUser);
+			new TransactionMenuAction(MenuContext.RETURN_PRODUCT, currentUser);
 		}
 		case 4 -> {
 			new TransactionMenuAction(MenuContext.SEARCH, currentUser);

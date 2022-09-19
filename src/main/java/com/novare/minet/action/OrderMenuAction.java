@@ -13,13 +13,13 @@ public class OrderMenuAction extends MiNetMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case CREATE -> title = "Create Order Option:";
-		case DELETE -> title = "Delete Order Option:";
-		case EDIT -> title = "Delete Order Option :";
-		case LIST -> title = "List of Orders Option :";
-		case PENDING_ORDERS -> title = "Pending Order Option:";
-		case SEARCH -> title = "Search Order Option :";
-		default -> title = "Order Option:";
+		case CREATE -> title = "Create Order Options:";
+		case DELETE -> title = "Delete Order Options:";
+		case EDIT -> title = "Waiting Order Options:";
+		case LIST -> title = "List of Orders Options:";
+		case PENDING_ORDERS -> title = "Pending Order Options:";
+		case SEARCH -> title = "Search Order Options:";
+		default -> title = "Order Options:";
 		}
 		OrderView view = new OrderView(getAppHeader(),title);
 		IOrderService model = new OrderServiceImpl();

@@ -21,7 +21,7 @@ public class SupplierView extends BaseView {
 
 	@Override
 	public void printNavigationMenu() {
-		PrintHandler.optionLogout();
+		PrintHandler.optionBackToMainMenu();;
 
 	}
 

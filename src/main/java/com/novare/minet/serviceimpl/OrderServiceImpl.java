@@ -37,10 +37,10 @@ public class OrderServiceImpl extends MiNetServiceImpl implements IOrderService 
 			new OrderMenuAction(MenuContext.CREATE, currentUser);
 		}
 		case 3 -> {
-			new OrderMenuAction(MenuContext.EDIT, currentUser);
+			new OrderMenuAction(MenuContext.DELETE, currentUser);
 		}
 		case 4 -> {
-			new OrderMenuAction(MenuContext.DELETE, currentUser);
+			new OrderMenuAction(MenuContext.EDIT, currentUser);
 		}
 		case 5 -> {
 			new OrderMenuAction(MenuContext.PENDING_ORDERS, currentUser);
@@ -128,8 +128,8 @@ public class OrderServiceImpl extends MiNetServiceImpl implements IOrderService 
 
 			boolean contains = false;
 			try {
-				Integer productId = Integer.parseInt(search);
-				contains = order.getId() == productId;
+				Integer orderID = Integer.parseInt(search);
+				contains = order.getId() == orderID;
 			} catch (Exception e) {
 				contains = order.getCreatedBy().getFullName().toLowerCase().contains(search.toLowerCase())
 						|| order.getCreatedBy().getUserName().toLowerCase().contains(search.toLowerCase())

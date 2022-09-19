@@ -38,6 +38,36 @@ public abstract class MiNetServiceImpl implements IMiNetService {
 	}
 
 	@Override
+	public User deleteUser(User user) throws Exception {
+		List<User> users = ServiceUtil.loadModel(User.class, USER_STORAGE);
+		users.remove(user);
+		ServiceUtil.saveModel(users, USER_STORAGE);
+		return user;
+	}
+
+	@Override
+	public User updateUser(User user) throws Exception {
+		List<User> users = ServiceUtil.loadModel(User.class, USER_STORAGE);
+		Iterator<User> iterator = users.iterator();
+		while (iterator.hasNext()) {
+			User next = iterator.next();
+			if (next.getFullName().equals(user.getFullName())) {
+				iterator.remove();
+			}
+		}
+		user.setPassWord(user.getPassWord());
+		users.add(user);
+		ServiceUtil.saveModel(users, USER_STORAGE);
+		return user;
+	}
+
+	@Override
+	public User updatePassword(User user) throws Exception {
+		return updateUser(user);
+	}
+
+	
+	@Override
 	public Inventory updateInventory(Inventory inventory) throws Exception {
 		ServiceUtil.checkAssetFolder();
 		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, INVENTROY_STORAGE);

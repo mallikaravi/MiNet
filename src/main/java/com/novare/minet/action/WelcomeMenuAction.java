@@ -11,7 +11,7 @@ public class WelcomeMenuAction extends MiNetMenuAction {
 
 	public WelcomeMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
-		WelcomeView view = new WelcomeView(getAppHeader(),"Login menu options:");
+		WelcomeView view = new WelcomeView(getAppHeader(),"Login Menu Options:");
 		IUserService model = new UserServiceImpl();
 		WelcomeController controller = new WelcomeController(model, view);
 		controller.setMenuVisible(context == MenuContext.WELCOME);

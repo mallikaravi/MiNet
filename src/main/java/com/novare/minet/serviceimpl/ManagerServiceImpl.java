@@ -25,10 +25,10 @@ public class ManagerServiceImpl extends MiNetServiceImpl implements IManagerServ
 			new ProductMenuAction(MenuContext.PRODUCT, currentUser);
 		}
 		case 3 -> {
-			new OrderMenuAction(MenuContext.ORDER, currentUser);
+			new SuppliersMenuAction(MenuContext.SUPPLIERS, currentUser);
 		}
 		case 4 -> {
-			new SuppliersMenuAction(MenuContext.SUPPLIERS, currentUser);
+			new OrderMenuAction(MenuContext.ORDER, currentUser);
 		}
 		case 5 -> {
 			new SettingsMenuAction(MenuContext.SETTINGS, currentUser);

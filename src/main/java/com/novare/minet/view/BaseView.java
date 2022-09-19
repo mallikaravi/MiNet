@@ -85,7 +85,9 @@ public abstract class BaseView {
 	public boolean askConfirmationYesOrNo(String message) {
 		printMessage(message);
 		String input = getUserTerminal().nextLine();
-		if (input.isEmpty()) {
+		boolean yes= input.equalsIgnoreCase("Yes") || input.equalsIgnoreCase("y");
+		boolean no= input.equalsIgnoreCase("No") || input.equalsIgnoreCase("n");
+		if (input.isEmpty() | !(yes | no)) {
 			return askConfirmationYesOrNo(message);
 		}
 

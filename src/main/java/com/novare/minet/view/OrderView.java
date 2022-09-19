@@ -16,7 +16,7 @@ public class OrderView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("List", "Create", "Received", "Delete", "Pending", "Search");
+		return List.of("List", "Create", "Delete", "Waiting", "Pending", "Search");
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class OrderView extends BaseView {
 	}
 
 	public int askOrderSelectionToReceive(String table, List<?> items) {
-		printMessage("table");
+		printMessage(table);
 		int selection = getSelectedOptionFromMenu(items.size()) - 1;
 		return selection;
 	}

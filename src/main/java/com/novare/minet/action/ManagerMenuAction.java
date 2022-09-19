@@ -11,7 +11,7 @@ public class ManagerMenuAction extends MiNetMenuAction {
 
 	public ManagerMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
-		String title = "Manager Menu options";
+		String title = "Manager Menu options:";
 		ManagerView view = new ManagerView(getAppHeader(), title);
 		IManagerService model = new ManagerServiceImpl();
 		ManagerController controller = new ManagerController(model, view);

@@ -13,12 +13,12 @@ public class ProductMenuAction extends MiNetMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case CREATE -> title = "Create Product Option :";
-		case LIST -> title = "Product List option : :";
-		case EDIT -> title = "Edit Product Option :";
-		case DELETE -> title = "Delete Product Option :";
-		case SEARCH -> title = "Search product Option :";
-		default -> title = "Product Menu options";
+		case CREATE -> title = "Create Product Options:";
+		case LIST -> title = "Product List options:";
+		case EDIT -> title = "Edit Product Options:";
+		case DELETE -> title = "Delete Product Options:";
+		case SEARCH -> title = "Search product Options:";
+		default -> title = "Product Menu optionss:";
 
 		}
 		ProductView view = new ProductView(getAppHeader(),title);

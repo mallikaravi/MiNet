@@ -17,6 +17,8 @@ import com.novare.minet.view.TransactionView;
 
 public class TransactionController extends MiNetController {
 
+	private Transaction newTransaction = new Transaction(getUserSession(), TransactionType.SALE);
+
 	public TransactionController(ITransactionService model, BaseView view) {
 		super(model, view);
 	}
@@ -134,8 +136,7 @@ public class TransactionController extends MiNetController {
 	}
 
 	private void createTransaction() throws Exception {
-		Transaction newTransaction = new Transaction(getUserSession(), TransactionType.SALE);
-
+		newTransaction.setSoldBy(getUserSession());
 		buildTransaction(newTransaction);
 
 		getModel().create(newTransaction);

@@ -34,19 +34,19 @@ public class AdminServiceImpl extends MiNetServiceImpl implements IAdminService 
 
 		}
 		case 4 -> {
-			new AdminMenuAction(MenuContext.PAYMENTS, currentUser);
+			new OrderMenuAction(MenuContext.ORDER, currentUser);
 
 		}
 		case 5 -> {
-			new AdminMenuAction(MenuContext.CASHFLOW, currentUser);
+			new AdminMenuAction(MenuContext.PAYMENTS, currentUser);
 
 		}
 		case 6 -> {
-			new AdminMenuAction(MenuContext.PROFITS, currentUser);
+			new AdminMenuAction(MenuContext.CASHFLOW, currentUser);
 
 		}
 		case 7 -> {
-			new OrderMenuAction(MenuContext.ORDER, currentUser);
+			new AdminMenuAction(MenuContext.PROFITS, currentUser);
 
 		}
 		case 8 -> {

@@ -21,10 +21,10 @@ public class CashierServiceImpl extends MiNetServiceImpl implements ICashierServ
 			new TransactionMenuAction(MenuContext.TRANSACTION, currentUser);
 		}
 		case 2 -> {
-			new OrderMenuAction(MenuContext.ORDER, currentUser);
+			new ProductMenuAction(MenuContext.PRODUCT, currentUser);
 		}
 		case 3 -> {
-			new ProductMenuAction(MenuContext.PRODUCT, currentUser);
+			new OrderMenuAction(MenuContext.ORDER, currentUser);
 		}
 		case 4 -> {
 			new SettingsMenuAction(MenuContext.SETTINGS, currentUser);

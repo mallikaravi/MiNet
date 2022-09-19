@@ -116,9 +116,9 @@ public class MiNetController {
 
 	protected String generateProductTable(List<Product> products) throws Exception {
 
-		String LINE_FORMAT = "| %85s |%n";
-		String TABLE_FORMAT = "| %-5s| %-5s| %-20.20s| %-15.15s| %10s|  %10s|  %7s|%n";
-		String[] COLUMNS = { "S.NO", "ID", "NAME", "SHORT NAME", "PRICE", "AVAIL QTY", "MIN QTY" };
+		String LINE_FORMAT = "| %110s |%n";
+		String TABLE_FORMAT = "| %-5s| %-5s| %-25.25s| %-15.15s| %10s|  %10s| %10s| %15.15s |%n";
+		String[] COLUMNS = { "S.NO", "ID", "NAME", "SHORT NAME", "PRICE", "AVAIL QTY", "MIN QTY", "ORDERED QTY" };
 
 		StringBuilder builder = new StringBuilder();
 		builder.append(String.format(LINE_FORMAT, "").replace(' ', '-'));
@@ -129,7 +129,8 @@ public class MiNetController {
 		for (Product product : products) {
 			Inventory inventory = getModel().findInventoryByProductId(product.getId());
 			builder.append(String.format(TABLE_FORMAT, count, product.getId(), product.getFullName(),
-					product.getShortName(), product.getSellingPrice(), inventory.getAvailQty(), product.getMinQty()));
+					product.getShortName(), product.getSellingPrice(), inventory.getAvailQty(), product.getMinQty(),
+					inventory.getOrderedQty()));
 			count++;
 		}
 		builder.append(String.format(LINE_FORMAT, "").replace(' ', '-'));
@@ -137,9 +138,9 @@ public class MiNetController {
 	}
 
 	protected String generateProductTableFromInventories(List<Inventory> inventories) throws Exception {
-		String LINE = "| %85s |%n";
-		String TABLE = "| %-5s| %-5s| %-20.20s| %-15.15s| %10s|  %10s|  %7s|%n";
-		String[] COLUMNS = { "S.NO", "ID", "NAME", "SHORT NAME", "PRICE", "AVAIL QTY", "MIN QTY" };
+		String LINE = "| %110s |%n";
+		String TABLE = "| %-5s| %-5s| %-25.25s| %-15.15s| %10s|  %10s| %10s| %15.15s |%n";
+		String[] COLUMNS = { "S.NO", "ID", "NAME", "SHORT NAME", "PRICE", "AVAIL QTY", "MIN QTY", "ORDERED QTY" };
 
 		StringBuilder builder = new StringBuilder();
 		builder.append(String.format(LINE, "").replace(' ', '-'));
@@ -150,7 +151,8 @@ public class MiNetController {
 		for (Inventory inventory : inventories) {
 			Product product = inventory.getProduct();
 			builder.append(String.format(TABLE, count, product.getId(), product.getFullName(), product.getShortName(),
-					product.getSellingPrice(), inventory.getAvailQty(), product.getMinQty()));
+					product.getSellingPrice(), inventory.getAvailQty(), product.getMinQty(),
+					inventory.getOrderedQty()));
 			count++;
 		}
 		builder.append(String.format(LINE, "").replace(' ', '-'));
@@ -195,9 +197,34 @@ public class MiNetController {
 		return builder.toString();
 	}
 
+	protected String generateOrderTableWithInventory(Order order, Inventory inventory) throws Exception {
+		String LINE_WIDTH = "| %105s |%n";
+		String GREAT = "| %-105s |%n";
+
+		String TABLE_WIDTH = "| %-4s| %-5s| %-25.25s| %-25.25s| %-10s| %-15s| %10s|%n";
+
+		String greet = "HELLO, " + getUserSession().getFullName().toUpperCase() + " !" + " REVIEW THE ORDER.";
+
+		StringBuilder builder = new StringBuilder();
+		builder.append(String.format(LINE_WIDTH, "").replace(' ', '-'));
+		builder.append(String.format(GREAT, greet));
+		builder.append(String.format(LINE_WIDTH, "").replace(' ', '-'));
+
+		builder.append(String.format(TABLE_WIDTH, "S.NO", "ID", "CREATED BY", "PRODUCT NAME", "MIN QTY", "ORDERED QTY",
+				"AVAIL QTY"));
+		builder.append(String.format(LINE_WIDTH, "").replace(' ', '-'));
+
+		int count = 1;
+		builder.append(String.format(TABLE_WIDTH, count, order.getId(), order.getCreatedBy().getFullName(),
+				order.getProduct().getFullName(), order.getProduct().getMinQty(), inventory.getOrderedQty(),
+				inventory.getAvailQty()));
+		builder.append(String.format(LINE_WIDTH, "").replace(' ', '-'));
+		return builder.toString();
+	}
+
 	protected String generateOrderHistoryTable(Order order) throws Exception {
-		String LINE_WIDTH = "| %80s |%n";
-		String TABLE_WIDTH = "| %-4s| %-5s| %-20.20s| %-20.20s| %10s|%n";
+		String LINE_WIDTH = "| %71s |%n";
+		String TABLE_WIDTH = "| %-4s| %-5s| %-25.25s| %-20.20s| %10s|%n";
 		String[] COLUMNS = { "S.NO", "ID", "UPDATE BY", "UPDATED ON", "STATUS" };
 
 		StringBuilder builder = new StringBuilder();

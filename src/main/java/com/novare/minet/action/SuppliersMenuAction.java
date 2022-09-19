@@ -13,14 +13,14 @@ public class SuppliersMenuAction extends MiNetMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case CREATE -> title ="Create Suppler Option :";
-		case EDIT -> title = "Edit Supplier Option :";
-		case DELETE -> title ="Delete Supplier Option:";
-		case LIST -> title ="View Suppliers List :";
-		case SEARCH -> title ="Search Supplier Option:";
-		default -> title="Supplier Menu Options:";
+		case CREATE -> title = "Create Suppler Options:";
+		case EDIT -> title = "Edit Supplier Options:";
+		case DELETE -> title = "Delete Supplier Options:";
+		case LIST -> title = "Suppliers List Options:";
+		case SEARCH -> title = "Search Supplier Options:";
+		default -> title = "Supplier Menu Options:";
 		}
-		SupplierView view = new SupplierView(getAppHeader(),title);
+		SupplierView view = new SupplierView(getAppHeader(), title);
 		ISupplierService model = new SupplierServiceImpl();
 		SupplierController controller = new SupplierController(model, view);
 		controller.setMenuVisible(context == MenuContext.SUPPLIERS);

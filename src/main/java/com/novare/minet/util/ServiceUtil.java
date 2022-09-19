@@ -82,15 +82,6 @@ public class ServiceUtil {
 		throw new FileNotFoundException("Asset Folder doesn't exist, Bye !");
 	}
 
-	public static String printOrderDetails(Order order, Inventory inventory, User currentUser) {
-		StringBuilder builder = new StringBuilder();
-		builder.append(String.format("| %62s |%n", "").replace(' ', '-'));
-		builder.append(String.format("| Hello,%-55s |%n", currentUser.getFullName()));
-		builder.append(String.format("| %-19s:%42s |%n", "Order Status", order.getStatus()));
-		builder.append(String.format("| %62s |%n", "").replace(' ', '-'));
-		return builder.toString();
-	}
-
 	public static String printHeader(User currentUser) throws ParseException {
 		return printHeader(currentUser, DateUtil.getNow());
 	}

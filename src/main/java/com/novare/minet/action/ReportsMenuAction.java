@@ -13,9 +13,9 @@ public class ReportsMenuAction  extends MiNetMenuAction{
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case BEST_SELLING_PRODUCTS -> title ="View Best Selling Products Option:";
-		case PRODUCT_PROFITS -> title ="Product Profits Option :";
-		default -> title ="Product Report Menu options";
+		case BEST_SELLING_PRODUCTS -> title ="View Best Selling Products Options:";
+		case PRODUCT_PROFITS -> title ="Product Profits Options:";
+		default -> title ="Product Report Menu options:";
 
 		}
 		ReportView view = new ReportView(getAppHeader(),title);

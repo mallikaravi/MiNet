@@ -16,11 +16,16 @@ public interface IMiNetService {
 	String REPORT_STORAGE = "assets/reports.json";
 	String SUPPLIER_STORAGE = "assets/suppliers.json";
 	String TRANSACTION_STORAGE = "assets/transactions.json";
-	
 
 	void handleOption(int selectedOption, User currentUser) throws Exception;
 
 	boolean isValidUser(User current) throws Exception;
+
+	User deleteUser(User user) throws Exception;
+
+	User updateUser(User user) throws Exception;
+
+	User updatePassword(User user) throws Exception;
 
 	Inventory updateInventory(Inventory inventory) throws Exception;
 

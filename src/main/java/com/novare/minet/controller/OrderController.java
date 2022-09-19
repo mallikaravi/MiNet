@@ -10,7 +10,6 @@ import com.novare.minet.model.Role;
 import com.novare.minet.model.User;
 import com.novare.minet.service.IOrderService;
 import com.novare.minet.util.MenuContext;
-import com.novare.minet.util.ServiceUtil;
 import com.novare.minet.view.OrderView;
 
 public class OrderController extends MiNetController {
@@ -36,7 +35,7 @@ public class OrderController extends MiNetController {
 			switch (context) {
 			case CREATE -> createOrder();
 			case DELETE -> deleteOrder();
-			case EDIT -> displayWaitingOrders();
+			case EDIT -> displayWaitingOrders(); // Receive Orders Or Waiting for delivery
 			case LIST -> displayOrders();
 			case PENDING_ORDERS -> displayPendingOrders();
 			case SEARCH -> searchOrders();
@@ -110,7 +109,7 @@ public class OrderController extends MiNetController {
 		if (selection > -1) {
 			Order order = findAllWaiting.get(selection);
 			Inventory inventory = getModel().findInventoryByProductId(order.getProduct().getId());
-			getView().printMessage(ServiceUtil.printOrderDetails(order, inventory, getUserSession()));
+			getView().printMessage(generateOrderTableWithInventory(order, inventory));
 			if (getUserSession().getRole() != Role.CASHIER) {
 
 				boolean approve = getView().askForAprrove();
@@ -142,7 +141,7 @@ public class OrderController extends MiNetController {
 		if (selection > -1) {
 			Order order = findAllPending.get(selection);
 			Inventory inventory = getModel().findInventoryByProductId(order.getProduct().getId());
-			getView().printMessage(ServiceUtil.printOrderDetails(order, inventory, getUserSession()));
+			getView().printMessage(generateOrderTableWithInventory(order, inventory));
 			if (getUserSession().getRole() != Role.CASHIER) {
 				boolean approve = getView().askForAprrove();
 				if (approve) {

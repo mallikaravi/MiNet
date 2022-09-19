@@ -13,12 +13,12 @@ public class TransactionMenuAction extends MiNetMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-		case CREATE -> title = "Start Transaction Option :";
-		case RETURN_PRODUCT -> title = "Return Product option : :";
-		case LIST -> title = "Transaction List Option :";
-		case SEARCH -> title = "Search Transaction Option :";
-		case EDIT->title = "Edit Transaction Option :";
-		default -> title = "Transaction Menu options";
+		case CREATE -> title = "Start Transaction Options:";
+		case RETURN_PRODUCT -> title = "Return Product Options:";
+		case LIST -> title = "Transaction List Options:";
+		case SEARCH -> title = "Search Transaction Options:";
+		case EDIT->title = "Edit Transaction Options:";
+		default -> title = "Transaction Menu Options:";
 
 		}
 		TransactionView view = new TransactionView(getAppHeader(),title);

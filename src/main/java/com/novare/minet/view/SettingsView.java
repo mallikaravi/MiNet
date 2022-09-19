@@ -4,10 +4,14 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class SettingsView  extends BaseView{
+public class SettingsView extends BaseView {
 
 	public SettingsView(String menuTitle) {
 		super(menuTitle);
+	}
+
+	public SettingsView(String appHeader, String title) {
+		super(appHeader, title);
 	}
 
 	@Override
@@ -20,9 +24,9 @@ public class SettingsView  extends BaseView{
 	}
 
 	public boolean askUserDeletion() {
-		printMessage("Do you want to delete the current user [Yes/No]: ");
-		return askConfirmationYesOrNo();
+		return askConfirmationYesOrNo("Do you want to delete the current user [Yes/No]: ");
 	}
+
 	public void printSuccessMessage() {
 		printMessage("Data saved successfully !");
 	}

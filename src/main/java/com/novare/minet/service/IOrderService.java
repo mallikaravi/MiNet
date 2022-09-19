@@ -10,9 +10,7 @@ import com.novare.minet.model.Order;
 /**
  *
  */
-public interface IOrderService extends IBaseService {
-
-	String STORAGE = "assets/orders.json";
+public interface IOrderService extends IMiNetService {
 
 	Order create(Order order) throws Exception;
 

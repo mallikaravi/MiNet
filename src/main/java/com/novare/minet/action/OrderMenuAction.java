@@ -7,7 +7,7 @@ import com.novare.minet.serviceimpl.OrderServiceImpl;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.OrderView;
 
-public class OrderMenuAction extends BaseMenuAction {
+public class OrderMenuAction extends MiNetMenuAction {
 
 	public OrderMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
@@ -22,7 +22,7 @@ public class OrderMenuAction extends BaseMenuAction {
 		case ORDER_HISTORY -> title = "Display Order History Option :";
 		default -> title = "Order Option:";
 		}
-		OrderView view = new OrderView(title);
+		OrderView view = new OrderView(getAppHeader(),title);
 		IOrderService model = new OrderServiceImpl();
 		OrderController controller = new OrderController(model, view);
 		controller.setMenuVisible(context == MenuContext.ORDER);

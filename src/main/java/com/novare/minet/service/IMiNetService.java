@@ -7,7 +7,15 @@ import com.novare.minet.model.Product;
 import com.novare.minet.model.Supplier;
 import com.novare.minet.model.User;
 
-public interface IBaseService {
+public interface IMiNetService {
+
+	String USER_STORAGE = "assets/user.json";
+	String INVENTROY_STORAGE = "assets/inventories.json";
+	String PRODUCT_STORAGE = "assets/products.json";
+	String ORDER_STORAGE = "assets/orders.json";
+	String REPORT_STORAGE = "assets/reports.json";
+	String SUPPLIER_STORAGE = "assets/suppliers.json";
+	String TRANSACTION_STORAGE = "assets/transactions.json";
 
 	void handleOption(int selectedOption, User currentUser) throws Exception;
 

@@ -7,18 +7,13 @@ import com.novare.minet.serviceimpl.UserServiceImpl;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.WelcomeView;
 
-public class WelcomeMenuAction extends BaseMenuAction {
+public class WelcomeMenuAction extends MiNetMenuAction {
 
 	public WelcomeMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
-		WelcomeView view = new WelcomeView("Welcome to WareHouse MiNet");
+		WelcomeView view = new WelcomeView(getAppHeader(),"Login menu options:");
 		IUserService model = new UserServiceImpl();
 		WelcomeController controller = new WelcomeController(model, view);
-		if (context == null) {
-			context = MenuContext.WELCOME;
-		} else if (context == MenuContext.LOGIN) {
-			view.setTitle("Login menu options:");
-		}
 		controller.setMenuVisible(context == MenuContext.WELCOME);
 		controller.requestUserInput(context, currentUser);
 	}

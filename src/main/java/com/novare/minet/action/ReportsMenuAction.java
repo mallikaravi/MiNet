@@ -7,7 +7,7 @@ import com.novare.minet.serviceimpl.ReportServiceImpl;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.ReportView;
 
-public class ReportsMenuAction  extends BaseMenuAction{
+public class ReportsMenuAction  extends MiNetMenuAction{
 
 	public ReportsMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
@@ -18,7 +18,7 @@ public class ReportsMenuAction  extends BaseMenuAction{
 		default -> title ="Product Report Menu options";
 
 		}
-		ReportView view = new ReportView(title);
+		ReportView view = new ReportView(getAppHeader(),title);
 		IReportService model = new ReportServiceImpl();
 		ReportController controller = new ReportController(model, view);
 		controller.setMenuVisible(context == MenuContext.INVENTORY);

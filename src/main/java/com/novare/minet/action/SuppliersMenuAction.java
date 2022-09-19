@@ -7,7 +7,7 @@ import com.novare.minet.serviceimpl.SupplierServiceImpl;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.SupplierView;
 
-public class SuppliersMenuAction extends BaseMenuAction {
+public class SuppliersMenuAction extends MiNetMenuAction {
 
 	public SuppliersMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
@@ -20,7 +20,7 @@ public class SuppliersMenuAction extends BaseMenuAction {
 		case SEARCH -> title ="Search Supplier Option:";
 		default -> title="Supplier Menu Options:";
 		}
-		SupplierView view = new SupplierView(title);
+		SupplierView view = new SupplierView(getAppHeader(),title);
 		ISupplierService model = new SupplierServiceImpl();
 		SupplierController controller = new SupplierController(model, view);
 		controller.setMenuVisible(context == MenuContext.SUPPLIERS);

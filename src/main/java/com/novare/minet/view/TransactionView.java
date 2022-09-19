@@ -11,6 +11,10 @@ public class TransactionView extends BaseView {
 		// TODO Auto-generated constructor stub
 	}
 
+	public TransactionView(String appHeader, String title) {
+		super(appHeader, title);
+	}
+
 	@Override
 	public List<String> getMenuOptions() {
 		return List.of("Start", "Return",  "List", "Search");

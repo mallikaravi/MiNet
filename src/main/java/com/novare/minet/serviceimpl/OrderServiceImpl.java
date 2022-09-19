@@ -16,7 +16,7 @@ import com.novare.minet.service.IOrderService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.util.ServiceUtil;
 
-public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
+public class OrderServiceImpl extends MiNetServiceImpl implements IOrderService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
@@ -27,7 +27,7 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 			case ADMIN -> new AdminMenuAction(MenuContext.ADMIN, currentUser);
 			case MANAGER -> new ManagerMenuAction(MenuContext.MANAGER, currentUser);
 			case CASHIER -> new CashierMenuAction(MenuContext.CASHIER, currentUser);
-			default -> new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+			default -> new WelcomeMenuAction(MenuContext.WELCOME, null);
 			}
 		}
 		case 1 -> {
@@ -59,11 +59,11 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 	@Override
 	public Order create(Order order) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
+		List<Order> orders = ServiceUtil.loadModel(Order.class, ORDER_STORAGE);
 		order.generateId();
 		order.addHistories(getCurrentUser());
 		orders.add(order);
-		ServiceUtil.saveModel(orders, STORAGE);
+		ServiceUtil.saveModel(orders, ORDER_STORAGE);
 		return order;
 
 	}
@@ -71,7 +71,7 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 	@Override
 	public Order update(Order order) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
+		List<Order> orders = ServiceUtil.loadModel(Order.class, ORDER_STORAGE);
 		Iterator<Order> iterator = orders.iterator();
 		while (iterator.hasNext()) {
 			Order next = iterator.next();
@@ -81,23 +81,23 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 		}
 		order.addHistories(getCurrentUser());
 		orders.add(order);
-		ServiceUtil.saveModel(orders, STORAGE);
+		ServiceUtil.saveModel(orders, ORDER_STORAGE);
 		return order;
 	}
 
 	@Override
 	public Order delete(Order order) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
+		List<Order> orders = ServiceUtil.loadModel(Order.class, ORDER_STORAGE);
 		orders.remove(order);
-		ServiceUtil.saveModel(orders, STORAGE);
+		ServiceUtil.saveModel(orders, ORDER_STORAGE);
 		return order;
 	}
 
 	@Override
 	public List<Order> findAllPending() throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
+		List<Order> orders = ServiceUtil.loadModel(Order.class, ORDER_STORAGE);
 		List<Order> result = new ArrayList<>();
 		for (Order order : orders) {
 			if (order.getStatus().equals(OrderStatus.PENDING)) {
@@ -124,7 +124,7 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 	@Override
 	public List<Order> search(String keyword) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
+		List<Order> orders = ServiceUtil.loadModel(Order.class, ORDER_STORAGE);
 		List<Order> result = new ArrayList<>();
 		for (Order order : orders) {
 			boolean contains = order.getStatus().name().contains(keyword.toUpperCase());
@@ -138,7 +138,7 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 	@Override
 	public List<Order> getAll() throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
+		List<Order> orders = ServiceUtil.loadModel(Order.class, ORDER_STORAGE);
 		List<Order> result = new ArrayList<>();
 		switch (getCurrentUser().getRole()) {
 		case CASHIER -> {
@@ -159,7 +159,7 @@ public class OrderServiceImpl extends BaseServiceImpl implements IOrderService {
 	@Override
 	public List<Order> findAllWaiting() throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Order> orders = ServiceUtil.loadModel(Order.class, STORAGE);
+		List<Order> orders = ServiceUtil.loadModel(Order.class, ORDER_STORAGE);
 		List<Order> result = new ArrayList<>();
 		for (Order order : orders) {
 			if (order.getStatus().equals(OrderStatus.WAITING)) {

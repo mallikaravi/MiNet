@@ -16,7 +16,7 @@ import com.novare.minet.service.ISupplierService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.util.ServiceUtil;
 
-public class SupplierServiceImpl extends BaseServiceImpl implements ISupplierService {
+public class SupplierServiceImpl extends MiNetServiceImpl implements ISupplierService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
@@ -27,7 +27,7 @@ public class SupplierServiceImpl extends BaseServiceImpl implements ISupplierSer
 			case ADMIN -> new AdminMenuAction(MenuContext.ADMIN, currentUser);
 			case MANAGER -> new ManagerMenuAction(MenuContext.MANAGER, currentUser);
 			case CASHIER -> new CashierMenuAction(MenuContext.CASHIER, currentUser);
-			default -> new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+			default -> new WelcomeMenuAction(MenuContext.WELCOME, null);
 			}
 		}
 		case 1 -> {
@@ -53,17 +53,17 @@ public class SupplierServiceImpl extends BaseServiceImpl implements ISupplierSer
 	@Override
 	public Supplier create(Supplier supplier) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, STORAGE);
+		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, SUPPLIER_STORAGE);
 		supplier.generateId();
 		suppliers.add(supplier);
-		ServiceUtil.saveModel(suppliers, STORAGE);
+		ServiceUtil.saveModel(suppliers, SUPPLIER_STORAGE);
 		return supplier;
 	}
 
 	@Override
 	public Supplier update(Supplier supplier) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, STORAGE);
+		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, SUPPLIER_STORAGE);
 		Iterator<Supplier> iterator = suppliers.iterator();
 		while (iterator.hasNext()) {
 			Supplier next = iterator.next();
@@ -72,23 +72,23 @@ public class SupplierServiceImpl extends BaseServiceImpl implements ISupplierSer
 			}
 		}
 		suppliers.add(supplier);
-		ServiceUtil.saveModel(suppliers, STORAGE);
+		ServiceUtil.saveModel(suppliers, SUPPLIER_STORAGE);
 		return supplier;
 	}
 
 	@Override
 	public Supplier delete(Supplier supplier) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, STORAGE);
+		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, SUPPLIER_STORAGE);
 		suppliers.remove(supplier);
-		ServiceUtil.saveModel(suppliers, STORAGE);
+		ServiceUtil.saveModel(suppliers, SUPPLIER_STORAGE);
 		return supplier;
 	}
 
 	@Override
 	public List<Supplier> find(String search) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, STORAGE);
+		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, SUPPLIER_STORAGE);
 		List<Supplier> result = new ArrayList<>();
 		for (Supplier supplier : suppliers) {
 			boolean contains = supplier.getName().toLowerCase().contains(search)

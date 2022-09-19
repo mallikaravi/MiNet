@@ -3,11 +3,6 @@ package com.novare.minet.util;
 import java.util.List;
 
 public class PrintHandler {
-	
-	public static void appTitle() {
-		System.out.println("** Welcome To MiNet **");
-		System.out.println(); // on purpose to make a space between the title
-	}
 
 	public static void optionLogout() {
 		System.out.println("[0] Logout");

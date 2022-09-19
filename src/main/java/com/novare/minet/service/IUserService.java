@@ -2,7 +2,7 @@ package com.novare.minet.service;
 
 import com.novare.minet.model.User;
 
-public interface IUserService extends IBaseService {
+public interface IUserService extends IMiNetService {
 	User findByUserName(String userName) throws Exception;
 
 	User deleteUser(User user) throws Exception;

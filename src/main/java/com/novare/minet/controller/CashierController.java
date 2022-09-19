@@ -5,7 +5,7 @@ import com.novare.minet.service.ICashierService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.CashierView;
 
-public class CashierController extends BaseController {
+public class CashierController extends MiNetController {
 
 	public CashierController(ICashierService model, CashierView view) {
 		super(model, view);

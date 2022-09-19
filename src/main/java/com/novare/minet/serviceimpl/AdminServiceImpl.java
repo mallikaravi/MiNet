@@ -11,19 +11,15 @@ import com.novare.minet.model.User;
 import com.novare.minet.service.IAdminService;
 import com.novare.minet.util.MenuContext;
 
-public class AdminServiceImpl extends BaseServiceImpl implements IAdminService {
+public class AdminServiceImpl extends MiNetServiceImpl implements IAdminService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
-		
+
 		switch (selectedOption) {
 		case 0 -> {
-			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+			new WelcomeMenuAction(MenuContext.WELCOME, null);
 		}
-		
-//		case 1 -> {
-//			new InventoryMenuAction(MenuContext.INVENTORY, currentUser);
-//		}
 		case 1 -> {
 			new TransactionMenuAction(MenuContext.TRANSACTION, currentUser);
 
@@ -48,7 +44,7 @@ public class AdminServiceImpl extends BaseServiceImpl implements IAdminService {
 			new AdminMenuAction(MenuContext.PROFITS, currentUser);
 
 		}
-		case 7-> {
+		case 7 -> {
 			new OrderMenuAction(MenuContext.ORDER, currentUser);
 
 		}

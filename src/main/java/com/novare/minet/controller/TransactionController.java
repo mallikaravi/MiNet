@@ -15,7 +15,7 @@ import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.BaseView;
 import com.novare.minet.view.TransactionView;
 
-public class TransactionController extends BaseController {
+public class TransactionController extends MiNetController {
 	Transaction newTransaction = new Transaction(getUserSession(), TransactionType.SALE);
 
 	public TransactionController(ITransactionService model, BaseView view) {

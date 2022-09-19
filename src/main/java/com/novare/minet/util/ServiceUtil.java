@@ -21,26 +21,6 @@ public class ServiceUtil {
 	private ServiceUtil() {
 	}
 
-	public static List<User> loadUsers() {
-		List<User> users = new ArrayList<>();
-		try {
-			ObjectMapper mapper = new ObjectMapper();
-			mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
-			CollectionType javaType = mapper.getTypeFactory().constructCollectionType(List.class, User.class);
-			users = mapper.readValue(Paths.get("assets/user.json").toFile(), javaType);
-			return users;
-		} catch (Exception e) {
-			return users;
-		}
-	}
-
-	public static void saveUsers(List<User> users) throws JsonProcessingException, IOException {
-		ObjectMapper mapper = new ObjectMapper();
-		mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
-		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(users);
-		Files.write(Paths.get("assets/user.json"), json.getBytes());
-	}
-
 	public static <T> List<T> loadModel(Class<T> modelClass, String storage) {
 		List<T> modelData = new ArrayList<>();
 		try {
@@ -102,4 +82,5 @@ public class ServiceUtil {
 		builder.append(String.format("| %62s |%n", "").replace(' ', '-'));
 		return builder.toString();
 	}
+
 }

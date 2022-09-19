@@ -5,9 +5,7 @@ import java.util.List;
 import com.novare.minet.model.Inventory;
 import com.novare.minet.model.Product;
 
-public interface IProductService extends IBaseService {
-
-	String STORAGE = "assets/products.json";
+public interface IProductService extends IMiNetService {
 
 	Product create(Product product) throws Exception;
 

@@ -12,7 +12,7 @@ import com.novare.minet.service.IUserService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.util.ServiceUtil;
 
-public class UserServiceImpl extends BaseServiceImpl implements IUserService {
+public class UserServiceImpl extends MiNetServiceImpl implements IUserService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
@@ -21,10 +21,10 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 			System.exit(0);
 		}
 		case 1 -> {
-			new WelcomeMenuAction(MenuContext.LOGIN, currentUser);
+			new WelcomeMenuAction(MenuContext.LOGIN, null);
 		}
 		case 2 -> {
-			new WelcomeMenuAction(MenuContext.SIGNUP, currentUser);
+			new WelcomeMenuAction(MenuContext.SIGNUP, null);
 		}
 		case 3 -> {
 			new WelcomeMenuAction(MenuContext.WELCOME, null);
@@ -45,7 +45,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 
 	@Override
 	public User findByUserName(String userName) throws Exception {
-		List<User> users = ServiceUtil.loadUsers();
+		List<User> users = ServiceUtil.loadModel(User.class, USER_STORAGE);
 		for (User user : users) {
 			if (user.getUserName().equals(userName)) {
 				return user;
@@ -56,15 +56,15 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 
 	@Override
 	public User deleteUser(User user) throws Exception {
-		List<User> users = ServiceUtil.loadUsers();
+		List<User> users = ServiceUtil.loadModel(User.class, USER_STORAGE);
 		users.remove(user);
-		ServiceUtil.saveUsers(users);
+		ServiceUtil.saveModel(users, USER_STORAGE);
 		return user;
 	}
 
 	@Override
 	public User updateUser(User user) throws Exception {
-		List<User> users = ServiceUtil.loadUsers();
+		List<User> users = ServiceUtil.loadModel(User.class, USER_STORAGE);
 		Iterator<User> iterator = users.iterator();
 		while (iterator.hasNext()) {
 			User next = iterator.next();
@@ -74,7 +74,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 		}
 		user.setPassWord(user.getPassWord());
 		users.add(user);
-		ServiceUtil.saveUsers(users);
+		ServiceUtil.saveModel(users, USER_STORAGE);
 		return user;
 	}
 
@@ -86,17 +86,17 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 	@Override
 	public User createUser(User user) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<User> users = ServiceUtil.loadUsers();
+		List<User> users = ServiceUtil.loadModel(User.class, USER_STORAGE);
 		user.setPassWord(user.getPassWord());
 		user.generateId();
 		users.add(user);
-		ServiceUtil.saveUsers(users);
+		ServiceUtil.saveModel(users, USER_STORAGE);
 		return user;
 	}
 
 	@Override
 	public User login(User user) throws Exception {
-		List<User> users = ServiceUtil.loadUsers();
+		List<User> users = ServiceUtil.loadModel(User.class, USER_STORAGE);
 		for (User cache : users) {
 			boolean userName = cache.getUserName().equals(user.getUserName());
 			boolean password = cache.getPassWord().equals(user.getPassWord());

@@ -8,13 +8,12 @@ import com.novare.minet.model.Inventory;
 import com.novare.minet.model.Product;
 import com.novare.minet.model.Supplier;
 import com.novare.minet.model.User;
-import com.novare.minet.service.IBaseService;
-import com.novare.minet.service.IInventoryService;
+import com.novare.minet.service.IMiNetService;
 import com.novare.minet.service.IProductService;
 import com.novare.minet.service.ISupplierService;
 import com.novare.minet.util.ServiceUtil;
 
-public abstract class BaseServiceImpl implements IBaseService {
+public abstract class MiNetServiceImpl implements IMiNetService {
 
 	private User currentUser;
 
@@ -34,14 +33,14 @@ public abstract class BaseServiceImpl implements IBaseService {
 
 	@Override
 	public boolean isValidUser(User current) throws Exception {
-		List<User> users = ServiceUtil.loadUsers();
+		List<User> users = ServiceUtil.loadModel(User.class, USER_STORAGE);
 		return users.contains(current);
 	}
 
 	@Override
 	public Inventory updateInventory(Inventory inventory) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, IInventoryService.STORAGE);
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, INVENTROY_STORAGE);
 		Iterator<Inventory> iterator = inventories.iterator();
 		while (iterator.hasNext()) {
 			Inventory next = iterator.next();
@@ -51,28 +50,28 @@ public abstract class BaseServiceImpl implements IBaseService {
 		}
 		inventory.addHistories(getCurrentUser());
 		inventories.add(inventory);
-		ServiceUtil.saveModel(inventories, IInventoryService.STORAGE);
+		ServiceUtil.saveModel(inventories, INVENTROY_STORAGE);
 		return inventory;
 	}
 
 	@Override
 	public List<Supplier> getAllSuppliers() throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, ISupplierService.STORAGE);
+		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, ISupplierService.SUPPLIER_STORAGE);
 		return suppliers;
 	}
 
 	@Override
 	public List<Product> getAllProducts() throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Product> products = ServiceUtil.loadModel(Product.class, IProductService.STORAGE);
+		List<Product> products = ServiceUtil.loadModel(Product.class, IProductService.PRODUCT_STORAGE);
 		return products;
 	}
 
 	@Override
 	public List<Inventory> getAllOutOfStockProducts() throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, IInventoryService.STORAGE);
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, INVENTROY_STORAGE);
 		List<Inventory> result = new ArrayList<Inventory>();
 		for (Inventory inventory : inventories) {
 			if (inventory.getAvailQty() <= inventory.getProduct().getMinQty()) {
@@ -85,7 +84,7 @@ public abstract class BaseServiceImpl implements IBaseService {
 	@Override
 	public Inventory findInventoryByProductId(Integer prodcutId) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, IInventoryService.STORAGE);
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, INVENTROY_STORAGE);
 		for (Inventory inventory : inventories) {
 			if (inventory.getProduct().getId() == prodcutId) {
 				return inventory;
@@ -97,7 +96,7 @@ public abstract class BaseServiceImpl implements IBaseService {
 	@Override
 	public List<Product> findByProductNameOrId(String search) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Product> products = ServiceUtil.loadModel(Product.class, IProductService.STORAGE);
+		List<Product> products = ServiceUtil.loadModel(Product.class, IProductService.PRODUCT_STORAGE);
 		List<Product> result = new ArrayList<>();
 		for (Product product : products) {
 			boolean contains = false;

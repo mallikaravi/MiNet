@@ -5,7 +5,7 @@ import com.novare.minet.service.IReportService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.ReportView;
 
-public class ReportController extends BaseController {
+public class ReportController extends MiNetController {
 
 	public ReportController(IReportService model, ReportView view) {
 		super(model, view);

@@ -9,18 +9,27 @@ import com.novare.minet.util.PrintHandler;
 public abstract class BaseView {
 	private final Scanner scanner;
 
-	public BaseView(String title) {
+	public BaseView(String menuTitle) {
+		this("** Welcome To MiNet **", menuTitle);
+	}
+
+	public BaseView(String appHeader, String menuTitle) {
 		this.scanner = new Scanner(System.in);
 		PrintHandler.clearScreen();
-		PrintHandler.appTitle();
-		setTitle(title);
+		setAppHeader(appHeader);
+		setMenuTitle(menuTitle);
 	}
 
 	public abstract List<String> getMenuOptions();
 
 	public abstract void printNavigationMenu();
 
-	public void setTitle(String title) {
+	public void setAppHeader(String appHeader) {
+		System.out.println(appHeader);
+		System.out.println(); // on purpose to make a space between the title
+	}
+
+	public void setMenuTitle(String title) {
 		System.out.println(title);
 	}
 

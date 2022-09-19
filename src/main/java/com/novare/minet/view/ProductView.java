@@ -10,6 +10,10 @@ public class ProductView extends BaseView {
 		super(title);
 	}
 
+	public ProductView(String appHeader, String title) {
+		super(appHeader, title);
+	}
+
 	@Override
 	public List<String> getMenuOptions() {
 		return List.of("List", "Create", "Edit", "Delete", "Search");

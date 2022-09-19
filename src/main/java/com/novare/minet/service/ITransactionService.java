@@ -4,9 +4,7 @@ import java.util.List;
 
 import com.novare.minet.model.Transaction;
 
-public interface ITransactionService extends IBaseService {
-
-	String STORAGE = "assets/transactions.json";
+public interface ITransactionService extends IMiNetService {
 
 	Transaction create(Transaction transaction) throws Exception;
 

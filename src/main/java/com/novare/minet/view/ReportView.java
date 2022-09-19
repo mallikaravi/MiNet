@@ -10,6 +10,10 @@ public class ReportView extends BaseView {
 		super(title);
 	}
 
+	public ReportView(String appHeader, String title) {
+		super(appHeader, title);
+	}
+
 	@Override
 	public List<String> getMenuOptions() {
 		return List.of("Best Selling Products","Product profits");

@@ -7,7 +7,7 @@ import com.novare.minet.serviceimpl.ProductServiceImpl;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.ProductView;
 
-public class ProductMenuAction extends BaseMenuAction {
+public class ProductMenuAction extends MiNetMenuAction {
 
 	public ProductMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
@@ -21,7 +21,7 @@ public class ProductMenuAction extends BaseMenuAction {
 		default -> title = "Product Menu options";
 
 		}
-		ProductView view = new ProductView(title);
+		ProductView view = new ProductView(getAppHeader(),title);
 		IProductService model = new ProductServiceImpl();
 		ProductController controller = new ProductController(model, view);
 		controller.setMenuVisible(context == MenuContext.PRODUCT);

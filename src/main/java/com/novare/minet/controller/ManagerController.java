@@ -5,7 +5,7 @@ import com.novare.minet.service.IManagerService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.ManagerView;
 
-public class ManagerController extends BaseController {
+public class ManagerController extends MiNetController {
 
 	public ManagerController(IManagerService model, ManagerView view) {
 		super(model, view);

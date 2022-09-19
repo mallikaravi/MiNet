@@ -5,19 +5,19 @@ import java.util.Objects;
 import javax.security.sasl.AuthenticationException;
 
 import com.novare.minet.model.User;
-import com.novare.minet.service.IBaseService;
-import com.novare.minet.serviceimpl.BaseServiceImpl;
+import com.novare.minet.service.IMiNetService;
+import com.novare.minet.serviceimpl.MiNetServiceImpl;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.BaseView;
 
-public class BaseController {
+public class MiNetController {
 
-	private IBaseService model;
+	private IMiNetService model;
 	private BaseView view;
 	private boolean menuVisible;
 	private User userSession;
 
-	public BaseController(IBaseService model, BaseView view) {
+	public MiNetController(IMiNetService model, BaseView view) {
 		setModel(model);
 		setView(view);
 		setMenuVisible(true);
@@ -39,7 +39,7 @@ public class BaseController {
 
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
 		setUserSession(currentUser);
-		((BaseServiceImpl)model).setCurrentUser(currentUser);
+		((MiNetServiceImpl)model).setCurrentUser(currentUser);
 		if (currentUser != null && !getModel().isValidUser(currentUser)) {
 			throw new AuthenticationException();
 		}
@@ -52,14 +52,14 @@ public class BaseController {
 	/**
 	 * @return the model
 	 */
-	public IBaseService getModel() {
+	public IMiNetService getModel() {
 		return model;
 	}
 
 	/**
 	 * @param model the model to set
 	 */
-	public void setModel(IBaseService model) {
+	public void setModel(IMiNetService model) {
 		this.model = model;
 	}
 

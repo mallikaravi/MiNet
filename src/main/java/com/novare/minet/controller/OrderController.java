@@ -13,7 +13,7 @@ import com.novare.minet.util.MenuContext;
 import com.novare.minet.util.ServiceUtil;
 import com.novare.minet.view.OrderView;
 
-public class OrderController extends BaseController {
+public class OrderController extends MiNetController {
 
 	public OrderController(IOrderService model, OrderView view) {
 		super(model, view);

@@ -10,6 +10,10 @@ public class ManagerView extends BaseView {
 		super(title);
 	}
 
+	public ManagerView(String appHeader, String title) {
+		super(appHeader, title);
+	}
+
 	@Override
 	public List<String> getMenuOptions() {
 		return List.of("Transaction", "Products", "Suppliers");

@@ -9,7 +9,7 @@ import com.novare.minet.model.User;
 import com.novare.minet.service.IReportService;
 import com.novare.minet.util.MenuContext;
 
-public class ReportServiceImpl extends BaseServiceImpl implements IReportService {
+public class ReportServiceImpl extends MiNetServiceImpl implements IReportService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
@@ -19,7 +19,7 @@ public class ReportServiceImpl extends BaseServiceImpl implements IReportService
 			case ADMIN -> new AdminMenuAction(MenuContext.ADMIN, currentUser);
 			case MANAGER -> new ManagerMenuAction(MenuContext.MANAGER, currentUser);
 			case CASHIER -> new CashierMenuAction(MenuContext.CASHIER, currentUser);
-			default -> new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+			default -> new WelcomeMenuAction(MenuContext.WELCOME, null);
 			}
 		}
 		case 1 -> {

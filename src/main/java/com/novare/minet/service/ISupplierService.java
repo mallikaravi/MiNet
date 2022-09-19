@@ -4,9 +4,7 @@ import java.util.List;
 
 import com.novare.minet.model.Supplier;
 
-public interface ISupplierService extends IBaseService {
-
-	String STORAGE = "assets/suppliers.json";
+public interface ISupplierService extends IMiNetService {
 
 	Supplier create(Supplier supplier) throws Exception;
 

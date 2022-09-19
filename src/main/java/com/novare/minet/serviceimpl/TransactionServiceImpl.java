@@ -14,7 +14,7 @@ import com.novare.minet.service.ITransactionService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.util.ServiceUtil;
 
-public class TransactionServiceImpl extends BaseServiceImpl implements ITransactionService {
+public class TransactionServiceImpl extends MiNetServiceImpl implements ITransactionService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
@@ -25,7 +25,7 @@ public class TransactionServiceImpl extends BaseServiceImpl implements ITransact
 			case ADMIN -> new AdminMenuAction(MenuContext.ADMIN, currentUser);
 			case MANAGER -> new ManagerMenuAction(MenuContext.MANAGER, currentUser);
 			case CASHIER -> new CashierMenuAction(MenuContext.CASHIER, currentUser);
-			default -> new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+			default -> new WelcomeMenuAction(MenuContext.WELCOME, null);
 			}
 		}
 		case 1 -> {
@@ -49,18 +49,18 @@ public class TransactionServiceImpl extends BaseServiceImpl implements ITransact
 	@Override
 	public Transaction create(Transaction transaction) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Transaction> transactions = ServiceUtil.loadModel(Transaction.class, STORAGE);
+		List<Transaction> transactions = ServiceUtil.loadModel(Transaction.class, TRANSACTION_STORAGE);
 		transaction.generateId();
 		transaction.calculateAmount();
 		transactions.add(transaction);
-		ServiceUtil.saveModel(transactions, STORAGE);
+		ServiceUtil.saveModel(transactions, TRANSACTION_STORAGE);
 		return transaction;
 	}
 
 	@Override
 	public List<Transaction> findByType(String tranType) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Transaction> transactions = ServiceUtil.loadModel(Transaction.class, STORAGE);
+		List<Transaction> transactions = ServiceUtil.loadModel(Transaction.class, TRANSACTION_STORAGE);
 		List<Transaction> result = new ArrayList<>();
 		for (Transaction transaction : transactions) {
 			if (transaction.getType().name().equals(tranType.toUpperCase())) {
@@ -86,7 +86,7 @@ public class TransactionServiceImpl extends BaseServiceImpl implements ITransact
 	@Override
 	public List<Transaction> findById(int transactionId) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Transaction> transactions = ServiceUtil.loadModel(Transaction.class, STORAGE);
+		List<Transaction> transactions = ServiceUtil.loadModel(Transaction.class, TRANSACTION_STORAGE);
 		List<Transaction> result = new ArrayList<>();
 		for (Transaction transaction : transactions) {
 			if (transaction.getId().equals(transactionId)) {
@@ -108,7 +108,7 @@ public class TransactionServiceImpl extends BaseServiceImpl implements ITransact
 	@Override
 	public List<Transaction> getAll() throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Transaction> transactions = ServiceUtil.loadModel(Transaction.class, STORAGE);
+		List<Transaction> transactions = ServiceUtil.loadModel(Transaction.class, TRANSACTION_STORAGE);
 		switch (getCurrentUser().getRole()) {
 		case CASHIER -> {
 			List<Transaction> result = new ArrayList<>();

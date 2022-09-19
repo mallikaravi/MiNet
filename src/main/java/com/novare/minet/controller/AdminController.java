@@ -5,7 +5,7 @@ import com.novare.minet.service.IAdminService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.AdminView;
 
-public class AdminController extends BaseController {
+public class AdminController extends MiNetController {
 
 	public AdminController(IAdminService model, AdminView view) {
 		super(model, view);

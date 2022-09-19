@@ -38,7 +38,18 @@ public class MinetApp {
 		}
 	}
 
+	private static String getAppHeader(User user) {
+		StringBuilder builder = new StringBuilder();
+		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
+		builder.append(String.format("* %-68s * %n", "Welcome to MiNet WareHouse Management System"));
+		builder.append(String.format("* Name: %-62s * %n",  "MALLfsfsfsfsfsfsfsfsfsESWARI".toUpperCase()));
+		builder.append(String.format("* Role: %-62s * %n",  "CACsdfsdfsdfsdfsfsfsfsfsHIER"));
+		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
+		return builder.toString();
+	}
+
 	public static void main(String[] args) {
+//		System.out.println(getAppHeader(null));
 //		try {
 ////			System.out.println(Ids.get().getUserId());
 ////			Ids id=Ids.get();

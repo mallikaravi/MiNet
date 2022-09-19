@@ -10,6 +10,10 @@ public class SupplierView extends BaseView {
 		super(title);
 	}
 
+	public SupplierView(String appHeader, String title) {
+		super(appHeader, title);
+	}
+
 	@Override
 	public List<String> getMenuOptions() {
 		return List.of("Create", "Edit", "Delete", "List", "Search");

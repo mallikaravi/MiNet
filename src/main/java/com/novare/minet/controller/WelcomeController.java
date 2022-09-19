@@ -13,7 +13,7 @@ import com.novare.minet.util.MenuContext;
 import com.novare.minet.util.ServiceUtil;
 import com.novare.minet.view.WelcomeView;
 
-public class WelcomeController extends BaseController {
+public class WelcomeController extends MiNetController {
 	private User newUser = new User();
 
 	public WelcomeController(IUserService model, WelcomeView view) {

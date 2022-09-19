@@ -11,12 +11,11 @@ import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.Inventory;
 import com.novare.minet.model.Product;
 import com.novare.minet.model.User;
-import com.novare.minet.service.IInventoryService;
 import com.novare.minet.service.IProductService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.util.ServiceUtil;
 
-public class ProductServiceImpl extends BaseServiceImpl implements IProductService {
+public class ProductServiceImpl extends MiNetServiceImpl implements IProductService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
@@ -26,7 +25,7 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 			case ADMIN -> new AdminMenuAction(MenuContext.ADMIN, currentUser);
 			case MANAGER -> new ManagerMenuAction(MenuContext.MANAGER, currentUser);
 			case CASHIER -> new CashierMenuAction(MenuContext.CASHIER, currentUser);
-			default -> new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+			default -> new WelcomeMenuAction(MenuContext.WELCOME, null);
 			}
 		}
 		case 1 -> {
@@ -53,18 +52,18 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 	@Override
 	public Product create(Product product) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Product> products = ServiceUtil.loadModel(Product.class, STORAGE);
+		List<Product> products = ServiceUtil.loadModel(Product.class, PRODUCT_STORAGE);
 		product.generateId();
 		product.addHistories(getCurrentUser());
 		products.add(product);
-		ServiceUtil.saveModel(products, STORAGE);
+		ServiceUtil.saveModel(products, PRODUCT_STORAGE);
 		return product;
 	}
 
 	@Override
 	public Product update(Product product) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Product> products = ServiceUtil.loadModel(Product.class, STORAGE);
+		List<Product> products = ServiceUtil.loadModel(Product.class, PRODUCT_STORAGE);
 		Iterator<Product> iterator = products.iterator();
 		while (iterator.hasNext()) {
 			Product next = iterator.next();
@@ -74,23 +73,23 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 		}
 		product.addHistories(getCurrentUser());
 		products.add(product);
-		ServiceUtil.saveModel(products, STORAGE);
+		ServiceUtil.saveModel(products, PRODUCT_STORAGE);
 		return product;
 	}
 
 	@Override
 	public Product delete(Product product) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Product> products = ServiceUtil.loadModel(Product.class, STORAGE);
+		List<Product> products = ServiceUtil.loadModel(Product.class, PRODUCT_STORAGE);
 		products.remove(product);
-		ServiceUtil.saveModel(products, STORAGE);
+		ServiceUtil.saveModel(products, PRODUCT_STORAGE);
 		return product;
 	}
 
 	@Override
 	public Product findByShortName(String shortName) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Product> products = ServiceUtil.loadModel(Product.class, STORAGE);
+		List<Product> products = ServiceUtil.loadModel(Product.class, PRODUCT_STORAGE);
 		for (Product product : products) {
 			if (product.getShortName().equals(shortName)) {
 				return product;
@@ -102,34 +101,34 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 	@Override
 	public Inventory createInventory(Inventory inventory) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, IInventoryService.STORAGE);
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, INVENTROY_STORAGE);
 		inventory.generateId();
 		inventory.addHistories(getCurrentUser());
 		inventories.add(inventory);
-		ServiceUtil.saveModel(inventories,IInventoryService.STORAGE);
+		ServiceUtil.saveModel(inventories, INVENTROY_STORAGE);
 		return inventory;
 	}
 
 	@Override
 	public Inventory deleteInventory(Inventory inventory) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, IInventoryService.STORAGE);
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, INVENTROY_STORAGE);
 		inventories.remove(inventory);
-		ServiceUtil.saveModel(inventories, IInventoryService.STORAGE);
+		ServiceUtil.saveModel(inventories, INVENTROY_STORAGE);
 		return inventory;
 	}
 
 	@Override
 	public List<Inventory> getAllInventories() throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, IInventoryService.STORAGE);
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, INVENTROY_STORAGE);
 		return inventories;
 	}
 
 	@Override
 	public Inventory updateInventory(Inventory inventory) throws Exception {
 		ServiceUtil.checkAssetFolder();
-		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, IInventoryService.STORAGE);
+		List<Inventory> inventories = ServiceUtil.loadModel(Inventory.class, INVENTROY_STORAGE);
 		Iterator<Inventory> iterator = inventories.iterator();
 		while (iterator.hasNext()) {
 			Inventory next = iterator.next();
@@ -139,7 +138,7 @@ public class ProductServiceImpl extends BaseServiceImpl implements IProductServi
 		}
 		inventory.addHistories(getCurrentUser());
 		inventories.add(inventory);
-		ServiceUtil.saveModel(inventories, IInventoryService.STORAGE);
+		ServiceUtil.saveModel(inventories, INVENTROY_STORAGE);
 		return inventory;
 	}
 

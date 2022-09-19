@@ -7,7 +7,7 @@ import com.novare.minet.serviceimpl.TransactionServiceImpl;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.TransactionView;
 
-public class TransactionMenuAction extends BaseMenuAction {
+public class TransactionMenuAction extends MiNetMenuAction {
 
 	public TransactionMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
@@ -21,7 +21,7 @@ public class TransactionMenuAction extends BaseMenuAction {
 		default -> title = "Transaction Menu options";
 
 		}
-		TransactionView view = new TransactionView(title);
+		TransactionView view = new TransactionView(getAppHeader(),title);
 		ITransactionService model = new TransactionServiceImpl();
 		TransactionController controller = new TransactionController(model, view);
 		controller.setMenuVisible(context == MenuContext.TRANSACTION);

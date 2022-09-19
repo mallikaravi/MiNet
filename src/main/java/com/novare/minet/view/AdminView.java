@@ -10,6 +10,10 @@ public class AdminView extends BaseView {
 		super(title);
 	}
 
+	public AdminView(String appHeader, String title) {
+		super(appHeader, title);
+	}
+
 	@Override
 	public List<String> getMenuOptions() {
 		return List.of("Transaction", "Products", "Suppliers", "Payments", "cashFlow", "Profits", "Order", "Reports");

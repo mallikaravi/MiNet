@@ -8,13 +8,13 @@ import com.novare.minet.model.User;
 import com.novare.minet.service.ICashierService;
 import com.novare.minet.util.MenuContext;
 
-public class CashierServiceImpl extends BaseServiceImpl implements ICashierService {
+public class CashierServiceImpl extends MiNetServiceImpl implements ICashierService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
 		switch (selectedOption) {
 		case 0 -> {
-			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+			new WelcomeMenuAction(MenuContext.WELCOME, null);
 		}
 		case 1 -> {
 			new TransactionMenuAction(MenuContext.TRANSACTION, currentUser);
@@ -22,9 +22,6 @@ public class CashierServiceImpl extends BaseServiceImpl implements ICashierServi
 		case 2 -> {
 			new OrderMenuAction(MenuContext.ORDER, currentUser);
 		}
-//		case 3 -> {
-//			new InventoryMenuAction(MenuContext.INVENTORY, currentUser);
-//		}
 		case 3 -> {
 			new ProductMenuAction(MenuContext.PRODUCT, currentUser);
 		}

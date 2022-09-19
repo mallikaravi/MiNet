@@ -8,20 +8,17 @@ import com.novare.minet.model.User;
 import com.novare.minet.service.IManagerService;
 import com.novare.minet.util.MenuContext;
 
-public class ManagerServiceImpl extends BaseServiceImpl implements IManagerService {
+public class ManagerServiceImpl extends MiNetServiceImpl implements IManagerService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
 		switch (selectedOption) {
 		case 0 -> {
-			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
+			new WelcomeMenuAction(MenuContext.WELCOME, null);
 		}
 		case 1 -> {
 			new TransactionMenuAction(MenuContext.TRANSACTION, currentUser);
 		}
-//		case 2 -> {
-//			new InventoryMenuAction(MenuContext.INVENTORY, currentUser);
-//		}
 		case 2 -> {
 			new ProductMenuAction(MenuContext.PRODUCT, currentUser);
 		}

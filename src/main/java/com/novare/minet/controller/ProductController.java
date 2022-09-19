@@ -6,17 +6,17 @@ import com.novare.minet.model.Inventory;
 import com.novare.minet.model.Product;
 import com.novare.minet.model.Supplier;
 import com.novare.minet.model.User;
-import com.novare.minet.service.IBaseService;
+import com.novare.minet.service.IMiNetService;
 import com.novare.minet.service.IProductService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.BaseView;
 import com.novare.minet.view.ProductView;
 
-public class ProductController extends BaseController {
+public class ProductController extends MiNetController {
 
 	private Product newProduct = new Product();
 
-	public ProductController(IBaseService model, BaseView view) {
+	public ProductController(IMiNetService model, BaseView view) {
 		super(model, view);
 	}
 

@@ -8,7 +8,7 @@ import com.novare.minet.service.ISupplierService;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.view.SupplierView;
 
-public class SupplierController extends BaseController {
+public class SupplierController extends MiNetController {
 
 	private Supplier newSupplier = new Supplier();
 

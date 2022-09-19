@@ -33,9 +33,8 @@ public class TransactionView extends BaseView {
 		return getUserText("Enter Product (ID | Full Name | Short Name): ");
 	}
 
-	public int askForChooseProduct(String printProductDetails, List<?> items) {
-		printMessage("Products hit: \n");
-		printMessage(printProductDetails);
+	public int askForChoose(String itemsText, List<?> items) {
+		printMessage(itemsText);
 		return getSelectedOptionFromMenu(items.size()) - 1;
 	}
 
@@ -46,5 +45,9 @@ public class TransactionView extends BaseView {
 	public boolean askMoreSale() {
 		printMessage("Continue transaction [Yes/No]:");
 		return askConfirmationYesOrNo();
+	}
+
+	public void printReceipt(String printReceipt) {
+		printMessage(printReceipt);		
 	}
 }

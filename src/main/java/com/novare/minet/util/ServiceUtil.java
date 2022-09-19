@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -82,4 +83,23 @@ public class ServiceUtil {
 		builder.append(String.format("| %62s |%n", "").replace(' ', '-'));
 		return builder.toString();
 	}
+
+	public static String printHeader(User currentUser) throws ParseException {
+		return printHeader(currentUser, DateUtil.getNow());
+	}
+
+	public static String printHeader(User currentUser, String time) throws ParseException {
+		String fullName = currentUser == null ? "xxxxxxxxxxx" : currentUser.getFullName();
+		String name = currentUser == null ? "xxxxxxxxxxx" : currentUser.getRole().name();
+
+		StringBuilder builder = new StringBuilder();
+		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
+		builder.append(String.format("* %-68s * %n", "WELCOME TO MINET WAREHOUSE MANAGEMENT SYSTEM"));
+		builder.append(String.format("* NAME: %-45s COUNTER NO: %4s *%n", fullName.toUpperCase(), "0001"));
+		builder.append(String.format("* ROLE: %-36s DATE: %7s *%n", name.toUpperCase(), time));
+		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
+
+		return builder.toString();
+	}
+
 }

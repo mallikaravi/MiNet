@@ -101,7 +101,7 @@ public class TransactionItems extends IdProperty {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), product, quantity, totalAmount);
+		return Objects.hash(getId());
 	}
 	/*
 	 * (non-Javadoc)
@@ -118,9 +118,7 @@ public class TransactionItems extends IdProperty {
 		if (getClass() != obj.getClass())
 			return false;
 		TransactionItems other = (TransactionItems) obj;
-		return getId() == other.getId() && Objects.equals(product, other.product)
-				&& Float.floatToIntBits(quantity) == Float.floatToIntBits(other.quantity)
-				&& Double.doubleToLongBits(totalAmount) == Double.doubleToLongBits(other.totalAmount);
+		return getId() == other.getId();
 	}
 	/*
 	 * (non-Javadoc)

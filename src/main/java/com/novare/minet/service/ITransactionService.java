@@ -8,6 +8,8 @@ public interface ITransactionService extends IMiNetService {
 
 	Transaction create(Transaction transaction) throws Exception;
 
+	Transaction update(Transaction transaction) throws Exception;
+	
 	List<Transaction> findByType(String type) throws Exception;
 
 	List<Transaction> findById(int transactionId) throws Exception;

@@ -137,6 +137,9 @@ public abstract class BaseView {
 			return selection;
 		} catch (Exception exception) {
 			printInvalidOption();
+			if (message.isEmpty()) {
+				printUserRequest();
+			}
 			return getUserInput(message);
 		}
 	}
@@ -151,6 +154,9 @@ public abstract class BaseView {
 			return input;
 		} catch (Exception exception) {
 			printInvalidOption();
+			if (message.isEmpty()) {
+				printUserRequest();
+			}
 			return getUserText(message);
 		}
 
@@ -164,6 +170,9 @@ public abstract class BaseView {
 			return selection;
 		} catch (Exception exception) {
 			printInvalidOption();
+			if (message.isEmpty()) {
+				printUserRequest();
+			}
 			return getUserInputDouble(message);
 		}
 	}

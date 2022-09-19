@@ -3,6 +3,7 @@ package com.novare.minet;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,18 +39,33 @@ public class MinetApp {
 		}
 	}
 
-	private static String getAppHeader(User user) {
+	private static String getAppHeader(User user) throws ParseException {
 		StringBuilder builder = new StringBuilder();
 		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
 		builder.append(String.format("* %-68s * %n", "Welcome to MiNet WareHouse Management System"));
-		builder.append(String.format("* Name: %-62s * %n",  "MALLfsfsfsfsfsfsfsfsfsESWARI".toUpperCase()));
-		builder.append(String.format("* Role: %-62s * %n",  "CACsdfsdfsdfsdfsfsfsfsfsHIER"));
+		builder.append(String.format("* Name: %-45s Counter No: %4s *%n", "MALLfsfsfsfsfsfsfsfsfsESWARI".toUpperCase(),
+				"0001"));
+		builder.append(String.format("* Role: %-36s Date: %7s *%n", "CACsdfsdfsdfsdfsfsfsfsfsHIER", DateUtil.getNow()));
 		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
+		builder.append("\n");
+		builder.append(String.format(" %-30s | %5s | %10s | %15s %n", "Item Name", "Qty", "Price", "Amount"));
+		builder.append(String.format(" %70s %n", "").replace(' ', '-'));
+		builder.append(String.format(" %-30s  %6s  %11s  %16s %n", "Item Name", "Qty", "Price", "Amount"));
+		builder.append("\n");
+		builder.append(String.format(" %70s %n", "").replace(' ', '-'));
+		builder.append(String.format(" Total Amount: %55s %n", "Amount"));
+		builder.append(String.format(" %70s %n", "").replace(' ', '-'));
+		builder.append(String.format(" Balance: %60s %n", "Amount"));
+		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
+		builder.append(String.format(" %20s %-20s %10s %n", "", "Thank you come again".toUpperCase(), ""));
+		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
+
 		return builder.toString();
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 //		System.out.println(getAppHeader(null));
+//		System.exit(0);
 //		try {
 ////			System.out.println(Ids.get().getUserId());
 ////			Ids id=Ids.get();

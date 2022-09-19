@@ -1,6 +1,7 @@
 package com.novare.minet.serviceimpl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.novare.minet.action.AdminMenuAction;
@@ -8,6 +9,7 @@ import com.novare.minet.action.CashierMenuAction;
 import com.novare.minet.action.ManagerMenuAction;
 import com.novare.minet.action.TransactionMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
+import com.novare.minet.model.Product;
 import com.novare.minet.model.Transaction;
 import com.novare.minet.model.User;
 import com.novare.minet.service.ITransactionService;
@@ -125,6 +127,23 @@ public class TransactionServiceImpl extends MiNetServiceImpl implements ITransac
 		}
 		}
 
+	}
+
+	@Override
+	public Transaction update(Transaction transaction) throws Exception {
+		ServiceUtil.checkAssetFolder();
+		List<Transaction> transactions = ServiceUtil.loadModel(Transaction.class, TRANSACTION_STORAGE);
+		Iterator<Transaction> iterator = transactions.iterator();
+		while (iterator.hasNext()) {
+			Transaction next = iterator.next();
+			if (next.getId() == transaction.getId()) {
+				iterator.remove();
+			}
+		}
+		transaction.calculateAmount();
+		transactions.add(transaction);
+		ServiceUtil.saveModel(transactions, TRANSACTION_STORAGE);
+		return null;
 	}
 
 }

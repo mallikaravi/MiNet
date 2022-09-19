@@ -16,7 +16,7 @@ public class ManagerView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Transaction", "Products", "Order", "Suppliers");
+		return List.of("Transaction", "Products", "Order", "Suppliers","Settings");
 	}
 
 	@Override

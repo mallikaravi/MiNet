@@ -43,6 +43,13 @@ public class ServiceUtil {
 		Files.write(Paths.get(storage), json.getBytes());
 	}
 
+	public static void saveUsers(List<User> users) throws JsonProcessingException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
+		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(users);
+		Files.write(Paths.get("assets/atm.json"), json.getBytes());
+	}
+
 	/**
 	 * THis method is used for encryption of password.
 	 * 

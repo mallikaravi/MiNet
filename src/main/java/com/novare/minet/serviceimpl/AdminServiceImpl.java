@@ -4,6 +4,7 @@ import com.novare.minet.action.AdminMenuAction;
 import com.novare.minet.action.OrderMenuAction;
 import com.novare.minet.action.ProductMenuAction;
 import com.novare.minet.action.ReportsMenuAction;
+import com.novare.minet.action.SettingsMenuAction;
 import com.novare.minet.action.SuppliersMenuAction;
 import com.novare.minet.action.TransactionMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
@@ -50,6 +51,10 @@ public class AdminServiceImpl extends MiNetServiceImpl implements IAdminService 
 		}
 		case 8 -> {
 			new ReportsMenuAction(MenuContext.REPORTS, currentUser);
+
+		}
+		case 9 -> {
+			new SettingsMenuAction(MenuContext.SETTINGS, currentUser);
 
 		}
 		default -> throw new IndexOutOfBoundsException();

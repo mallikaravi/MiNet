@@ -16,7 +16,7 @@ public class ProductController extends MiNetController {
 
 	private Product newProduct = new Product();
 
-	public ProductController(IMiNetService model, BaseView view) {
+	public ProductController(IProductService model, ProductView view) {
 		super(model, view);
 	}
 

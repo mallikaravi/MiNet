@@ -2,6 +2,7 @@ package com.novare.minet.serviceimpl;
 
 import com.novare.minet.action.OrderMenuAction;
 import com.novare.minet.action.ProductMenuAction;
+import com.novare.minet.action.SettingsMenuAction;
 import com.novare.minet.action.TransactionMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
 import com.novare.minet.model.User;
@@ -24,6 +25,10 @@ public class CashierServiceImpl extends MiNetServiceImpl implements ICashierServ
 		}
 		case 3 -> {
 			new ProductMenuAction(MenuContext.PRODUCT, currentUser);
+		}
+		case 4 -> {
+			new SettingsMenuAction(MenuContext.SETTINGS, currentUser);
+
 		}
 		default -> throw new IndexOutOfBoundsException();
 		}

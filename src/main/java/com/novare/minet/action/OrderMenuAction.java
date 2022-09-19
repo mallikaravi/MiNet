@@ -19,7 +19,6 @@ public class OrderMenuAction extends MiNetMenuAction {
 		case LIST -> title = "List of Orders Option :";
 		case PENDING_ORDERS -> title = "Pending Order Option:";
 		case SEARCH -> title = "Search Order Option :";
-		case ORDER_HISTORY -> title = "Display Order History Option :";
 		default -> title = "Order Option:";
 		}
 		OrderView view = new OrderView(getAppHeader(),title);

@@ -42,7 +42,7 @@ public class MinetApp {
 	private static String getAppHeader(User user) throws ParseException {
 		StringBuilder builder = new StringBuilder();
 		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
-		builder.append(String.format("* %-68s * %n", "Welcome to MiNet WareHouse Management System"));
+		builder.append(String.format("* %-68.60s * %n", "Welcome to MiNet WareHouse Managementdgdgf dfgdgdgdgfdgdgfdgdgdgdgdfgd System"));
 		builder.append(String.format("* Name: %-45s Counter No: %4s *%n", "MALLfsfsfsfsfsfsfsfsfsESWARI".toUpperCase(),
 				"0001"));
 		builder.append(String.format("* Role: %-36s Date: %7s *%n", "CACsdfsdfsdfsdfsfsfsfsfsHIER", DateUtil.getNow()));

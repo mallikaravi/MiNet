@@ -40,7 +40,6 @@ public class OrderController extends MiNetController {
 			case LIST -> displayOrders();
 			case PENDING_ORDERS -> displayPendingOrders();
 			case SEARCH -> searchOrders();
-			case ORDER_HISTORY -> displayOrderHistory();
 			default -> {
 				selectedOption = getView().getUserInput();
 			}
@@ -61,7 +60,8 @@ public class OrderController extends MiNetController {
 			getView().waitForDecision();
 			return;
 		}
-		int selection = getView().askForDelete(allOrders);
+		String generateOrderTable = generateOrderTable(allOrders);
+		int selection = getView().askForDelete(generateOrderTable, allOrders);
 		if (selection > -1) {
 			Order order = allOrders.get(selection);
 			Inventory inventory = getModel().findInventoryByProductId(order.getProduct().getId());
@@ -77,24 +77,6 @@ public class OrderController extends MiNetController {
 		}
 	}
 
-	private void displayOrderHistory() throws Exception {
-
-		List<Order> allOrders = getModel().getAll();
-		if (allOrders == null || allOrders.isEmpty()) {
-			getView().displayResultNotFound();
-			getView().waitForDecision();
-			return;
-		}
-		int selection = getView().askForDelete(allOrders);
-		if (selection > -1) {
-			Order order = allOrders.get(selection);
-			Inventory inventory = getModel().findInventoryByProductId(order.getProduct().getId());
-			getView().printMessage(ServiceUtil.printOrderDetails(order, inventory, getUserSession()));
-			getView().waitForDecision();
-		}
-
-	}
-
 	private void searchOrders() throws Exception {
 		String askSearch = getView().askSearch();
 		List<Order> search = getModel().search(askSearch);
@@ -102,7 +84,15 @@ public class OrderController extends MiNetController {
 			getView().displayResultNotFound();
 			return;
 		} else {
-			getView().setMenuOptions(search, false);
+			String generateOrderTable = generateOrderTable(search);
+			getView().printMessage(generateOrderTable);
+
+			boolean details = getView().askDisplay();
+			if (details) {
+				int selection = getView().askForChoose("", search);
+				Order order = search.get(selection);
+				getView().printMessage(generateOrderHistoryTable(order));
+			}
 		}
 		getView().waitForDecision();
 	}
@@ -114,7 +104,9 @@ public class OrderController extends MiNetController {
 			getView().waitForDecision();
 			return;
 		}
-		int selection = getView().askOrderSelectionToReceive(findAllWaiting);
+		String generateOrderTable = generateOrderTable(findAllWaiting);
+
+		int selection = getView().askOrderSelectionToReceive(generateOrderTable, findAllWaiting);
 		if (selection > -1) {
 			Order order = findAllWaiting.get(selection);
 			Inventory inventory = getModel().findInventoryByProductId(order.getProduct().getId());
@@ -145,7 +137,8 @@ public class OrderController extends MiNetController {
 			getView().waitForDecision();
 			return;
 		}
-		int selection = getView().askOrderSelectionToApprove(findAllPending);
+		String generateOrderTable = generateOrderTable(findAllPending);
+		int selection = getView().askOrderSelectionToApprove(generateOrderTable, findAllPending);
 		if (selection > -1) {
 			Order order = findAllPending.get(selection);
 			Inventory inventory = getModel().findInventoryByProductId(order.getProduct().getId());
@@ -172,7 +165,13 @@ public class OrderController extends MiNetController {
 		if (orders == null || orders.isEmpty()) {
 			getView().displayResultNotFound();
 		} else {
-			getView().setMenuOptions(orders, false);
+			getView().printMessage(generateOrderTable(orders));
+			boolean details = getView().askDisplay();
+			if (details) {
+				int selection = getView().askForChoose("", orders);
+				Order order = orders.get(selection);
+				getView().printMessage(generateOrderHistoryTable(order));
+			}
 		}
 		getView().waitForDecision();
 
@@ -185,7 +184,8 @@ public class OrderController extends MiNetController {
 			getView().waitForDecision();
 			return;
 		}
-		int selection = getView().askForCreate(productList);
+		String inventoryTable = generateProductTableFromInventories(productList);
+		int selection = getView().askForCreate(inventoryTable, productList);
 		if (selection > -1) {
 			Inventory inventory = productList.get(selection);
 			Product selectedProduct = inventory.getProduct();

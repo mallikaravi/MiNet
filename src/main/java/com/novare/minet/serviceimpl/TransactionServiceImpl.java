@@ -9,7 +9,6 @@ import com.novare.minet.action.CashierMenuAction;
 import com.novare.minet.action.ManagerMenuAction;
 import com.novare.minet.action.TransactionMenuAction;
 import com.novare.minet.action.WelcomeMenuAction;
-import com.novare.minet.model.Product;
 import com.novare.minet.model.Transaction;
 import com.novare.minet.model.User;
 import com.novare.minet.service.ITransactionService;
@@ -97,6 +96,7 @@ public class TransactionServiceImpl extends MiNetServiceImpl implements ITransac
 					boolean contains = transaction.getSoldBy().equals(getCurrentUser());
 					if (contains) {
 						result.add(transaction);
+						continue;
 					}
 				}
 				default:

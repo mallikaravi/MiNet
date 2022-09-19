@@ -101,8 +101,8 @@ public class ServiceUtil {
 
 		StringBuilder builder = new StringBuilder();
 		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
-		builder.append(String.format("* %-68s * %n", "WELCOME TO MINET WAREHOUSE MANAGEMENT SYSTEM"));
-		builder.append(String.format("* NAME: %-45s COUNTER NO: %4s *%n", fullName.toUpperCase(), "0001"));
+		builder.append(String.format("* %-68.68s * %n", "WELCOME TO MINET WAREHOUSE MANAGEMENT SYSTEM"));
+		builder.append(String.format("* NAME: %-45.45s COUNTER NO: %4s *%n", fullName.toUpperCase(), "0001"));
 		builder.append(String.format("* ROLE: %-36s DATE: %7s *%n", name.toUpperCase(), time));
 		builder.append(String.format(" %70s %n", "").replace(' ', '*'));
 

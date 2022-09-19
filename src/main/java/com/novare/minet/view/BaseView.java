@@ -82,10 +82,11 @@ public abstract class BaseView {
 		System.out.print(message);
 	}
 
-	public boolean askConfirmationYesOrNo() {
+	public boolean askConfirmationYesOrNo(String message) {
+		printMessage(message);
 		String input = getUserTerminal().nextLine();
 		if (input.isEmpty()) {
-			throw new IllegalArgumentException();
+			return askConfirmationYesOrNo(message);
 		}
 
 		return input.equalsIgnoreCase("Yes") || input.equalsIgnoreCase("y");
@@ -217,30 +218,36 @@ public abstract class BaseView {
 		printMessage("");
 	}
 
-	public int askForCreate(List<?> items) {
-		printMessage("Select the item for create: ");
-		setMenuOptionsInRow(items);
+	public int askForCreate(String table, List<?> items) {
+		printMessage(table);
 		int selection = getSelectedOptionFromMenu(items.size()) - 1;
-		printMessage("Do you want to edit " + items.get(selection) + " [Yes/No]: ");
-		return askConfirmationYesOrNo() ? selection : -1;
+		String message = "Do you want to create " + items.get(selection) + " [Yes/No]: ";
+		return askConfirmationYesOrNo(message) ? selection : -1;
 	}
 
-	public int askForEdit(List<?> items) {
-		printMessage("Select the item for edit: ");
-		setMenuOptionsInRow(items);
+	public int askForEdit(String table, List<?> items) {
+		printMessage(table);
 		int selection = getSelectedOptionFromMenu(items.size()) - 1;
-		printMessage("Do you want to edit " + items.get(selection) + " [Yes/No]: ");
-		return askConfirmationYesOrNo() ? selection : -1;
+		String message = "Do you want to edit " + items.get(selection) + " [Yes/No]: ";
+		return askConfirmationYesOrNo(message) ? selection : -1;
 
 	}
 
-	public int askForDelete(List<?> items) {
-		printMessage("Select the item for delete: ");
-		setMenuOptionsInRow(items);
+	public int askForDelete(String table, List<?> items) {
+		printMessage(table);
 		int selection = getSelectedOptionFromMenu(items.size()) - 1;
-		printMessage("Do you want to delete " + items.get(selection) + " [Yes/No]: ");
-		return askConfirmationYesOrNo() ? selection : -1;
+		String message = "Do you want to delete " + items.get(selection) + " [Yes/No]: ";
+		return askConfirmationYesOrNo(message) ? selection : -1;
 
+	}
+
+	public int askForChoose(String itemsText, List<?> items) {
+		printMessage(itemsText);
+		return getSelectedOptionFromMenu(items.size()) - 1;
+	}
+
+	public boolean askDisplay() {
+		return askConfirmationYesOrNo("Do you want see the details [Yes/No]:");
 	}
 
 	public String askSearch() {

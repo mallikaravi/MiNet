@@ -48,9 +48,7 @@ public class OrderServiceImpl extends MiNetServiceImpl implements IOrderService 
 		case 6 -> {
 			new OrderMenuAction(MenuContext.SEARCH, currentUser);
 		}
-		case 7 -> {
-			new OrderMenuAction(MenuContext.ORDER_HISTORY, currentUser);
-		}
+
 		default -> throw new IndexOutOfBoundsException();
 		}
 
@@ -122,12 +120,22 @@ public class OrderServiceImpl extends MiNetServiceImpl implements IOrderService 
 	}
 
 	@Override
-	public List<Order> search(String keyword) throws Exception {
+	public List<Order> search(String search) throws Exception {
 		ServiceUtil.checkAssetFolder();
 		List<Order> orders = ServiceUtil.loadModel(Order.class, ORDER_STORAGE);
 		List<Order> result = new ArrayList<>();
 		for (Order order : orders) {
-			boolean contains = order.getStatus().name().contains(keyword.toUpperCase());
+
+			boolean contains = false;
+			try {
+				Integer productId = Integer.parseInt(search);
+				contains = order.getId() == productId;
+			} catch (Exception e) {
+				contains = order.getCreatedBy().getFullName().toLowerCase().contains(search.toLowerCase())
+						|| order.getCreatedBy().getUserName().toLowerCase().contains(search.toLowerCase())
+						|| order.getSupplier().getName().toLowerCase().contains(search.toLowerCase())
+						|| order.getStatus().name().contains(search.toUpperCase());
+			}
 			if (contains) {
 				result.add(order);
 			}

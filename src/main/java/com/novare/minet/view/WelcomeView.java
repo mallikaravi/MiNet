@@ -51,8 +51,7 @@ public class WelcomeView extends BaseView {
 	}
 
 	public boolean askForSignUp() {
-		printMessage("Do you want to SignUp [Yes/No]: ");
-		if (!askConfirmationYesOrNo()) {
+		if (!askConfirmationYesOrNo("Do you want to SignUp [Yes/No]: ")) {
 			printMessage("Bye !");
 			goodBye();
 		}

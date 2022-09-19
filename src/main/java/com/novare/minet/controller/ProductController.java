@@ -58,35 +58,31 @@ public class ProductController extends MiNetController {
 			getView().displayResultNotFound();
 			return;
 		} else {
-			getView().setMenuOptions(find, false);
+			String tableFormat = generateProductTable(find);
+			getView().printMessage(tableFormat);
 		}
 		getView().waitForDecision();
 	}
 
 	private void editProduct() throws Exception {
-		List<Inventory> productList = getModel().getAllInventories();
-		if (productList == null || productList.isEmpty()) {
+		List<Inventory> inventories = getModel().getAllInventories();
+		if (inventories == null || inventories.isEmpty()) {
 			getView().displayResultNotFound();
 			getView().waitForDecision();
 			return;
 		}
-
-		int selection = getView().askForEdit(productList);
+		String tableFormat = generateProductTableFromInventories(inventories);
+		int selection = getView().askForEdit(tableFormat, inventories);
 		if (selection > -1) {
-			Inventory inventory = productList.get(selection);
+			Inventory inventory = inventories.get(selection);
 			Product selectedProduct = inventory.getProduct();
 
-			/*
-			 * if (!getView().askProductShortName().isEmpty()) {
-			 * selectedProduct.setShortName(getView().askProductShortName()); } if
-			 * (!getView().askProductDescription().isEmpty()) {
-			 * selectedProduct.setDescription(getView().askProductDescription()); }
-			 */
 			selectedProduct.setShortName(getView().askProductShortName());
 			selectedProduct.setDescription(getView().askProductDescription());
 			selectedProduct.setMinQty(getView().askProductMinQty());
 			selectedProduct.setSellingPrice(getView().askProductSellingPrice());
 			selectedProduct.setCostPrice(getView().askProductCostPrice());
+
 			List<Supplier> allSuppliers = getModel().getAllSuppliers();
 			selection = getView().askDefaultSupplier(allSuppliers);
 			selectedProduct.setDefaultSupplier(allSuppliers.get(selection));
@@ -96,7 +92,7 @@ public class ProductController extends MiNetController {
 
 			getModel().update(selectedProduct);
 
-			// Delete Inventory
+			// Update Inventory
 			getModel().updateInventory(inventory);
 
 			getView().printSaveMessage();
@@ -142,11 +138,12 @@ public class ProductController extends MiNetController {
 	}
 
 	private void productList() throws Exception {
-		List<Inventory> productList = getModel().getAllInventories();
-		if (productList == null || productList.isEmpty()) {
+		List<Inventory> inventories = getModel().getAllInventories();
+		if (inventories == null || inventories.isEmpty()) {
 			getView().displayResultNotFound();
 		} else {
-			getView().setMenuOptions(productList, false);
+			getView().setMenuOptions(inventories, false);
+			getView().printMessage(generateProductTableFromInventories(inventories));
 		}
 		getView().waitForDecision();
 
@@ -159,8 +156,8 @@ public class ProductController extends MiNetController {
 			getView().waitForDecision();
 			return;
 		}
-
-		int selection = getView().askForDelete(productList);
+		String inventoryTable = generateProductTableFromInventories(productList);
+		int selection = getView().askForDelete(inventoryTable, productList);
 		if (selection > -1) {
 			Inventory inventory = productList.get(selection);
 			Product selectedProduct = inventory.getProduct();

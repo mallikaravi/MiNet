@@ -54,7 +54,7 @@ public class SupplierController extends MiNetController {
 			getView().displayResultNotFound();
 			return;
 		} else {
-			getView().setMenuOptions(findSupplier, false);
+			getView().printMessage(generateSupplierTable(findSupplier));
 		}
 		getView().waitForDecision();
 	}
@@ -78,26 +78,27 @@ public class SupplierController extends MiNetController {
 	}
 
 	private void supplierList() throws Exception {
-		List<Supplier> SupplierList = getModel().getAllSuppliers();
-		if (SupplierList == null || SupplierList.isEmpty()) {
+		List<Supplier> supplierList = getModel().getAllSuppliers();
+		if (supplierList == null || supplierList.isEmpty()) {
 			getView().displayResultNotFound();
 		} else {
-			getView().setMenuOptions(SupplierList, false);
+			getView().printMessage(generateSupplierTable(supplierList));
 		}
 		getView().waitForDecision();
 
 	}
 
 	private void deleteSupplier() throws Exception {
-		List<Supplier> SupplierList = getModel().getAllSuppliers();
-		if (SupplierList == null || SupplierList.isEmpty()) {
+		List<Supplier> supplierList = getModel().getAllSuppliers();
+		if (supplierList == null || supplierList.isEmpty()) {
 			getView().displayResultNotFound();
 			getView().waitForDecision();
 			return;
 		}
-		int selection = getView().askForDelete(SupplierList);
+		String supplierTable = generateSupplierTable(supplierList);
+		int selection = getView().askForDelete(supplierTable, supplierList);
 		if (selection > -1) {
-			Supplier selectedSupplier = SupplierList.get(selection);
+			Supplier selectedSupplier = supplierList.get(selection);
 			getModel().delete(selectedSupplier);
 			getView().printSaveMessage();
 			getView().waitForDecision();
@@ -107,22 +108,16 @@ public class SupplierController extends MiNetController {
 	}
 
 	private void editSupplier() throws Exception {
-		List<Supplier> SupplierList = getModel().getAllSuppliers();
-		if (SupplierList == null || SupplierList.isEmpty()) {
+		List<Supplier> supplierList = getModel().getAllSuppliers();
+		if (supplierList == null || supplierList.isEmpty()) {
 			getView().displayResultNotFound();
 			getView().waitForDecision();
 			return;
 		}
-		int selection = getView().askForEdit(SupplierList);
+		int selection = getView().askForEdit(generateSupplierTable(supplierList), supplierList);
 		if (selection > -1) {
-			Supplier selectedSupplier = SupplierList.get(selection);
+			Supplier selectedSupplier = supplierList.get(selection);
 
-			/*
-			 * if (!getView().askSupplierName().isEmpty()) {
-			 * selectedSupplier.setName(getView().askSupplierName()); } if
-			 * (!getView().askSupplierAddress().isEmpty()) {
-			 * selectedSupplier.setAddress(getView().askSupplierAddress()); }
-			 */
 			selectedSupplier.setName(getView().askSupplierName());
 			selectedSupplier.setAddress(getView().askSupplierAddress());
 			selectedSupplier.setEmail(getView().askSupplierEmail());

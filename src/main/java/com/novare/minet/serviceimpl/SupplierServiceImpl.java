@@ -91,8 +91,7 @@ public class SupplierServiceImpl extends MiNetServiceImpl implements ISupplierSe
 		List<Supplier> suppliers = ServiceUtil.loadModel(Supplier.class, SUPPLIER_STORAGE);
 		List<Supplier> result = new ArrayList<>();
 		for (Supplier supplier : suppliers) {
-			boolean contains = supplier.getName().toLowerCase().contains(search)
-					|| supplier.getName().toLowerCase().contains(search);
+			boolean contains = supplier.getName().toLowerCase().contains(search.toLowerCase());
 			if (contains) {
 				result.add(supplier);
 			}

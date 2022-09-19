@@ -16,7 +16,7 @@ public class AdminView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return List.of("Transaction", "Products", "Suppliers", "Payments", "cashFlow", "Profits", "Order", "Reports","Settings");
+		return List.of("Transaction", "Products", "Suppliers", "Payments", "Cash Flow", "Profits", "Order", "Reports","Settings");
 	}
 
 	@Override

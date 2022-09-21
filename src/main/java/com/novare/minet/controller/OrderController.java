@@ -36,7 +36,7 @@ public class OrderController extends MiNetController {
 			case LIST -> displayOrders();
 			case CREATE -> createOrder();
 			case DELETE -> deleteOrder();
-			case WAITING_ORDERS -> displayWaitingOrders(); 
+			case WAITING_ORDERS -> displayWaitingOrders();
 			case PENDING_ORDERS -> displayPendingOrders();
 			case SEARCH -> searchOrders();
 			default -> {
@@ -121,7 +121,6 @@ public class OrderController extends MiNetController {
 					inventory.setOrderedQty(inventory.getOrderedQty() - order.getQuantity());
 					inventory.setAvailQty(inventory.getAvailQty() + order.getQuantity());
 					getModel().updateInventory(inventory);
-
 					getView().printSaveMessage();
 				}
 			}

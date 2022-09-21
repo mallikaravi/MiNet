@@ -1,5 +1,5 @@
 [ {
-  "uuid" : "cfa79a58-fe34-4d15-a019-c40170836f8e",
+  "uuid" : "4dd89ccc-b7bc-453d-aedd-c6a8ba3c3ba1",
   "id" : 1,
   "fullName" : "Karthikeya ravi",
   "userName" : "karthik",
@@ -9,7 +9,7 @@
   "address" : "Near ATM building,Bangalore",
   "role" : "ADMIN"
 }, {
-  "uuid" : "f9b1d176-a238-4d18-9e87-52be4e9848bd",
+  "uuid" : "81058aee-0119-4729-94c3-e5abf7d33f54",
   "id" : 2,
   "fullName" : "Jeshitha Ravi",
   "userName" : "jeshitha",
@@ -19,7 +19,7 @@
   "address" : "Koti street,Bangalore",
   "role" : "CASHIER"
 }, {
-  "uuid" : "b9b0d8a9-e71c-4595-9413-2ec89ffa5b68",
+  "uuid" : "d8e2dc54-66f0-4273-886b-b8ddef8a544c",
   "id" : 3,
   "fullName" : "Rishitha ravi",
   "userName" : "rishi",
@@ -29,7 +29,7 @@
   "address" : "Golconda,Bangalore",
   "role" : "MANAGER"
 }, {
-  "uuid" : "86412aff-4086-4afd-aaf9-227ea8f82a3a",
+  "uuid" : "19c1054a-cae4-4ebc-adc1-5a431ad73be1",
   "id" : 4,
   "fullName" : "kumar Ravi",
   "userName" : "kumar",
@@ -39,7 +39,7 @@
   "address" : "Gvt street,Bangalore",
   "role" : "MANAGER"
 }, {
-  "uuid" : "b1356d09-3785-4830-8fd1-921960a14854",
+  "uuid" : "a7d37c10-1a28-4320-bf4b-01aa040ef303",
   "id" : 5,
   "fullName" : "Malleswari Ravi",
   "userName" : "mallika",
@@ -47,5 +47,15 @@
   "email" : "mallika@gmail.com",
   "phoneNumber" : "+91 6789543577",
   "address" : "koti Street, Bangalore",
+  "role" : "CASHIER"
+}, {
+  "uuid" : "93bc2d68-a1b6-453a-9a17-1530b094ebba",
+  "id" : 6,
+  "fullName" : "JohnMarcus",
+  "userName" : "john",
+  "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+  "email" : "john@gmail.com",
+  "phoneNumber" : "+46 734568767",
+  "address" : "old Street,Hyderabad",
   "role" : "CASHIER"
 } ]

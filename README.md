@@ -150,6 +150,7 @@ JIRA tool is used for this project, mainly maintaining the recipe-manager applic
 - etc.
 
 ### Link to JIRA Activities
+https://github.com/mallikaravi/MiNet/blob/main/design/Jiradashboard-Activities.pdf
 
 Future Enhancement
 ============

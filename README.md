@@ -32,7 +32,7 @@ $ java -jar MiNet-0.0.1.jar
         * [Dependencies](#dependencies)
         * [UseCase Diagram](#usecase-diagram)
         * [Class Diagram](#class-diagram) 
-        * [Sequence Diagram](#sequence-diagram)
+        * [Entity Model Diagram](#entity-model-diagram)
    *  [Tool Used For Project Management](#tool-used-for-project-management)
    *  [Future Enhancement](#future-enhancement)
 
@@ -80,7 +80,7 @@ Implementation and Design
 ============
 Explained here 
 
-https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
+https://github.com/mallikaravi/ATM/blob/main/design/MiNet-Design.pdf
 
 ### Usecase Diagram: 
 <img src="design/Usecase-ATM.png " width="450" height="250">
@@ -89,7 +89,7 @@ https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
 <img src="design/ClassDiagram-ATM.png"  width="450" height="250">
 
 
-### Sequence Diagram 
+### Entity Model Diagram 
 <img src="design/Sequence-ATM.png" width="450" height="350">
 
 Technology

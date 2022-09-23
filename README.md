@@ -83,14 +83,14 @@ Explained here
 https://github.com/mallikaravi/ATM/blob/main/design/MiNet-Design.pdf
 
 ### Usecase Diagram: 
-<img src="design/Usecase-ATM.png " width="450" height="250">
+<img src="design/UseCase-MiNet.png " width="450" height="250">
 
 ### Class Diagram 
-<img src="design/ClassDiagram-ATM.png"  width="450" height="250">
+<img src="design/ClassDiagram-MiNet.png"  width="450" height="250">
 
 
 ### Entity Model Diagram 
-<img src="design/Sequence-ATM.png" width="450" height="350">
+<img src="design/Entity-Model-MiNet.png" width="450" height="350">
 
 Technology
 ============

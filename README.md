@@ -79,6 +79,7 @@ First you’ll need to setup a Java project for Maven to build.
 
 Documentation
 ============
+https://github.com/mallikaravi/MiNet/blob/main/design/Minet-Documentation.pdf
 
 
 Implementation and Design

@@ -153,11 +153,11 @@ JIRA tool is used for this project, mainly maintaining the recipe-manager applic
 
 Future Enhancement
 ============
-*There should be different payment options for customers. If a user already has an account registered in the system, they can buy on credit, otherwise they have to pay by card or cash.
+* There should be different payment options for customers. If a user already has an account registered in the system, they can buy on credit, otherwise they have to pay by card or cash.
 
-*Implement a commission-based system that gives the cashiers a certain percent of the sales the more they sell.
+* Implement a commission-based system that gives the cashiers a certain percent of the sales the more they sell.
 
-*Create list of related products where the user has the ability to sort them by best selling, cheapest, amount existing in the inventory or alphabetical order. The user may also want to filter the items by a certain price limit that the user enters.
+* Create list of related products where the user has the ability to sort them by best selling, cheapest, amount existing in the inventory or alphabetical order. The user may also want to filter the items by a certain price limit that the user enters.
 
 * All error exceptions (runtime exceptions) and cashier-made transactions will be handled by separate threads, so that only one user at a time can write into a specific file, and once the file is closed it’s available for other users to use.
 

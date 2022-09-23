@@ -30,7 +30,7 @@ $ java -jar MiNet-0.0.1.jar
    * [Implementation And Design](#implementation-and-design)
       * [Define a simple Maven Build](#define-a-simple-maven-build)
         * [Dependencies](#dependencies)
-	* [DOcumentat](#dependencies)
+        * [Documentation](#documentation)
         * [UseCase Diagram](#usecase-diagram)
         * [Class Diagram](#class-diagram) 
         * [Entity Model Diagram](#entity-model-diagram)
@@ -77,6 +77,10 @@ Project setup
 ============
 First you’ll need to setup a Java project for Maven to build. 
 
+Documentation
+============
+
+
 Implementation and Design
 ============
 Explained here 
@@ -110,7 +114,7 @@ Define a simple Maven Build
 3.Among other things, this file gives the project’s name, version, and dependencies that it has on external libraries.
 4.Create a file named pom.xml at the root of the project.
 
- Dependencies
+Dependencies
 ============
 
 ```

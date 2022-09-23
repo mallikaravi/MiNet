@@ -30,6 +30,7 @@ $ java -jar MiNet-0.0.1.jar
    * [Implementation And Design](#implementation-and-design)
       * [Define a simple Maven Build](#define-a-simple-maven-build)
         * [Dependencies](#dependencies)
+	* [DOcumentat](#dependencies)
         * [UseCase Diagram](#usecase-diagram)
         * [Class Diagram](#class-diagram) 
         * [Entity Model Diagram](#entity-model-diagram)

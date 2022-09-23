@@ -80,7 +80,7 @@ Implementation and Design
 ============
 Explained here 
 
-https://github.com/mallikaravi/ATM/blob/main/design/MiNet-Design.pdf
+https://github.com/mallikaravi/MiNet/blob/main/design/Minet-UML-Design.pdf
 
 ### Usecase Diagram: 
 <img src="design/UseCase-MiNet.png " width="450" height="250">

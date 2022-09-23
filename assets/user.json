@@ -1,5 +1,5 @@
 [ {
-  "uuid" : "c86c733b-b5f9-4fcc-8051-d95fd88aaa63",
+  "uuid" : "e35ab23d-451a-4f80-a1f7-07d6c870ca46",
   "id" : 3,
   "fullName" : "Rishitha ravi",
   "userName" : "rishi",
@@ -9,7 +9,7 @@
   "address" : "Golconda,Bangalore",
   "role" : "MANAGER"
 }, {
-  "uuid" : "1d044749-25d4-4c93-b0c3-69d85da22181",
+  "uuid" : "26388d4b-daab-43b0-858d-bb7b676c247d",
   "id" : 4,
   "fullName" : "kumar Ravi",
   "userName" : "kumar",
@@ -19,7 +19,7 @@
   "address" : "Gvt street,Bangalore",
   "role" : "MANAGER"
 }, {
-  "uuid" : "ea88e546-c78b-4a5f-be93-e03ad55ee3b2",
+  "uuid" : "b69099f9-6498-42a0-b4e9-4bea7cf7d517",
   "id" : 5,
   "fullName" : "Malleswari Ravi",
   "userName" : "mallika",
@@ -29,7 +29,7 @@
   "address" : "koti Street, Bangalore",
   "role" : "CASHIER"
 }, {
-  "uuid" : "27e77add-621c-4331-8fb9-182f548f5957",
+  "uuid" : "089943ae-cc70-4d4c-b817-f27aee4aa30b",
   "id" : 2,
   "fullName" : "Jeshitha Ravi",
   "userName" : "jeshi",
@@ -39,7 +39,7 @@
   "address" : "Koti street,Bangalore",
   "role" : "CASHIER"
 }, {
-  "uuid" : "847cf698-e8b5-4437-bc80-b4beaffec3fc",
+  "uuid" : "c57ece9a-7ee7-4aec-95f8-9cdadb0e522f",
   "id" : 13,
   "fullName" : "karthikeya",
   "userName" : "karthik",
@@ -48,4 +48,34 @@
   "phoneNumber" : "+9199876543",
   "address" : "old street,Hyd",
   "role" : "ADMIN"
+}, {
+  "uuid" : "974f257e-34df-47b3-91b5-10b836ad97a9",
+  "id" : 16,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "fc0b0914-ec38-4092-8f67-7bd3752ef9ed",
+  "id" : 18,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "264391e6-b5d1-4226-82f5-dcebf64e47f1",
+  "id" : 20,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
 } ]

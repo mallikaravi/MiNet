@@ -1,11 +1,11 @@
 {
-  "userId" : 21,
+  "userId" : 35,
   "inventoryId" : 10,
   "inventoryHistoryId" : 28,
   "orderId" : 8,
   "orderHistoryId" : 20,
-  "productId" : 10,
-  "productHistoryId" : 11,
+  "productId" : 14,
+  "productHistoryId" : 15,
   "supplierId" : 8,
   "transactionId" : 5,
   "transactionItemId" : 6

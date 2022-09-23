@@ -1,5 +1,5 @@
 [ {
-  "uuid" : "e35ab23d-451a-4f80-a1f7-07d6c870ca46",
+  "uuid" : "84146ccb-1218-4239-a7d4-4aea8a3df37f",
   "id" : 3,
   "fullName" : "Rishitha ravi",
   "userName" : "rishi",
@@ -9,7 +9,7 @@
   "address" : "Golconda,Bangalore",
   "role" : "MANAGER"
 }, {
-  "uuid" : "26388d4b-daab-43b0-858d-bb7b676c247d",
+  "uuid" : "b375cff6-33d7-443d-9024-d27a642c2122",
   "id" : 4,
   "fullName" : "kumar Ravi",
   "userName" : "kumar",
@@ -19,7 +19,7 @@
   "address" : "Gvt street,Bangalore",
   "role" : "MANAGER"
 }, {
-  "uuid" : "b69099f9-6498-42a0-b4e9-4bea7cf7d517",
+  "uuid" : "d595b117-fa24-447c-9afb-551e73440d97",
   "id" : 5,
   "fullName" : "Malleswari Ravi",
   "userName" : "mallika",
@@ -29,7 +29,7 @@
   "address" : "koti Street, Bangalore",
   "role" : "CASHIER"
 }, {
-  "uuid" : "089943ae-cc70-4d4c-b817-f27aee4aa30b",
+  "uuid" : "8190b865-2535-4169-93e7-6bb488010029",
   "id" : 2,
   "fullName" : "Jeshitha Ravi",
   "userName" : "jeshi",
@@ -39,7 +39,7 @@
   "address" : "Koti street,Bangalore",
   "role" : "CASHIER"
 }, {
-  "uuid" : "c57ece9a-7ee7-4aec-95f8-9cdadb0e522f",
+  "uuid" : "80529025-2c17-4a9d-9a12-e679a472dcff",
   "id" : 13,
   "fullName" : "karthikeya",
   "userName" : "karthik",
@@ -49,7 +49,7 @@
   "address" : "old street,Hyd",
   "role" : "ADMIN"
 }, {
-  "uuid" : "974f257e-34df-47b3-91b5-10b836ad97a9",
+  "uuid" : "8c8ebb22-f691-44e5-a581-366aff1e854b",
   "id" : 16,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -59,7 +59,7 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "fc0b0914-ec38-4092-8f67-7bd3752ef9ed",
+  "uuid" : "7f54769b-26bc-42dd-bf72-7344d324b61b",
   "id" : 18,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -69,8 +69,78 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "264391e6-b5d1-4226-82f5-dcebf64e47f1",
+  "uuid" : "390a36a4-e737-4eaf-87d9-8db799b87362",
   "id" : 20,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "dbff6cf6-5e21-41d3-8155-e0471fe2cc21",
+  "id" : 22,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "5350279f-915c-42b1-bbb3-fb558f641822",
+  "id" : 24,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "ecc48a04-9df4-466e-ba44-b0e7e3905ad3",
+  "id" : 26,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "93ebda98-07bc-42bf-a0c6-3eab8d2d2da9",
+  "id" : 28,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "374ad4ef-015c-4b87-9b7f-eeb24ff000a0",
+  "id" : 30,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "a9c881e8-61c0-4a41-baf5-45e685599048",
+  "id" : 32,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "f38c8b3c-70e4-43dd-aa69-ce5cc97b213a",
+  "id" : 34,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
   "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",

@@ -12,8 +12,11 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
+import com.novare.minet.model.Product;
 import com.novare.minet.model.User;
+import com.novare.minet.service.IProductService;
 import com.novare.minet.service.IUserService;
+import com.novare.minet.serviceimpl.ProductServiceImpl;
 import com.novare.minet.serviceimpl.UserServiceImpl;
 import com.novare.minet.util.ServiceUtil;
 
@@ -21,16 +24,20 @@ import com.novare.minet.util.ServiceUtil;
 public class TestSettingServiceImpl {
 
 	private static IUserService userService;
+	private static IProductService productService;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		userService = new UserServiceImpl();
+		productService = new ProductServiceImpl();
 
 	}
 
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 		userService = null;
+		productService = null;
+
 	}
 
 	@BeforeEach

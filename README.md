@@ -161,7 +161,7 @@ https://github.com/mallikaravi/MiNet/blob/main/design/Jiradashboard-Activities.p
 
 Future Enhancement
 ============
-* There should be different payment options for customers. If a user already has an account registered in the system, they can buy on credit, otherwise they have to pay by card or cash.
+* There should be different payment options for customers. If a user already has an account registered in the system, they can buy on credit, otherwise they have to pay by card or cash
 
 * Implement a commission-based system that gives the cashiers a certain percent of the sales the more they sell.
 

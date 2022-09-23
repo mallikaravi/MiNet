@@ -1,5 +1,5 @@
 [ {
-  "uuid" : "84146ccb-1218-4239-a7d4-4aea8a3df37f",
+  "uuid" : "ae1ea7b1-7769-476e-96bb-56bd81fbb4e0",
   "id" : 3,
   "fullName" : "Rishitha ravi",
   "userName" : "rishi",
@@ -9,7 +9,7 @@
   "address" : "Golconda,Bangalore",
   "role" : "MANAGER"
 }, {
-  "uuid" : "b375cff6-33d7-443d-9024-d27a642c2122",
+  "uuid" : "12459f9b-778b-4eea-a24c-637b45fcaf95",
   "id" : 4,
   "fullName" : "kumar Ravi",
   "userName" : "kumar",
@@ -19,7 +19,7 @@
   "address" : "Gvt street,Bangalore",
   "role" : "MANAGER"
 }, {
-  "uuid" : "d595b117-fa24-447c-9afb-551e73440d97",
+  "uuid" : "7e814800-2eef-4ebd-8dd3-bccdde2b2e57",
   "id" : 5,
   "fullName" : "Malleswari Ravi",
   "userName" : "mallika",
@@ -29,7 +29,7 @@
   "address" : "koti Street, Bangalore",
   "role" : "CASHIER"
 }, {
-  "uuid" : "8190b865-2535-4169-93e7-6bb488010029",
+  "uuid" : "a6c5b1ae-7296-4ea2-bed8-4518a8fa4f1e",
   "id" : 2,
   "fullName" : "Jeshitha Ravi",
   "userName" : "jeshi",
@@ -39,7 +39,7 @@
   "address" : "Koti street,Bangalore",
   "role" : "CASHIER"
 }, {
-  "uuid" : "80529025-2c17-4a9d-9a12-e679a472dcff",
+  "uuid" : "d69ab65e-896a-43dc-935a-97e111f7db90",
   "id" : 13,
   "fullName" : "karthikeya",
   "userName" : "karthik",
@@ -49,7 +49,7 @@
   "address" : "old street,Hyd",
   "role" : "ADMIN"
 }, {
-  "uuid" : "8c8ebb22-f691-44e5-a581-366aff1e854b",
+  "uuid" : "978454f7-6a2a-47a7-9bb7-3163e2f3eb41",
   "id" : 16,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -59,7 +59,7 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "7f54769b-26bc-42dd-bf72-7344d324b61b",
+  "uuid" : "3d37effe-798e-4ac7-a2ab-2d1ea2787b13",
   "id" : 18,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -69,7 +69,7 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "390a36a4-e737-4eaf-87d9-8db799b87362",
+  "uuid" : "7f01bf36-c721-4e48-b567-aad3615861bc",
   "id" : 20,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -79,7 +79,7 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "dbff6cf6-5e21-41d3-8155-e0471fe2cc21",
+  "uuid" : "7c92c4d5-cdb0-495e-a329-8ffe4adf3e0e",
   "id" : 22,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -89,7 +89,7 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "5350279f-915c-42b1-bbb3-fb558f641822",
+  "uuid" : "0583dc08-3f31-4578-9ae7-efc35d7586b1",
   "id" : 24,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -99,7 +99,7 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "ecc48a04-9df4-466e-ba44-b0e7e3905ad3",
+  "uuid" : "a37f7cff-0f25-4760-b68d-8e6792857145",
   "id" : 26,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -109,7 +109,7 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "93ebda98-07bc-42bf-a0c6-3eab8d2d2da9",
+  "uuid" : "e980e93a-778a-413a-86ae-266480872557",
   "id" : 28,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -119,7 +119,7 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "374ad4ef-015c-4b87-9b7f-eeb24ff000a0",
+  "uuid" : "de96b450-324e-44d3-8718-8f66ad802172",
   "id" : 30,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -129,7 +129,7 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "a9c881e8-61c0-4a41-baf5-45e685599048",
+  "uuid" : "ccb8d267-e4c4-430a-823f-6afabe017d77",
   "id" : 32,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
@@ -139,8 +139,28 @@
   "address" : null,
   "role" : null
 }, {
-  "uuid" : "f38c8b3c-70e4-43dd-aa69-ce5cc97b213a",
+  "uuid" : "14861b6a-1951-4129-be70-39aae138b3ff",
   "id" : 34,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "b652d407-c41c-42a3-8881-508994d6af88",
+  "id" : 36,
+  "fullName" : "Test Rishitha ravi",
+  "userName" : "abc",
+  "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+  "email" : null,
+  "phoneNumber" : null,
+  "address" : null,
+  "role" : null
+}, {
+  "uuid" : "88838dff-cee3-4c0b-aa87-3f298833d3e1",
+  "id" : 38,
   "fullName" : "Test Rishitha ravi",
   "userName" : "abc",
   "passWord" : "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",

@@ -72,6 +72,7 @@ NOTE: Product minimum quantity should be always one.
 * ORDER: To create an order,Product should be out of stock.
 * The ORDER shall be reviewed only by Admin and Manager
 * Cashier shall have access to see only his created orders.
+* Default Password for the users in the project is 123
 
 Project setup
 ============

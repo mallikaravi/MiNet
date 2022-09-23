@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class AdminView extends BaseView {
+public class AdminView extends MinetView {
 
 	public AdminView(String title) {
 		super(title);

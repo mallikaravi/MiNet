@@ -1,5 +1,7 @@
 package com.novare.minet.controller;
 
+import java.util.EnumSet;
+
 import com.novare.minet.model.User;
 import com.novare.minet.service.IAdminService;
 import com.novare.minet.util.MenuContext;
@@ -24,7 +26,13 @@ public class AdminController extends MiNetController {
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
 		try {
 			super.requestUserInput(context, currentUser);
-			int selectedOption = getView().getUserInput();
+			int selectedOption = 0;
+			if (EnumSet.of(MenuContext.PAYMENTS, MenuContext.CASHFLOW, MenuContext.PROFITS).contains(context)) {
+				getView().printInprogress();
+				getView().waitForDecision();
+			}
+
+			selectedOption = getView().getUserInput();
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
 			getView().printInvalidOption();
@@ -32,5 +40,6 @@ public class AdminController extends MiNetController {
 			setMenuVisible(false);
 			requestUserInput(context, currentUser);
 		}
-	}	
+	}
+
 }

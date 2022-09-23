@@ -28,21 +28,22 @@ public class SettingsController extends MiNetController {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-			case UPDATE_USER -> {
-				updateProfile();
-			}
-			case CHANGE_PASSWORD -> {
-				changePassword();
-			}
-			case DELETE_USER -> {
-				if (deleteUser()) {
-					setUserSession(null);
+				case UPDATE_USER -> {
+					updateProfile();
 				}
-			}
-			default -> {
-				int option = getView().getUserInput();
-				selectedOption = option;
-			}
+				case CHANGE_PASSWORD -> {
+					changePassword();
+				}
+				case DELETE_USER -> {
+					if (deleteUser()) {
+						selectedOption = 0;
+						setUserSession(null);
+					}
+				}
+				default -> {
+					int option = getView().getUserInput();
+					selectedOption = option;
+				}
 			}
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
@@ -64,6 +65,7 @@ public class SettingsController extends MiNetController {
 		if (askConfirmation) {
 			getModel().deleteUser(getUserSession());
 			getView().printSuccessMessage();
+			getView().waitForDecision();
 			return true;
 		}
 		return false;

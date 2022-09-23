@@ -19,12 +19,6 @@ public class Inventory extends IdProperty {
 		super();
 	}
 
-	/**
-	 * @param product
-	 * @param quantity
-	 * @param orderedQty
-	 * @param histories
-	 */
 	public Inventory(Product product, double availQty, double orderedQty) {
 		this();
 		this.product = product;
@@ -41,58 +35,34 @@ public class Inventory extends IdProperty {
 		id.close();
 	}
 
-	/**
-	 * @return the product
-	 */
 	public Product getProduct() {
 		return product;
 	}
 
-	/**
-	 * @param product the product to set
-	 */
 	public void setProduct(Product product) {
 		this.product = product;
 	}
 
-	/**
-	 * @return the availQty
-	 */
 	public double getAvailQty() {
 		return availQty;
 	}
 
-	/**
-	 * @param availQty the availQty to set
-	 */
 	public void setAvailQty(double availQty) {
 		this.availQty = availQty;
 	}
 
-	/**
-	 * @return the orderedQty
-	 */
 	public double getOrderedQty() {
 		return orderedQty;
 	}
 
-	/**
-	 * @param orderedQty the orderedQty to set
-	 */
 	public void setOrderedQty(double orderedQty) {
 		this.orderedQty = orderedQty;
 	}
 
-	/**
-	 * @return the histories
-	 */
 	public List<InventoryHistory> getHistories() {
 		return histories;
 	}
 
-	/**
-	 * @param histories the histories to set
-	 */
 	public void addHistories(User user) {
 		InventoryHistory history = new InventoryHistory(DateUtil.toDate(LocalDateTime.now()), this, user);
 		history.generateId();
@@ -100,22 +70,10 @@ public class Inventory extends IdProperty {
 		getHistories().add(history);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId());
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 
 	@Override
 	public boolean equals(Object obj) {
@@ -128,12 +86,6 @@ public class Inventory extends IdProperty {
 		Inventory other = (Inventory) obj;
 		return getId() == other.getId();
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 
 	@Override
 	public String toString() {

@@ -12,16 +12,10 @@ public class IdProperty {
 //	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private Integer id;
 
-	/**
-	 * @return the id
-	 */
 	public Integer getId() {
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -29,22 +23,11 @@ public class IdProperty {
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	public void generateId() {
 	}
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId());
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 
 	@Override
 	public boolean equals(Object obj) {

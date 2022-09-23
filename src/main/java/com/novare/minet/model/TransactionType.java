@@ -1,5 +1,5 @@
 package com.novare.minet.model;
 
 public enum TransactionType {
-	SALE, RETURN, AMEND
+	SALE, RETURN, AMEND;
 }

@@ -12,14 +12,14 @@ import com.novare.minet.model.TransactionType;
 import com.novare.minet.model.User;
 import com.novare.minet.service.ITransactionService;
 import com.novare.minet.util.MenuContext;
-import com.novare.minet.view.BaseView;
+import com.novare.minet.view.MinetView;
 import com.novare.minet.view.TransactionView;
 
 public class TransactionController extends MiNetController {
 
 	private Transaction newTransaction = new Transaction(getUserSession(), TransactionType.SALE);
 
-	public TransactionController(ITransactionService model, BaseView view) {
+	public TransactionController(ITransactionService model, MinetView view) {
 		super(model, view);
 	}
 

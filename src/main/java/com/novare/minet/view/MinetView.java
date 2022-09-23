@@ -6,14 +6,14 @@ import java.util.Scanner;
 
 import com.novare.minet.util.PrintHandler;
 
-public abstract class BaseView {
+public abstract class MinetView {
 	private final Scanner scanner;
 
-	public BaseView(String menuTitle) {
+	public MinetView(String menuTitle) {
 		this("** Welcome To MiNet **", menuTitle);
 	}
 
-	public BaseView(String appHeader, String menuTitle) {
+	public MinetView(String appHeader, String menuTitle) {
 		this.scanner = new Scanner(System.in);
 		PrintHandler.clearScreen();
 		setAppHeader(appHeader);
@@ -256,4 +256,9 @@ public abstract class BaseView {
 		return getUserText("Enter Search keyword: ");
 	}
 
+	public void printInprogress() {
+		String title;
+		title = "Implementation is in Progress";
+		System.out.println(title);
+	}
 }

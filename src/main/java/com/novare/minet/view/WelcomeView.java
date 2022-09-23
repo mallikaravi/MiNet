@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class WelcomeView extends BaseView {
+public class WelcomeView extends MinetView {
 
 	public WelcomeView(String title) {
 		super(title);

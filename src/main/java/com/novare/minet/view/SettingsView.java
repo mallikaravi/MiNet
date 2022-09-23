@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class SettingsView extends BaseView {
+public class SettingsView extends MinetView {
 
 	public SettingsView(String menuTitle) {
 		super(menuTitle);

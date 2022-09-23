@@ -1,55 +1,8 @@
 [ {
-  "uuid" : "350e24c1-2033-456b-85e5-01cc35306a35",
-  "id" : 1,
-  "product" : {
-    "uuid" : "d3cf97a7-cf99-4752-9736-c79107ad39e6",
-    "id" : 1,
-    "fullName" : "Apple iPhone 13 Pro Max",
-    "shortName" : "iphone Pro",
-    "description" : "Large screen, long battery life, ultra-fast performance and triple rear cameras with night mode, wide angle, cinematic mode, ultra wide angle and telephoto + LiDAR sensor",
-    "sellingPrice" : 40000.0,
-    "costPrice" : 35000.0,
-    "minQty" : 1,
-    "defaultSupplier" : {
-      "uuid" : "af972b0e-24ab-4e74-9ef2-58fc749104b5",
-      "id" : 2,
-      "name" : "3M Company",
-      "address" : "Unites States",
-      "email" : "company@gmail.com",
-      "phoneNumber" : "+1 545679965445"
-    },
-    "histories" : [ {
-      "uuid" : "427a5f68-856b-44b5-9be1-0e2d1c345415",
-      "id" : 1,
-      "updatedOn" : "19-09-2022 16:47:16",
-      "product" : "d3cf97a7-cf99-4752-9736-c79107ad39e6",
-      "updateBy" : {
-        "uuid" : "088103bb-1106-43d2-946e-761e6b8035f2",
-        "id" : 2,
-        "fullName" : "Jeshitha Ravi",
-        "userName" : "jeshitha",
-        "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-        "email" : "jeshi@gmail.com",
-        "phoneNumber" : "+91 9700315069",
-        "address" : "Koti street,Bangalore",
-        "role" : "CASHIER"
-      }
-    } ]
-  },
-  "availQty" : 20.0,
-  "orderedQty" : 0.0,
-  "histories" : [ {
-    "uuid" : "33b80810-b2ec-4425-bf05-57d5e8af6fb3",
-    "id" : 1,
-    "updatedOn" : "19-09-2022 16:47:16",
-    "inventory" : "350e24c1-2033-456b-85e5-01cc35306a35",
-    "updateBy" : "088103bb-1106-43d2-946e-761e6b8035f2"
-  }, "33b80810-b2ec-4425-bf05-57d5e8af6fb3" ]
-}, {
-  "uuid" : "5045ef57-596d-4722-b111-5af785117701",
+  "uuid" : "0b33eb94-9476-4b96-9252-1e149e8b71c6",
   "id" : 2,
   "product" : {
-    "uuid" : "532f02bf-3fad-4e8d-92f6-19ac08524929",
+    "uuid" : "99f5bf80-c6a3-4879-afd2-b5bb5327ce07",
     "id" : 2,
     "fullName" : "Samsung Galaxy S22 Ultra",
     "shortName" : "galaxy ultra",
@@ -58,7 +11,7 @@
     "costPrice" : 15000.0,
     "minQty" : 1,
     "defaultSupplier" : {
-      "uuid" : "e76f5cd0-2330-419e-8ce2-da24b738eb74",
+      "uuid" : "1c9c6b7f-840f-4c8f-b92d-6df1c70d3390",
       "id" : 2,
       "name" : "3M Company",
       "address" : "Unites States",
@@ -66,12 +19,12 @@
       "phoneNumber" : "+1 545679965445"
     },
     "histories" : [ {
-      "uuid" : "b9f2cc17-db1c-41bb-a469-c1ffbb2c2f04",
+      "uuid" : "2ed9784b-8282-4c66-b0fb-a24d5a49d7d8",
       "id" : 2,
       "updatedOn" : "19-09-2022 16:49:02",
-      "product" : "532f02bf-3fad-4e8d-92f6-19ac08524929",
+      "product" : "99f5bf80-c6a3-4879-afd2-b5bb5327ce07",
       "updateBy" : {
-        "uuid" : "84eab15b-f35f-4a2d-b4be-b562db116654",
+        "uuid" : "5dbf9c3c-6d4e-48ad-b304-48866930154b",
         "id" : 2,
         "fullName" : "Jeshitha Ravi",
         "userName" : "jeshitha",
@@ -86,17 +39,17 @@
   "availQty" : 20.0,
   "orderedQty" : 0.0,
   "histories" : [ {
-    "uuid" : "bedb32d7-38ef-4b20-9087-6e37b4c1c762",
+    "uuid" : "6cc19c31-7976-4882-8c3f-6e2011642e5d",
     "id" : 2,
     "updatedOn" : "19-09-2022 16:49:02",
-    "inventory" : "5045ef57-596d-4722-b111-5af785117701",
-    "updateBy" : "84eab15b-f35f-4a2d-b4be-b562db116654"
-  }, "bedb32d7-38ef-4b20-9087-6e37b4c1c762" ]
+    "inventory" : "0b33eb94-9476-4b96-9252-1e149e8b71c6",
+    "updateBy" : "5dbf9c3c-6d4e-48ad-b304-48866930154b"
+  }, "6cc19c31-7976-4882-8c3f-6e2011642e5d" ]
 }, {
-  "uuid" : "f6a0d3e8-7e38-468a-9577-273502a40dda",
+  "uuid" : "6a29c5f7-fbc5-40ca-9b33-75985e7ad53a",
   "id" : 3,
   "product" : {
-    "uuid" : "742284d2-481f-4e32-abdd-31241a72cf5a",
+    "uuid" : "1d44320d-3d0a-4182-9973-a6e60d18e765",
     "id" : 3,
     "fullName" : "vivo X80 Pro Plus 5G.",
     "shortName" : "vivo pro",
@@ -105,7 +58,7 @@
     "costPrice" : 25000.0,
     "minQty" : 1,
     "defaultSupplier" : {
-      "uuid" : "490b9985-578d-4d9f-84b5-ecc41c1b9cb2",
+      "uuid" : "af3b9f62-677e-4e12-bed7-af9484ce51f5",
       "id" : 1,
       "name" : "AGC Incorporated",
       "address" : "Japan",
@@ -113,12 +66,12 @@
       "phoneNumber" : "+81 568834892"
     },
     "histories" : [ {
-      "uuid" : "5f9e2707-05c0-49a0-a4a6-d58031adaf32",
+      "uuid" : "69ff89ed-6b51-4420-88b7-9b4ae1c51753",
       "id" : 3,
       "updatedOn" : "19-09-2022 16:52:06",
-      "product" : "742284d2-481f-4e32-abdd-31241a72cf5a",
+      "product" : "1d44320d-3d0a-4182-9973-a6e60d18e765",
       "updateBy" : {
-        "uuid" : "9dbdda82-82bc-4834-8105-d935b1e46f6a",
+        "uuid" : "4b1c1944-cbff-4ee4-8766-6ead116240f5",
         "id" : 2,
         "fullName" : "Jeshitha Ravi",
         "userName" : "jeshitha",
@@ -133,64 +86,17 @@
   "availQty" : 20.0,
   "orderedQty" : 0.0,
   "histories" : [ {
-    "uuid" : "d07b466e-c389-48c6-a2c5-3718bd816e15",
+    "uuid" : "fa4a578f-4b95-4803-bc13-732bba0069c6",
     "id" : 3,
     "updatedOn" : "19-09-2022 16:52:06",
-    "inventory" : "f6a0d3e8-7e38-468a-9577-273502a40dda",
-    "updateBy" : "9dbdda82-82bc-4834-8105-d935b1e46f6a"
-  }, "d07b466e-c389-48c6-a2c5-3718bd816e15" ]
+    "inventory" : "6a29c5f7-fbc5-40ca-9b33-75985e7ad53a",
+    "updateBy" : "4b1c1944-cbff-4ee4-8766-6ead116240f5"
+  }, "fa4a578f-4b95-4803-bc13-732bba0069c6" ]
 }, {
-  "uuid" : "08141af0-0321-4b87-ab51-729ba8978bfb",
-  "id" : 4,
-  "product" : {
-    "uuid" : "9e017aa9-dca3-44c3-a323-19a7b5d8db44",
-    "id" : 4,
-    "fullName" : "Samsung Galaxy Z Flip 4 5G",
-    "shortName" : "Galaxy flip",
-    "description" : "The new Samsung Galaxy Z Flip4 is a cool and foldable mobile phone. IPX8 waterproof and a long-lasting battery.",
-    "sellingPrice" : 29000.0,
-    "costPrice" : 20000.0,
-    "minQty" : 1,
-    "defaultSupplier" : {
-      "uuid" : "144439cd-e4a6-4da5-b160-569b1f2bbc7a",
-      "id" : 2,
-      "name" : "3M Company",
-      "address" : "Unites States",
-      "email" : "company@gmail.com",
-      "phoneNumber" : "+1 545679965445"
-    },
-    "histories" : [ {
-      "uuid" : "a22651a9-4db6-4daf-a463-373634aa0a0e",
-      "id" : 4,
-      "updatedOn" : "19-09-2022 16:56:08",
-      "product" : "9e017aa9-dca3-44c3-a323-19a7b5d8db44",
-      "updateBy" : {
-        "uuid" : "119804a9-3e5d-4643-bc51-8f7d82714c60",
-        "id" : 2,
-        "fullName" : "Jeshitha Ravi",
-        "userName" : "jeshitha",
-        "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-        "email" : "jeshi@gmail.com",
-        "phoneNumber" : "+91 9700315069",
-        "address" : "Koti street,Bangalore",
-        "role" : "CASHIER"
-      }
-    } ]
-  },
-  "availQty" : 10.0,
-  "orderedQty" : 0.0,
-  "histories" : [ {
-    "uuid" : "eabd2ac6-8728-4385-b078-73e8bc230cb7",
-    "id" : 4,
-    "updatedOn" : "19-09-2022 16:56:08",
-    "inventory" : "08141af0-0321-4b87-ab51-729ba8978bfb",
-    "updateBy" : "119804a9-3e5d-4643-bc51-8f7d82714c60"
-  }, "eabd2ac6-8728-4385-b078-73e8bc230cb7" ]
-}, {
-  "uuid" : "e3b5fe8d-3399-47ae-b40f-4c094da1f5dd",
+  "uuid" : "c7b4e48b-67a5-483b-9392-6f75c868012a",
   "id" : 5,
   "product" : {
-    "uuid" : "06d44903-9aef-444d-9111-5bf82422d111",
+    "uuid" : "b26d4544-0700-4335-ac0f-00f52bfc5fd1",
     "id" : 5,
     "fullName" : "Xiaomi 12 Pro 5G.",
     "shortName" : "xiaomi pro",
@@ -199,7 +105,7 @@
     "costPrice" : 20000.0,
     "minQty" : 1,
     "defaultSupplier" : {
-      "uuid" : "9d1d3a82-ca3e-4583-b566-f0ac2b1bc84c",
+      "uuid" : "619b6518-9786-46b2-969a-21d7ad14a0db",
       "id" : 6,
       "name" : "Hitachi Ltd.",
       "address" : "USA",
@@ -207,12 +113,12 @@
       "phoneNumber" : "+1 56677389292"
     },
     "histories" : [ {
-      "uuid" : "75f43e52-9ea3-426d-ac09-329e89e97581",
+      "uuid" : "4611fdb2-f3b2-4fea-a228-7b4b77bf805f",
       "id" : 5,
       "updatedOn" : "19-09-2022 18:25:39",
-      "product" : "06d44903-9aef-444d-9111-5bf82422d111",
+      "product" : "b26d4544-0700-4335-ac0f-00f52bfc5fd1",
       "updateBy" : {
-        "uuid" : "709e4f52-ed34-4cd4-a350-5607bc245e2a",
+        "uuid" : "eaaeeb40-62f7-4ab2-a42a-8de16b4d3b58",
         "id" : 3,
         "fullName" : "Rishitha ravi",
         "userName" : "rishi",
@@ -227,17 +133,17 @@
   "availQty" : 10.0,
   "orderedQty" : 0.0,
   "histories" : [ {
-    "uuid" : "90525163-264e-43d0-a861-ecc41869d905",
+    "uuid" : "76be1437-9f78-4c3b-b56e-8b0f1dc4fec4",
     "id" : 5,
     "updatedOn" : "19-09-2022 18:25:39",
-    "inventory" : "e3b5fe8d-3399-47ae-b40f-4c094da1f5dd",
-    "updateBy" : "709e4f52-ed34-4cd4-a350-5607bc245e2a"
-  }, "90525163-264e-43d0-a861-ecc41869d905" ]
+    "inventory" : "c7b4e48b-67a5-483b-9392-6f75c868012a",
+    "updateBy" : "eaaeeb40-62f7-4ab2-a42a-8de16b4d3b58"
+  }, "76be1437-9f78-4c3b-b56e-8b0f1dc4fec4" ]
 }, {
-  "uuid" : "26baa3c2-d207-4f23-bdc4-00e9988bb31a",
+  "uuid" : "fc718c4a-2645-4929-a7e6-5464d4f43178",
   "id" : 6,
   "product" : {
-    "uuid" : "208ef2e7-c9b2-448c-9942-1ccacb28c3e3",
+    "uuid" : "14d396bd-5133-4505-abb7-a6273f4cf574",
     "id" : 6,
     "fullName" : "OnePlus 10 Pro.",
     "shortName" : "OnePlus",
@@ -246,7 +152,7 @@
     "costPrice" : 15000.0,
     "minQty" : 1,
     "defaultSupplier" : {
-      "uuid" : "65015a1e-727f-4e10-93bb-70c990ef9b6f",
+      "uuid" : "ab4657c7-3d4d-47a8-b728-229be02288a0",
       "id" : 1,
       "name" : "AGC Incorporated",
       "address" : "Japan",
@@ -254,12 +160,12 @@
       "phoneNumber" : "+81 568834892"
     },
     "histories" : [ {
-      "uuid" : "24e49f17-4640-48e0-b28b-e8ac27f78f7b",
+      "uuid" : "eafee165-9fe5-42a3-8b4e-e45d1fa4fab8",
       "id" : 6,
       "updatedOn" : "19-09-2022 18:27:32",
-      "product" : "208ef2e7-c9b2-448c-9942-1ccacb28c3e3",
+      "product" : "14d396bd-5133-4505-abb7-a6273f4cf574",
       "updateBy" : {
-        "uuid" : "3f7d188b-5101-47af-a8af-546b541275b9",
+        "uuid" : "72a24d66-1051-4a03-bbd1-396f68e89700",
         "id" : 3,
         "fullName" : "Rishitha ravi",
         "userName" : "rishi",
@@ -271,21 +177,21 @@
       }
     } ]
   },
-  "availQty" : 1.0,
+  "availQty" : 27.0,
   "orderedQty" : 0.0,
   "histories" : [ {
-    "uuid" : "3614b613-9df7-4412-9e01-20a541e850ee",
+    "uuid" : "683fb720-dc8a-4a6d-9912-be57111acb35",
     "id" : 6,
     "updatedOn" : "19-09-2022 18:27:32",
-    "inventory" : "26baa3c2-d207-4f23-bdc4-00e9988bb31a",
-    "updateBy" : "3f7d188b-5101-47af-a8af-546b541275b9"
-  }, "3614b613-9df7-4412-9e01-20a541e850ee", {
-    "uuid" : "a12abd80-371e-4d64-b190-2aa456a276db",
+    "inventory" : "fc718c4a-2645-4929-a7e6-5464d4f43178",
+    "updateBy" : "72a24d66-1051-4a03-bbd1-396f68e89700"
+  }, "683fb720-dc8a-4a6d-9912-be57111acb35", {
+    "uuid" : "9f13a956-4374-4d0e-9137-8be42b8445ab",
     "id" : 7,
     "updatedOn" : "19-09-2022 18:29:04",
-    "inventory" : "26baa3c2-d207-4f23-bdc4-00e9988bb31a",
+    "inventory" : "fc718c4a-2645-4929-a7e6-5464d4f43178",
     "updateBy" : {
-      "uuid" : "980530b8-734a-4213-a9ba-515c80efbfd9",
+      "uuid" : "8df7a9a1-0673-4ef4-8e5f-c9854f495054",
       "id" : 3,
       "fullName" : "Rishitha ravi",
       "userName" : "rishi",
@@ -295,5 +201,355 @@
       "address" : "Golconda,Bangalore",
       "role" : "MANAGER"
     }
-  }, "a12abd80-371e-4d64-b190-2aa456a276db" ]
+  }, "9f13a956-4374-4d0e-9137-8be42b8445ab", {
+    "uuid" : "b8a5ceb0-a005-4d35-b542-acddc8692db0",
+    "id" : 9,
+    "updatedOn" : "21-09-2022 17:27:37",
+    "inventory" : "fc718c4a-2645-4929-a7e6-5464d4f43178",
+    "updateBy" : {
+      "uuid" : "d23dd849-3e6b-4e3f-853b-517e4c4b9a2f",
+      "id" : 1,
+      "fullName" : "Karthikeya ravi",
+      "userName" : "karthik",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "karthi@gmail.com",
+      "phoneNumber" : "+91 9953614242",
+      "address" : "Near ATM building,Bangalore",
+      "role" : "ADMIN"
+    }
+  }, "b8a5ceb0-a005-4d35-b542-acddc8692db0", {
+    "uuid" : "472d5a54-5f0a-4a26-9ad6-ed3abf09937d",
+    "id" : 14,
+    "updatedOn" : "22-09-2022 12:18:35",
+    "inventory" : "fc718c4a-2645-4929-a7e6-5464d4f43178",
+    "updateBy" : {
+      "uuid" : "97b7febb-a62c-4b08-b097-e2f9b7077d3e",
+      "id" : 1,
+      "fullName" : "Karthikeya ravi",
+      "userName" : "karthik",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "karthi@gmail.com",
+      "phoneNumber" : "+91 9953614242",
+      "address" : "Near ATM building,Bangalore",
+      "role" : "ADMIN"
+    }
+  }, "472d5a54-5f0a-4a26-9ad6-ed3abf09937d", {
+    "uuid" : "277adfcf-e8fc-4309-b453-829551c0e6a8",
+    "id" : 15,
+    "updatedOn" : "22-09-2022 12:27:45",
+    "inventory" : "fc718c4a-2645-4929-a7e6-5464d4f43178",
+    "updateBy" : {
+      "uuid" : "a2c0ff64-9fd3-4c76-bf71-69caadc25f33",
+      "id" : 1,
+      "fullName" : "Karthikeya ravi",
+      "userName" : "karthik",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "karthi@gmail.com",
+      "phoneNumber" : "+91 9953614242",
+      "address" : "Near ATM building,Bangalore",
+      "role" : "ADMIN"
+    }
+  }, "277adfcf-e8fc-4309-b453-829551c0e6a8" ]
+}, {
+  "uuid" : "270c2dd7-2d0e-4d8b-b495-c77aac238922",
+  "id" : 4,
+  "product" : {
+    "uuid" : "09a08581-7de1-4c92-b9fe-35a4140cddad",
+    "id" : 4,
+    "fullName" : "Samsung Galaxy Z Flip 4 5G",
+    "shortName" : "Galaxy flip",
+    "description" : "The new Samsung Galaxy Z Flip4 is a cool and foldable mobile phone. IPX8 waterproof and a long-lasting battery.",
+    "sellingPrice" : 29000.0,
+    "costPrice" : 20000.0,
+    "minQty" : 1,
+    "defaultSupplier" : {
+      "uuid" : "28be3147-0e51-46fe-9fbf-c8f97d0a7151",
+      "id" : 2,
+      "name" : "3M Company",
+      "address" : "Unites States",
+      "email" : "company@gmail.com",
+      "phoneNumber" : "+1 545679965445"
+    },
+    "histories" : [ {
+      "uuid" : "827bf7b5-d1ff-44b4-a7c1-cf248a891804",
+      "id" : 4,
+      "updatedOn" : "19-09-2022 16:56:08",
+      "product" : "09a08581-7de1-4c92-b9fe-35a4140cddad",
+      "updateBy" : {
+        "uuid" : "04e56279-71ce-42d3-aeda-1e9b6a28a504",
+        "id" : 2,
+        "fullName" : "Jeshitha Ravi",
+        "userName" : "jeshitha",
+        "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+        "email" : "jeshi@gmail.com",
+        "phoneNumber" : "+91 9700315069",
+        "address" : "Koti street,Bangalore",
+        "role" : "CASHIER"
+      }
+    } ]
+  },
+  "availQty" : 41.0,
+  "orderedQty" : -20.0,
+  "histories" : [ {
+    "uuid" : "9b3ed581-7319-4557-9b3b-1837d02ab288",
+    "id" : 4,
+    "updatedOn" : "19-09-2022 16:56:08",
+    "inventory" : "270c2dd7-2d0e-4d8b-b495-c77aac238922",
+    "updateBy" : "04e56279-71ce-42d3-aeda-1e9b6a28a504"
+  }, "9b3ed581-7319-4557-9b3b-1837d02ab288", {
+    "uuid" : "90575f63-fd35-4a90-beb3-3e0afe9f64dc",
+    "id" : 8,
+    "updatedOn" : "21-09-2022 17:13:48",
+    "inventory" : "270c2dd7-2d0e-4d8b-b495-c77aac238922",
+    "updateBy" : {
+      "uuid" : "859e1172-da24-4023-9b45-3ae20c418347",
+      "id" : 1,
+      "fullName" : "Karthikeya ravi",
+      "userName" : "karthik",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "karthi@gmail.com",
+      "phoneNumber" : "+91 9953614242",
+      "address" : "Near ATM building,Bangalore",
+      "role" : "ADMIN"
+    }
+  }, "90575f63-fd35-4a90-beb3-3e0afe9f64dc", {
+    "uuid" : "e5c1adbd-9fa9-429e-a50e-2f2d81f41237",
+    "id" : 16,
+    "updatedOn" : "22-09-2022 12:28:25",
+    "inventory" : "270c2dd7-2d0e-4d8b-b495-c77aac238922",
+    "updateBy" : {
+      "uuid" : "abc31829-c5f1-4a65-a330-f9221f5ccd37",
+      "id" : 1,
+      "fullName" : "Karthikeya ravi",
+      "userName" : "karthik",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "karthi@gmail.com",
+      "phoneNumber" : "+91 9953614242",
+      "address" : "Near ATM building,Bangalore",
+      "role" : "ADMIN"
+    }
+  }, "e5c1adbd-9fa9-429e-a50e-2f2d81f41237", {
+    "uuid" : "93bb3303-da0a-422d-b49b-9b6337c9409a",
+    "id" : 17,
+    "updatedOn" : "22-09-2022 12:31:39",
+    "inventory" : "270c2dd7-2d0e-4d8b-b495-c77aac238922",
+    "updateBy" : {
+      "uuid" : "f48195d4-4957-4e9a-bf2f-db36e3ac9eff",
+      "id" : 1,
+      "fullName" : "Karthikeya ravi",
+      "userName" : "karthik",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "karthi@gmail.com",
+      "phoneNumber" : "+91 9953614242",
+      "address" : "Near ATM building,Bangalore",
+      "role" : "ADMIN"
+    }
+  }, "93bb3303-da0a-422d-b49b-9b6337c9409a", {
+    "uuid" : "1f16ba23-56bd-4f32-950b-04d6d32b1de9",
+    "id" : 18,
+    "updatedOn" : "22-09-2022 12:34:37",
+    "inventory" : "270c2dd7-2d0e-4d8b-b495-c77aac238922",
+    "updateBy" : {
+      "uuid" : "f040d3bd-d888-4c00-ac69-12bc8f0627b0",
+      "id" : 1,
+      "fullName" : "Karthikeya ravi",
+      "userName" : "karthik",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "karthi@gmail.com",
+      "phoneNumber" : "+91 9953614242",
+      "address" : "Near ATM building,Bangalore",
+      "role" : "ADMIN"
+    }
+  }, "1f16ba23-56bd-4f32-950b-04d6d32b1de9", {
+    "uuid" : "a123df68-a0ec-4a97-9653-10837aa85aa3",
+    "id" : 19,
+    "updatedOn" : "22-09-2022 12:34:50",
+    "inventory" : "270c2dd7-2d0e-4d8b-b495-c77aac238922",
+    "updateBy" : {
+      "uuid" : "b0afa1a8-9644-41ef-b46a-010be5479be5",
+      "id" : 1,
+      "fullName" : "Karthikeya ravi",
+      "userName" : "karthik",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "karthi@gmail.com",
+      "phoneNumber" : "+91 9953614242",
+      "address" : "Near ATM building,Bangalore",
+      "role" : "ADMIN"
+    }
+  }, "a123df68-a0ec-4a97-9653-10837aa85aa3" ]
+}, {
+  "uuid" : "c4af1d2f-e713-4fa6-83b2-7a59a68cb217",
+  "id" : 1,
+  "product" : {
+    "uuid" : "8c8cde8b-2a9a-45af-8fe8-570ad9159839",
+    "id" : 1,
+    "fullName" : "Apple iPhone 13 Pro Max",
+    "shortName" : "iphone Pro",
+    "description" : "Large screen, long battery life, ultra-fast performance and triple rear cameras with night mode, wide angle, cinematic mode, ultra wide angle and telephoto + LiDAR sensor",
+    "sellingPrice" : 40000.0,
+    "costPrice" : 35000.0,
+    "minQty" : 1,
+    "defaultSupplier" : {
+      "uuid" : "dab4fee4-97eb-471e-9ccb-5569ee7cc8a9",
+      "id" : 2,
+      "name" : "3M Company",
+      "address" : "Unites States",
+      "email" : "company@gmail.com",
+      "phoneNumber" : "+1 545679965445"
+    },
+    "histories" : [ {
+      "uuid" : "ee807a9e-90aa-4595-a854-8faa67528475",
+      "id" : 1,
+      "updatedOn" : "19-09-2022 16:47:16",
+      "product" : "8c8cde8b-2a9a-45af-8fe8-570ad9159839",
+      "updateBy" : {
+        "uuid" : "6151e38e-1d0c-448b-b78c-53d84350b6ec",
+        "id" : 2,
+        "fullName" : "Jeshitha Ravi",
+        "userName" : "jeshitha",
+        "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+        "email" : "jeshi@gmail.com",
+        "phoneNumber" : "+91 9700315069",
+        "address" : "Koti street,Bangalore",
+        "role" : "CASHIER"
+      }
+    } ]
+  },
+  "availQty" : 62.0,
+  "orderedQty" : -20.0,
+  "histories" : [ {
+    "uuid" : "e3cd49c2-7836-486e-88d9-55c9a35b3f24",
+    "id" : 1,
+    "updatedOn" : "19-09-2022 16:47:16",
+    "inventory" : "c4af1d2f-e713-4fa6-83b2-7a59a68cb217",
+    "updateBy" : "6151e38e-1d0c-448b-b78c-53d84350b6ec"
+  }, "e3cd49c2-7836-486e-88d9-55c9a35b3f24", {
+    "uuid" : "7a6b2fdb-690c-4c4b-8a11-60335e7f3172",
+    "id" : 20,
+    "updatedOn" : "22-09-2022 16:04:04",
+    "inventory" : "c4af1d2f-e713-4fa6-83b2-7a59a68cb217",
+    "updateBy" : {
+      "uuid" : "268bb116-b961-4183-a071-68f8acbe6342",
+      "id" : 2,
+      "fullName" : "Jeshitha Ravi",
+      "userName" : "jeshi",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "jeshi@gmail.com",
+      "phoneNumber" : "+91 9700315069",
+      "address" : "Koti street,Bangalore",
+      "role" : "CASHIER"
+    }
+  }, "7a6b2fdb-690c-4c4b-8a11-60335e7f3172", {
+    "uuid" : "7b5a8465-8b21-4051-8627-162ae4e5be9b",
+    "id" : 21,
+    "updatedOn" : "22-09-2022 16:04:04",
+    "inventory" : "c4af1d2f-e713-4fa6-83b2-7a59a68cb217",
+    "updateBy" : {
+      "uuid" : "6bb4797d-a5fc-4a81-8531-23da2c3252ea",
+      "id" : 2,
+      "fullName" : "Jeshitha Ravi",
+      "userName" : "jeshi",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "jeshi@gmail.com",
+      "phoneNumber" : "+91 9700315069",
+      "address" : "Koti street,Bangalore",
+      "role" : "CASHIER"
+    }
+  }, "7b5a8465-8b21-4051-8627-162ae4e5be9b", {
+    "uuid" : "f83e6466-2ef7-475f-9bf7-4cdb33eff6de",
+    "id" : 22,
+    "updatedOn" : "22-09-2022 16:57:48",
+    "inventory" : "c4af1d2f-e713-4fa6-83b2-7a59a68cb217",
+    "updateBy" : {
+      "uuid" : "b2f2b540-f7a6-48f0-bccb-b21ba7e64c0f",
+      "id" : 3,
+      "fullName" : "Rishitha ravi",
+      "userName" : "rishi",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "rishi@gmail.com",
+      "phoneNumber" : "+91 9877044667",
+      "address" : "Golconda,Bangalore",
+      "role" : "MANAGER"
+    }
+  }, "f83e6466-2ef7-475f-9bf7-4cdb33eff6de", {
+    "uuid" : "00bae9f9-b096-4255-a4b1-a7c5063710a0",
+    "id" : 23,
+    "updatedOn" : "22-09-2022 16:59:04",
+    "inventory" : "c4af1d2f-e713-4fa6-83b2-7a59a68cb217",
+    "updateBy" : {
+      "uuid" : "3801354f-2796-4044-925d-e4148be2abc8",
+      "id" : 13,
+      "fullName" : "karthikeya",
+      "userName" : "karthik",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "karthik@gmail.com",
+      "phoneNumber" : "+9199876543",
+      "address" : "old street,Hyd",
+      "role" : "ADMIN"
+    }
+  }, "00bae9f9-b096-4255-a4b1-a7c5063710a0", {
+    "uuid" : "8850b601-e53b-46d9-943f-99d6297a0e1a",
+    "id" : 24,
+    "updatedOn" : "22-09-2022 17:09:04",
+    "inventory" : "c4af1d2f-e713-4fa6-83b2-7a59a68cb217",
+    "updateBy" : {
+      "uuid" : "20a1b1d4-5a37-414b-8053-454c540ee9ef",
+      "id" : 3,
+      "fullName" : "Rishitha ravi",
+      "userName" : "rishi",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "rishi@gmail.com",
+      "phoneNumber" : "+91 9877044667",
+      "address" : "Golconda,Bangalore",
+      "role" : "MANAGER"
+    }
+  }, "8850b601-e53b-46d9-943f-99d6297a0e1a", {
+    "uuid" : "62e4ca98-b561-495d-af39-fa41fa234037",
+    "id" : 25,
+    "updatedOn" : "22-09-2022 17:09:16",
+    "inventory" : "c4af1d2f-e713-4fa6-83b2-7a59a68cb217",
+    "updateBy" : {
+      "uuid" : "8723fb70-119f-407e-a555-d0d038b19e64",
+      "id" : 3,
+      "fullName" : "Rishitha ravi",
+      "userName" : "rishi",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "rishi@gmail.com",
+      "phoneNumber" : "+91 9877044667",
+      "address" : "Golconda,Bangalore",
+      "role" : "MANAGER"
+    }
+  }, "62e4ca98-b561-495d-af39-fa41fa234037", {
+    "uuid" : "3107113d-b4b2-4eb4-8936-91f07899c6a5",
+    "id" : 26,
+    "updatedOn" : "22-09-2022 17:09:27",
+    "inventory" : "c4af1d2f-e713-4fa6-83b2-7a59a68cb217",
+    "updateBy" : {
+      "uuid" : "0058bd5e-2e71-44c2-b12b-a2b0f3ac7b1b",
+      "id" : 3,
+      "fullName" : "Rishitha ravi",
+      "userName" : "rishi",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "rishi@gmail.com",
+      "phoneNumber" : "+91 9877044667",
+      "address" : "Golconda,Bangalore",
+      "role" : "MANAGER"
+    }
+  }, "3107113d-b4b2-4eb4-8936-91f07899c6a5", {
+    "uuid" : "bd154956-389e-467a-ac66-6141329d5ac7",
+    "id" : 27,
+    "updatedOn" : "22-09-2022 17:09:35",
+    "inventory" : "c4af1d2f-e713-4fa6-83b2-7a59a68cb217",
+    "updateBy" : {
+      "uuid" : "ab499f34-0b84-4430-b719-3b80f756193b",
+      "id" : 3,
+      "fullName" : "Rishitha ravi",
+      "userName" : "rishi",
+      "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "email" : "rishi@gmail.com",
+      "phoneNumber" : "+91 9877044667",
+      "address" : "Golconda,Bangalore",
+      "role" : "MANAGER"
+    }
+  }, "bd154956-389e-467a-ac66-6141329d5ac7" ]
 } ]

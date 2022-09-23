@@ -86,19 +86,12 @@ public class WelcomeController extends MiNetController {
 			}
 		}
 		setUserSession(login);
-
 	}
 
-	/**
-	 * this method is used to create a user by sign up
-	 * 
-	 * @throws Exception
-	 */
 	private void createUser() throws Exception {
 		if (newUser.getFullName() == null) {
 			newUser.setFullName(getView().askUserFullName());
 		}
-
 		if (newUser.getUserName() == null) {
 			newUser.setUserName(getView().askUserName());
 			if (getModel().isValidUser(newUser)) {

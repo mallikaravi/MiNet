@@ -10,18 +10,10 @@ public class TransactionItems extends IdProperty {
 	private float quantity;
 	private double totalAmount;
 
-	/**
-	 * 
-	 */
 	public TransactionItems() {
 		super();
 	}
 
-	/**
-	 * @param product
-	 * @param quantity
-	 * @param totalAmount
-	 */
 	public TransactionItems(Product product, float quantity, double totalAmount) {
 		this();
 		this.product = product;
@@ -38,76 +30,42 @@ public class TransactionItems extends IdProperty {
 		id.close();
 	}
 
-	/**
-	 * @return the transaction
-	 */
 	public Transaction getTransaction() {
 		return transaction;
 	}
 
-	/**
-	 * @param transaction the transaction to set
-	 */
 	public void setTransaction(Transaction transaction) {
 		this.transaction = transaction;
 	}
 
-	/**
-	 * @return the product
-	 */
 	public Product getProduct() {
 		return product;
 	}
 
-	/**
-	 * @param product the product to set
-	 */
 	public void setProduct(Product product) {
 		this.product = product;
 	}
 
-	/**
-	 * @return the quantity
-	 */
 	public float getQuantity() {
 		return quantity;
 	}
 
-	/**
-	 * @param quantity the quantity to set
-	 */
 	public void setQuantity(float quantity) {
 		this.quantity = quantity;
 	}
 
-	/**
-	 * @return the totalAmount
-	 */
 	public double getTotalAmount() {
 		return totalAmount;
 	}
 
-	/**
-	 * @param totalAmount the totalAmount to set
-	 */
 	public void setTotalAmount(double totalAmount) {
 		this.totalAmount = totalAmount;
 	}
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId());
 	}
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 
 	@Override
 	public boolean equals(Object obj) {
@@ -120,11 +78,6 @@ public class TransactionItems extends IdProperty {
 		TransactionItems other = (TransactionItems) obj;
 		return getId() == other.getId();
 	}
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 
 	@Override
 	public String toString() {

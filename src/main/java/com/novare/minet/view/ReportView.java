@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class ReportView extends BaseView {
+public class ReportView extends MinetView {
 
 	public ReportView(String title) {
 		super(title);

@@ -1,40 +1,40 @@
 [ {
-  "uuid" : "897706fa-c27b-40bf-aa07-60096aa65b9b",
+  "uuid" : "445775db-3f52-4b8f-8c78-986254999c3c",
   "id" : 1,
   "name" : "AGC Incorporated",
   "address" : "Japan",
   "email" : "agc@gmail.com",
   "phoneNumber" : "+81 568834892"
 }, {
-  "uuid" : "d8f3031c-4777-4975-b30a-82e79dc282e2",
+  "uuid" : "b969c6ca-d965-4e87-9bee-c843c93292b2",
   "id" : 2,
   "name" : "3M Company",
   "address" : "Unites States",
   "email" : "company@gmail.com",
   "phoneNumber" : "+1 545679965445"
 }, {
-  "uuid" : "4c72e1d1-11af-425b-a2a1-3d80ad31c217",
+  "uuid" : "571047c4-fe03-45ff-982b-e76fe344b4ce",
   "id" : 3,
   "name" : "Flex Limited",
   "address" : "Unites States",
   "email" : "flex@gmail.com",
   "phoneNumber" : "+1 65678398459"
 }, {
-  "uuid" : "f5ab8905-d7d4-4cb0-b7c9-2754bd044189",
+  "uuid" : "3b592e06-e7cb-4dc8-b2b6-33e7cbe16d05",
   "id" : 4,
   "name" : "Advantest Corp",
   "address" : "Japan",
   "email" : "advantest@gmail.com",
   "phoneNumber" : "+81 345689890"
 }, {
-  "uuid" : "3aec7374-f4d8-44fa-97d3-32a2c43d3817",
+  "uuid" : "bae57dba-38d3-493b-a256-59395daafb47",
   "id" : 5,
   "name" : "Elentec co., Ltd.",
   "address" : "India",
   "email" : "elentec@gmail.com",
   "phoneNumber" : "+91 7646547738"
 }, {
-  "uuid" : "c827d167-aa73-431b-befe-2766fd425d9c",
+  "uuid" : "be9122c0-3afa-468b-8a1c-47efd2629f0b",
   "id" : 6,
   "name" : "Hitachi Ltd.",
   "address" : "USA",

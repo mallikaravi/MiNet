@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class OrderView extends BaseView {
+public class OrderView extends MinetView {
 
 	public OrderView(String title) {
 		super(title);

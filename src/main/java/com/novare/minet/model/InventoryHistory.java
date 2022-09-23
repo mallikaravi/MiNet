@@ -15,11 +15,6 @@ public class InventoryHistory extends IdProperty {
 		super();
 	}
 
-	/**
-	 * @param updatedOn
-	 * @param inventory
-	 * @param updateBy
-	 */
 	public InventoryHistory(Date updatedOn, Inventory inventory, User updateBy) {
 		this();
 		this.updatedOn = updatedOn;
@@ -36,64 +31,34 @@ public class InventoryHistory extends IdProperty {
 		id.close();
 	}
 
-	/**
-	 * @return the updatedOn
-	 */
 	public Date getUpdatedOn() {
 		return updatedOn;
 	}
 
-	/**
-	 * @param updatedOn the updatedOn to set
-	 */
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
 	}
 
-	/**
-	 * @return the inventory
-	 */
 	public Inventory getInventory() {
 		return inventory;
 	}
 
-	/**
-	 * @param inventory the inventory to set
-	 */
 	public void setInventory(Inventory inventory) {
 		this.inventory = inventory;
 	}
 
-	/**
-	 * @return the updateBy
-	 */
 	public User getUpdateBy() {
 		return updateBy;
 	}
 
-	/**
-	 * @param updateBy the updateBy to set
-	 */
 	public void setUpdateBy(User updateBy) {
 		this.updateBy = updateBy;
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), inventory, updateBy, updatedOn);
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 
 	@Override
 	public boolean equals(Object obj) {
@@ -107,12 +72,6 @@ public class InventoryHistory extends IdProperty {
 		return getId() == other.getId() && Objects.equals(inventory, other.inventory)
 				&& Objects.equals(updateBy, other.updateBy) && Objects.equals(updatedOn, other.updatedOn);
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 
 	@Override
 	public String toString() {

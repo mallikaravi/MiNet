@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class SupplierView extends BaseView {
+public class SupplierView extends MinetView {
 
 	public SupplierView(String title) {
 		super(title);

@@ -17,19 +17,10 @@ public class Transaction extends IdProperty {
 	private TransactionType type;
 	private Double totalAmount;
 
-	/**
-	 * 
-	 */
 	public Transaction() {
 		super();
 	}
 
-	/**
-	 * @param transactionOn
-	 * @param soldBy
-	 * @param type
-	 * @param totalAmount
-	 */
 	public Transaction(User soldBy, TransactionType type) {
 		this();
 		this.transactionOn = DateUtil.toDate(LocalDateTime.now());
@@ -54,9 +45,6 @@ public class Transaction extends IdProperty {
 		setTotalAmount(totalAmount);
 	}
 
-	/**
-	 * @return the transactionOn
-	 */
 	public Date getTransactionOn() {
 		return transactionOn;
 	}
@@ -68,78 +56,40 @@ public class Transaction extends IdProperty {
 		this.transactionOn = transactionOn;
 	}
 
-	/**
-	 * @return the transactionItems
-	 */
 	public List<TransactionItems> getTransactionItems() {
 		return transactionItems;
 	}
 
-	/**
-	 * @param transactionItems the transactionItems to set
-	 */
 	public void addTransactionItems(TransactionItems transactionItems) {
 		getTransactionItems().add(transactionItems);
 	}
 
-	/**
-	 * @return the soldBy
-	 */
 	public User getSoldBy() {
 		return soldBy;
 	}
 
-	/**
-	 * @param soldBy the soldBy to set
-	 */
 	public void setSoldBy(User soldBy) {
 		this.soldBy = soldBy;
 	}
-
-	/**
-	 * @return the type
-	 */
 	public TransactionType getType() {
 		return type;
 	}
 
-	/**
-	 * @param type the type to set
-	 */
 	public void setType(TransactionType type) {
 		this.type = type;
 	}
-
-	/**
-	 * @return the totalAmount
-	 */
 	public Double getTotalAmount() {
 		return totalAmount;
 	}
 
-	/**
-	 * @param totalAmount the totalAmount to set
-	 */
 	public void setTotalAmount(Double totalAmount) {
 		this.totalAmount = totalAmount;
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId());
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 
 	@Override
 	public boolean equals(Object obj) {
@@ -152,12 +102,6 @@ public class Transaction extends IdProperty {
 		Transaction other = (Transaction) obj;
 		return getId() == other.getId();
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 
 	@Override
 	public String toString() {

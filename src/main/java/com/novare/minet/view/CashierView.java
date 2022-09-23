@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class CashierView extends BaseView {
+public class CashierView extends MinetView {
 
 	public CashierView(String menuTitle) {
 		super(menuTitle);

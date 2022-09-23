@@ -82,7 +82,8 @@ public class ProductController extends MiNetController {
 			selectedProduct.setCostPrice(getView().askProductCostPrice());
 
 			List<Supplier> allSuppliers = getModel().getAllSuppliers();
-			selection = getView().askDefaultSupplier(allSuppliers);
+			String generateSupplierTable = generateSupplierTable(allSuppliers);
+			selection = getView().askDefaultSupplier(generateSupplierTable, allSuppliers);
 			selectedProduct.setDefaultSupplier(allSuppliers.get(selection));
 
 			Double availQty = getView().askProductAvailQty();
@@ -121,7 +122,8 @@ public class ProductController extends MiNetController {
 		}
 		if (isNull(newProduct.getDefaultSupplier())) {
 			List<Supplier> allSuppliers = getModel().getAllSuppliers();
-			int selection = getView().askDefaultSupplier(allSuppliers);
+			String generateSupplierTable = generateSupplierTable(allSuppliers);
+			int selection = getView().askDefaultSupplier(generateSupplierTable, allSuppliers);
 			newProduct.setDefaultSupplier(allSuppliers.get(selection));
 		}
 		Double availQty = getView().askProductAvailQty();

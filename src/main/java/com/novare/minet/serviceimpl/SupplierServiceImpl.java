@@ -67,7 +67,7 @@ public class SupplierServiceImpl extends MiNetServiceImpl implements ISupplierSe
 		Iterator<Supplier> iterator = suppliers.iterator();
 		while (iterator.hasNext()) {
 			Supplier next = iterator.next();
-			if (next.getName().equals(supplier.getName()) && next.getId() == supplier.getId()) {
+			if (next.getId() == supplier.getId()) {
 				iterator.remove();
 			}
 		}

@@ -19,16 +19,16 @@ import com.novare.minet.serviceimpl.MiNetServiceImpl;
 import com.novare.minet.util.DateUtil;
 import com.novare.minet.util.MenuContext;
 import com.novare.minet.util.ServiceUtil;
-import com.novare.minet.view.BaseView;
+import com.novare.minet.view.MinetView;
 
 public class MiNetController {
 
 	private IMiNetService model;
-	private BaseView view;
+	private MinetView view;
 	private boolean menuVisible;
 	private User userSession;
 
-	public MiNetController(IMiNetService model, BaseView view) {
+	public MiNetController(IMiNetService model, MinetView view) {
 		setModel(model);
 		setView(view);
 		setMenuVisible(true);
@@ -91,14 +91,14 @@ public class MiNetController {
 	/**
 	 * @return the view
 	 */
-	public BaseView getView() {
+	public MinetView getView() {
 		return view;
 	}
 
 	/**
 	 * @param view the view to set
 	 */
-	public void setView(BaseView view) {
+	public void setView(MinetView view) {
 		this.view = view;
 	}
 

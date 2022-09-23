@@ -1,25 +1,5 @@
 [ {
-  "uuid" : "4dd89ccc-b7bc-453d-aedd-c6a8ba3c3ba1",
-  "id" : 1,
-  "fullName" : "Karthikeya ravi",
-  "userName" : "karthik",
-  "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-  "email" : "karthi@gmail.com",
-  "phoneNumber" : "+91 9953614242",
-  "address" : "Near ATM building,Bangalore",
-  "role" : "ADMIN"
-}, {
-  "uuid" : "81058aee-0119-4729-94c3-e5abf7d33f54",
-  "id" : 2,
-  "fullName" : "Jeshitha Ravi",
-  "userName" : "jeshitha",
-  "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-  "email" : "jeshi@gmail.com",
-  "phoneNumber" : "+91 9700315069",
-  "address" : "Koti street,Bangalore",
-  "role" : "CASHIER"
-}, {
-  "uuid" : "d8e2dc54-66f0-4273-886b-b8ddef8a544c",
+  "uuid" : "c86c733b-b5f9-4fcc-8051-d95fd88aaa63",
   "id" : 3,
   "fullName" : "Rishitha ravi",
   "userName" : "rishi",
@@ -29,7 +9,7 @@
   "address" : "Golconda,Bangalore",
   "role" : "MANAGER"
 }, {
-  "uuid" : "19c1054a-cae4-4ebc-adc1-5a431ad73be1",
+  "uuid" : "1d044749-25d4-4c93-b0c3-69d85da22181",
   "id" : 4,
   "fullName" : "kumar Ravi",
   "userName" : "kumar",
@@ -39,7 +19,7 @@
   "address" : "Gvt street,Bangalore",
   "role" : "MANAGER"
 }, {
-  "uuid" : "a7d37c10-1a28-4320-bf4b-01aa040ef303",
+  "uuid" : "ea88e546-c78b-4a5f-be93-e03ad55ee3b2",
   "id" : 5,
   "fullName" : "Malleswari Ravi",
   "userName" : "mallika",
@@ -49,13 +29,23 @@
   "address" : "koti Street, Bangalore",
   "role" : "CASHIER"
 }, {
-  "uuid" : "93bc2d68-a1b6-453a-9a17-1530b094ebba",
-  "id" : 6,
-  "fullName" : "JohnMarcus",
-  "userName" : "john",
+  "uuid" : "27e77add-621c-4331-8fb9-182f548f5957",
+  "id" : 2,
+  "fullName" : "Jeshitha Ravi",
+  "userName" : "jeshi",
   "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-  "email" : "john@gmail.com",
-  "phoneNumber" : "+46 734568767",
-  "address" : "old Street,Hyderabad",
+  "email" : "jeshi@gmail.com",
+  "phoneNumber" : "+91 9700315069",
+  "address" : "Koti street,Bangalore",
   "role" : "CASHIER"
+}, {
+  "uuid" : "847cf698-e8b5-4437-bc80-b4beaffec3fc",
+  "id" : 13,
+  "fullName" : "karthikeya",
+  "userName" : "karthik",
+  "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+  "email" : "karthik@gmail.com",
+  "phoneNumber" : "+9199876543",
+  "address" : "old street,Hyd",
+  "role" : "ADMIN"
 } ]

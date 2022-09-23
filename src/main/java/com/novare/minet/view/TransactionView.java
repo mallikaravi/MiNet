@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class TransactionView extends BaseView {
+public class TransactionView extends MinetView {
 
 	public TransactionView(String title) {
 		super(title);

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.novare.minet.util.PrintHandler;
 
-public class ProductView extends BaseView {
+public class ProductView extends MinetView {
 
 	public ProductView(String title) {
 		super(title);
@@ -49,9 +49,9 @@ public class ProductView extends BaseView {
 		return getUserInputDouble("Purchase Price: ");
 	}
 
-	public int askDefaultSupplier(List<?> allSuppliers) {
-		printMessage("Select the Default Supplier: ");
-		setMenuOptionsInRow(allSuppliers);
+	public int askDefaultSupplier(String generateSupplierTable, List<?> allSuppliers) {
+		printMessage("Select the Default Supplier: \n");
+		printMessage(generateSupplierTable);
 		return getSelectedOptionFromMenu(allSuppliers.size()) - 1;
 	}
 
